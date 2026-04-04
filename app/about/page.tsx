@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -140,23 +139,6 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: 0.15 }}
                 className="lg:col-span-5 space-y-4"
               >
-                {/* Company in action photo */}
-                <div className="relative h-52 rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/projects/04C26CF2-F48B-4832-BA14-59DB0D2F1564_1_105_c.jpeg"
-                    alt="VAH Construction — crew and equipment on site in Southern Ontario"
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <span className="text-xs text-white/80 font-medium bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      Smithville, Ontario
-                    </span>
-                  </div>
-                </div>
-
                 <div className="bg-[#111111] border border-amber-500/20 rounded-lg p-6">
                   <div className="text-amber-500 font-extrabold text-4xl mb-1">Smithville</div>
                   <div className="text-neutral-400 text-sm mb-3">Ontario — Head Office</div>

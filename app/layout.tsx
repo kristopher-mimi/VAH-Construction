@@ -14,11 +14,16 @@ export const metadata: Metadata = {
     "Ontario's metal roofing specialists. Standing seam, metal tiles, metal siding & custom fences. Lifetime non-prorated, transferable warranty. Serving Hamilton, St. Catharines, Kitchener, Burlington, Oakville, Mississauga, Muskoka & beyond — flexible travel for the right project.",
   keywords:
     "metal roofing Ontario, standing seam roofing, metal tiles, roofing Hamilton, roofing Kitchener, roofing Mississauga, roofing Muskoka, roofing Burlington, roofing Oakville, VAH Construction",
+  icons: {
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
   openGraph: {
     title: "VAH Construction | Metal Roofing Specialists",
     description:
       "Beautiful roofs that protect in style. Lifetime non-prorated warranty. Serving all of Southern Ontario.",
     type: "website",
+    images: ["/icon.jpg"],
   },
 };
 
