@@ -73,11 +73,11 @@ export default function AboutPage() {
       <main>
         <PageHero
           label="About VAH Construction"
-          headline="A Different Kind"
-          headlineAccent="of Roofing Company."
-          subheadline="Based in Smithville, Ontario. Built on the belief that homeowners deserve a roofing contractor who tells them the truth, shows up when they say they will, and stands behind their work unconditionally."
+          headline="Results You'll"
+          headlineAccent="Never Forget."
+          subheadline="Most homeowners in Southern Ontario have never experienced a roofing contractor who shows up on time, communicates clearly, and delivers exactly what was promised. That's what you get with VAH."
           breadcrumbs={[{ label: "About" }]}
-          ctaLabel="Work With Us"
+          ctaLabel="Get a Free Quote"
           ctaHref="/contact"
         />
 
@@ -96,7 +96,7 @@ export default function AboutPage() {
                   Our Story
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight mb-7">
-                  We Chose a Different Path.
+                  You Deserve Better Than Average.
                 </h2>
                 <div className="space-y-4 text-neutral-400 text-base leading-relaxed">
                   <p>
@@ -296,8 +296,8 @@ export default function AboutPage() {
         </section>
 
         <CTABanner
-          headline="Ready to Work With Us?"
-          subtext="Request a free quote. We measure remotely using satellite technology and deliver a detailed, written quote by email — no site visit required, no obligation."
+          headline="See the Difference for Yourself."
+          subtext="Get a free written quote delivered to your email — no site visit, no obligation. Most homeowners are surprised by how simple the process is."
           primaryLabel="Get a Free Quote"
           primaryHref="/contact"
         />

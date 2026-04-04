@@ -96,9 +96,9 @@ export default function MetalRoofingPage() {
       <main>
         <PageHero
           label="Metal Roofing Systems"
-          headline="The Last Roof"
-          headlineAccent="You'll Ever Need."
-          subheadline="Standing seam and metal tiles — installed by specialists who understand metal's unique properties, expansion characteristics, and the Ontario climate it has to survive."
+          headline="A Roof That"
+          headlineAccent="Speaks for Itself."
+          subheadline="Standing seam and metal tiles that protect your home for decades — no recoating, no replacement cycles, no compromises. Just a roof that performs exactly as promised, every year."
           breadcrumbs={[{ label: "Services", href: "/services" }, { label: "Metal Roofing" }]}
           ctaLabel="Get a Metal Roofing Quote"
           ctaHref="/contact"

@@ -201,8 +201,8 @@ export default function ProjectsPage() {
         </section>
 
         <CTABanner
-          headline="Want a Project Like One of These?"
-          subtext="Tell us about your property and we'll put together a detailed quote with material options, timeline, and warranty breakdown."
+          headline="Your Home Deserves the Same."
+          subtext="Get a detailed written quote — material options, timeline, and full warranty breakdown included. No site visit needed, no obligation."
           primaryLabel="Start Your Project"
           primaryHref="/contact"
         />
