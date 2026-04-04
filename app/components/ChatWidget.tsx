@@ -11,7 +11,7 @@ interface Message {
 const INITIAL: Message = {
   role: "assistant",
   content:
-    "Hi, I'm VAH Assistant. I can help with questions about metal roofing, pricing, and booking a free quote. What can I help you with?",
+    "Hi, I'm VAH AI Assistant. I can help with questions about metal roofing, pricing, and booking a free quote. What can I help you with?",
 };
 
 export default function ChatWidget() {
@@ -99,7 +99,7 @@ export default function ChatWidget() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-sm leading-none mb-1">
-                    VAH Assistant
+                    VAH AI Assistant
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse flex-shrink-0" />

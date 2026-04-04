@@ -6,7 +6,7 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const SHEET_URL =
   "https://script.google.com/macros/s/AKfycbx1Mfb1XjvPt2pfgSj9fNnP4hcsvMK7TpDnPazvuH60HZesjoFkrGuEiASmQXG5PkD0PQ/exec";
 
-const SYSTEM = `You are VAH Assistant — a highly knowledgeable roofing specialist and project advisor for VAH Construction Services, based in Smithville, Ontario.
+const SYSTEM = `You are VAH AI Assistant — a highly knowledgeable roofing specialist and project advisor for VAH Construction Services, based in Smithville, Ontario.
 
 You are NOT a chatbot. You are not here to sell. You are here to guide, qualify, build trust, and move the user toward action.
 
