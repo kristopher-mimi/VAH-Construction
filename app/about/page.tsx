@@ -149,6 +149,14 @@ export default function AboutPage() {
                 </div>
 
                 <div className="bg-[#111111] border border-neutral-800 rounded-lg p-6">
+                  <div className="text-white font-extrabold text-2xl mb-1">20+ Years</div>
+                  <div className="text-amber-500 text-sm font-semibold mb-3">Industry Experience</div>
+                  <p className="text-neutral-500 text-sm leading-relaxed">
+                    Two decades of metal roofing expertise — every technique refined, every failure mode understood, every installation backed with confidence.
+                  </p>
+                </div>
+
+                <div className="bg-[#111111] border border-neutral-800 rounded-lg p-6">
                   <div className="text-white font-extrabold text-2xl mb-1">Metal Only</div>
                   <div className="text-amber-500 text-sm font-semibold mb-3">Our Commitment</div>
                   <p className="text-neutral-500 text-sm leading-relaxed">

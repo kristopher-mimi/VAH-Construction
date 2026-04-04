@@ -34,12 +34,12 @@ const stats = [
     ),
   },
   {
-    value: "100%",
-    label: "Metal Specialists",
-    sub: "We only install metal roofing systems",
+    value: "20+",
+    label: "Years Experience",
+    sub: "Metal roofing specialists since day one",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path d="M3 9.5L12 3l9 6.5V21H3V9.5z" />
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z" />
       </svg>
     ),
   },

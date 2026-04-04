@@ -321,6 +321,97 @@ export default function MetalRoofingPage() {
           </div>
         </section>
 
+        {/* Vendors */}
+        <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45 }}
+              className="text-center mb-12"
+            >
+              <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
+                Our Material Partners
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                World-Class Steel. Nothing Less.
+              </h2>
+              <p className="text-neutral-400 text-base max-w-2xl mx-auto leading-relaxed">
+                To ensure top quality for our customers, we source exclusively from the world&apos;s leading steel manufacturers. The material behind your roof is as important as the installation.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                {
+                  name: "Ruukki",
+                  origin: "Finland",
+                  logo: "/images/services/ruukki.png",
+                  accent: "#E3501A",
+                  scale: 1.4,
+                  translateY: "0%",
+                  desc: "Europe's leading steel solutions company. Ruukki's Pural and Purex coatings set the standard for durability in the world's harshest climates.",
+                },
+                {
+                  name: "ThyssenKrupp",
+                  origin: "Germany",
+                  logo: "/images/services/thyssenkrupp.png",
+                  accent: "#0099CC",
+                  scale: 3.0,
+                  translateY: "0%",
+                  desc: "200+ years of industrial engineering heritage. ThyssenKrupp's coated flat steel is the benchmark for dimensional precision and coating adhesion.",
+                },
+                {
+                  name: "ArcelorMittal",
+                  origin: "Belgium / Global",
+                  logo: "/images/services/ArcelorMital.png",
+                  accent: "#F47920",
+                  scale: 1.3,
+                  translateY: "-10%",
+                  desc: "The world's largest steel producer. ArcelorMittal's Magnelis® and Granite coatings deliver corrosion resistance that outlasts the building itself.",
+                },
+              ].map((vendor, i) => (
+                <motion.div
+                  key={vendor.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.45, delay: i * 0.1 }}
+                  className="rounded-lg overflow-hidden flex flex-col"
+                  style={{ border: `1px solid ${vendor.accent}55` }}
+                >
+                  {/* Logo area — white bg */}
+                  <div className="bg-white flex items-center justify-center overflow-hidden" style={{ height: "160px" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={vendor.logo}
+                      alt={vendor.name}
+                      className="object-contain"
+                      style={{ width: "70%", height: "70%", transform: `scale(${vendor.scale}) translateY(${vendor.translateY})` }}
+                    />
+                  </div>
+                  {/* Brand color bar */}
+                  <div className="h-[3px]" style={{ backgroundColor: vendor.accent }} />
+                  {/* Content */}
+                  <div className="bg-[#111111] p-6 flex flex-col gap-3 flex-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white font-bold text-sm">{vendor.name}</span>
+                      <span
+                        className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border"
+                        style={{ color: vendor.accent, borderColor: `${vendor.accent}40`, backgroundColor: `${vendor.accent}15` }}
+                      >
+                        {vendor.origin}
+                      </span>
+                    </div>
+                    <p className="text-neutral-500 text-xs leading-relaxed">{vendor.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
           <div className="max-w-3xl mx-auto px-5 sm:px-8">

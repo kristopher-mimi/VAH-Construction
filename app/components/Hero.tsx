@@ -37,7 +37,7 @@ export default function Hero() {
           >
             <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
             <span className="text-amber-400 text-xs font-semibold tracking-[0.12em] uppercase">
-              Southern Ontario&apos;s Metal Roofing Specialists
+              20+ Years Experience · Southern Ontario&apos;s Metal Roofing Specialists
             </span>
           </motion.div>
 
