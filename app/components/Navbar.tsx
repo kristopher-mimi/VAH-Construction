@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS, PHONE, PHONE_HREF } from "@/lib/constants";
 
@@ -47,18 +48,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
-            <div className="flex items-center justify-center w-9 h-9 bg-amber-500 rounded-sm font-black text-black text-lg leading-none transition-colors group-hover:bg-amber-400">
-              V
-            </div>
-            <div className="leading-none">
-              <span className="block text-white font-extrabold text-base tracking-tight">
-                VAH Construction
-              </span>
-              <span className="block text-amber-500 text-[9px] font-bold tracking-[0.2em] uppercase">
-                Metal Roofing Specialists
-              </span>
-            </div>
+          <Link href="/" className="flex items-center flex-shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <Image
+              src="/images/logo5-transparent.png"
+              alt="VAH Construction"
+              width={260}
+              height={60}
+              className="h-11 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
