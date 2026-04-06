@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <Image
-              src="/images/logo5-transparent.png"
+              src="/images/logo1-transparent.png"
               alt="VAH Construction"
               width={260}
               height={60}
