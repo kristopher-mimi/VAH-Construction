@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -82,7 +82,7 @@ const stats: Stat[] = [
   { value: "50+", label: "Warranty on Every Project" },
 ];
 
-export default function ProjectsPage() {
+function ProjectsGallery() {
   const searchParams = useSearchParams();
   const [active, setActive] = useState<ProjectCategory>(() => {
     const cat = searchParams.get("category");
@@ -98,6 +98,85 @@ export default function ProjectsPage() {
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active || p.extraCategory === active);
 
+  return (
+    <>
+        {/* Filter + grid */}
+        <section className="bg-neutral-950 py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <div className="flex flex-wrap gap-2 mb-10">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className={`text-sm font-semibold px-4 py-2 rounded-sm border transition-all duration-200 ${
+                    active === cat
+                      ? "bg-amber-500 border-amber-500 text-black"
+                      : "bg-transparent border-neutral-700 text-neutral-400 hover:border-neutral-500 hover:text-white"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <AnimatePresence mode="popLayout">
+                {filtered.map((project) => (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.97 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.97 }}
+                    transition={{ duration: 0.3 }}
+                    className="group bg-[#111111] border border-neutral-800 hover:border-neutral-700 rounded-lg overflow-hidden transition-colors"
+                  >
+                    <div className="relative h-56 sm:h-60 overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        fill
+                        className={`object-cover ${project.imagePosition} transition-transform duration-700 group-hover:scale-105`}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                      <div className="absolute bottom-3 left-4 right-4">
+                        <span className="text-[10px] font-bold uppercase tracking-widest bg-black/50 text-white/80 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                          {project.system}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-white font-bold mb-1">{project.title}</h3>
+                      <div className="flex items-center gap-2 mb-3">
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-amber-500 flex-shrink-0">
+                          <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.034 3.048-4.374 3.048-6.827 0-4.075-3.15-7.5-7.5-7.5s-7.5 3.425-7.5 7.5c0 2.453 1.104 4.793 3.048 6.827a19.58 19.58 0 002.683 2.282 16.975 16.975 0 001.144.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-neutral-500 text-xs">{project.location}</span>
+                      </div>
+                      <div className="flex items-center gap-4 flex-wrap border-t border-neutral-800/60 pt-4">
+                        {[
+                          { label: "Area", value: project.area },
+                          { label: "Colour", value: project.colour },
+                        ].map((spec) => (
+                          <div key={spec.label}>
+                            <div className="text-xs font-bold text-white">{spec.value}</div>
+                            <div className="text-[10px] text-neutral-600 uppercase tracking-wider">{spec.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+        </section>
+    </>
+  );
+}
+
+export default function ProjectsPage() {
   return (
     <>
       <Navbar />
@@ -135,86 +214,9 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* Filter + grid */}
-        <section className="bg-neutral-950 py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            {/* Filter tabs */}
-            <div className="flex flex-wrap gap-2 mb-10">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActive(cat)}
-                  className={`text-sm font-semibold px-4 py-2 rounded-sm border transition-all duration-200 ${
-                    active === cat
-                      ? "bg-amber-500 border-amber-500 text-black"
-                      : "bg-transparent border-neutral-700 text-neutral-400 hover:border-neutral-500 hover:text-white"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
-            {/* Project grid */}
-            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <AnimatePresence mode="popLayout">
-                {filtered.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.3 }}
-                    className="group bg-[#111111] border border-neutral-800 hover:border-neutral-700 rounded-lg overflow-hidden transition-colors"
-                  >
-                    {/* Project image */}
-                    <div className="relative h-56 sm:h-60 overflow-hidden">
-                      <Image
-                        src={project.image}
-                        alt={project.imageAlt}
-                        fill
-                        className={`object-cover ${project.imagePosition} transition-transform duration-700 group-hover:scale-105`}
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-                      <div className="absolute bottom-3 left-4 right-4">
-                        <div className="flex items-center">
-                          <span className="text-[10px] font-bold uppercase tracking-widest bg-black/50 text-white/80 px-2.5 py-1 rounded-full backdrop-blur-sm">
-                            {project.system}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Project details */}
-                    <div className="p-5">
-                      <h3 className="text-white font-bold mb-1">{project.title}</h3>
-                      <div className="flex items-center gap-2 mb-3">
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-amber-500 flex-shrink-0">
-                          <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.034 3.048-4.374 3.048-6.827 0-4.075-3.15-7.5-7.5-7.5s-7.5 3.425-7.5 7.5c0 2.453 1.104 4.793 3.048 6.827a19.58 19.58 0 002.683 2.282 16.975 16.975 0 001.144.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-neutral-500 text-xs">{project.location}</span>
-                      </div>
-
-                      <div className="flex items-center gap-4 flex-wrap border-t border-neutral-800/60 pt-4">
-                        {[
-                          { label: "Area", value: project.area },
-                          { label: "Colour", value: project.colour },
-                        ].map((spec) => (
-                          <div key={spec.label}>
-                            <div className="text-xs font-bold text-white">{spec.value}</div>
-                            <div className="text-[10px] text-neutral-600 uppercase tracking-wider">{spec.label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        </section>
+        <Suspense fallback={<div className="bg-neutral-950 py-20" />}>
+          <ProjectsGallery />
+        </Suspense>
 
         <CTABanner
           headline="Your Home Deserves the Same."

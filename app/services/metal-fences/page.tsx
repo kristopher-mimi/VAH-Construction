@@ -374,7 +374,6 @@ export default function MetalFencesPage() {
                 { src: "/images/projects/Дизайн без названия (17).png", alt: "Custom metal panel fence" },
                 { src: "/images/projects/fence6.jpg", alt: "Metal fence installation" },
                 { src: "/images/projects/fence7.jpg", alt: "Metal fence installation" },
-                { src: "/images/projects/fence8.jpg", alt: "Metal fence installation" },
                 { src: "/images/projects/fence9.jpg", alt: "Metal fence installation" },
                 { src: "/images/projects/fence10.jpg", alt: "Metal fence installation" },
               ].map((photo, i) => (
