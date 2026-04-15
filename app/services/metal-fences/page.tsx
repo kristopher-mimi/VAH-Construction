@@ -340,6 +340,28 @@ export default function MetalFencesPage() {
               </p>
             </motion.div>
 
+            {/* Style reference */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5 }}
+              className="mb-12 rounded-lg overflow-hidden bg-white"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/projects/fencetemplate.png"
+                alt="Metal fence style options — VAH Construction"
+                className="w-full h-auto block"
+                style={{ maxHeight: "500px", objectFit: "contain", objectPosition: "center" }}
+              />
+              <div className="bg-[#111111] border-t border-neutral-800 px-5 py-4">
+                <span className="text-sm text-neutral-200 font-semibold">
+                  Available fence profiles — all custom fabricated in powder-coated steel &amp; aluminum
+                </span>
+              </div>
+            </motion.div>
+
             <div className="space-y-4 mb-16">
               {styles.map((s, i) => (
                 <motion.div
