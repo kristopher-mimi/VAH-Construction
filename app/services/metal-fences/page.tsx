@@ -17,7 +17,7 @@ const comparisons = [
   },
   {
     wood: "Posts warp, lean, and heave with frost",
-    metal: "Steel posts in concrete — stays plumb forever",
+    metal: "Metal-clad posts in concrete — stays plumb forever",
   },
   {
     wood: "Termites, ants, and fungi destroy it from inside",
@@ -70,8 +70,8 @@ const faq = [
     a: "Yes. Single and double swing gates, sliding gates, and pedestrian gates are all available as part of any fence installation. Hardware and locking mechanisms are matched to the fence system.",
   },
   {
-    q: "How are the posts installed?",
-    a: "Steel posts are set in concrete footings below the frost line — minimum 48 inches in Southern Ontario. This prevents frost heave and keeps the fence plumb and stable year after year.",
+    q: "What are the posts made of?",
+    a: "Posts are either solid steel or structural wood wrapped in powder-coated metal cladding — both set in concrete footings below the frost line (minimum 48 inches in Southern Ontario). The metal cladding protects the post from moisture, UV, and frost regardless of what's underneath. The result looks identical and performs the same.",
   },
   {
     q: "Can I get a quote without a site visit?",
