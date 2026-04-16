@@ -2,13 +2,19 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import ChatWidget from "@/app/components/ChatWidget";
+import ClientProviders from "@/app/components/ClientProviders";
 
 const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   title: "VAH Construction | Metal Roofing Specialists — Southern Ontario",
@@ -35,8 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body>
-        {children}
-        <ChatWidget />
+        <ClientProviders>{children}</ClientProviders>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-WGBE6PF5P0" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];

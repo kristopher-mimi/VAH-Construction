@@ -43,7 +43,8 @@ export default function PageHero({
         fill
         className="object-cover object-center"
         priority
-        quality={85}
+        quality={70}
+        sizes="100vw"
       />
 
       {/* Overlays */}

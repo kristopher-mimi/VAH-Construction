@@ -54,7 +54,8 @@ export default function Navbar() {
               alt="VAH Construction"
               width={260}
               height={60}
-              className="h-11 w-auto object-contain"
+              className="h-9 sm:h-11 w-auto object-contain"
+              sizes="(max-width: 640px) 180px, 260px"
               priority
             />
           </Link>
