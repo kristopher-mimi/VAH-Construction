@@ -40,6 +40,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero/5965F2DB-0262-4966-9379-092C7E6DA345_1_105_c.jpeg"
+          fetchPriority="high"
+        />
+      </head>
       <body>
         <ClientProviders>{children}</ClientProviders>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-WGBE6PF5P0" strategy="afterInteractive" />

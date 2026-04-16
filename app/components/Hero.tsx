@@ -15,6 +15,7 @@ export default function Hero() {
         priority
         quality={75}
         sizes="100vw"
+        fetchPriority="high"
       />
 
       <div className="absolute inset-0 bg-neutral-950/60" />
