@@ -2,9 +2,30 @@ import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const FORMSPREE_URL = "https://formspree.io/f/mbdqvgvw";;
 
-const SHEET_URL =
-  "https://script.google.com/macros/s/AKfycbx1Mfb1XjvPt2pfgSj9fNnP4hcsvMK7TpDnPazvuH60HZesjoFkrGuEiASmQXG5PkD0PQ/exec";
+// Simple in-memory rate limit — per IP, max 20 requests per minute
+const rateLimitMap = new Map<string, { count: number; ts: number }>();
+const RATE_LIMIT = 20;
+const RATE_WINDOW = 60_000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now - entry.ts > RATE_WINDOW) {
+    rateLimitMap.set(ip, { count: 1, ts: now });
+    return false;
+  }
+  if (entry.count >= RATE_LIMIT) return true;
+  entry.count++;
+  return false;
+}
+
+const ALLOWED_ORIGINS = [
+  "https://www.vahconstruction.com",
+  "https://vahconstruction.com",
+  "http://localhost:3000",
+];
 
 const SYSTEM = `You are VAH AI Assistant — a highly knowledgeable roofing specialist and project advisor for VAH Construction Services, based in Smithville, Ontario.
 
@@ -132,12 +153,54 @@ const LEAD_TOOL: OpenAI.Chat.Completions.ChatCompletionTool = {
 };
 
 export async function POST(req: NextRequest) {
+  // Origin check
+  const origin = req.headers.get("origin") ?? "";
+  if (!ALLOWED_ORIGINS.includes(origin)) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  // Rate limiting by IP
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { content: "Too many requests. Please wait a moment before sending another message." },
+      { status: 429 }
+    );
+  }
+
   try {
-    const { messages, leadCaptured } = await req.json();
+    const body = await req.json();
+    const { messages, leadCaptured } = body;
+
+    // Validate input
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+    }
+
+    // Limit conversation length to prevent abuse
+    const trimmedMessages = messages.slice(-20);
+
+    // Sanitize messages — only allow role/content string pairs
+    const safeMessages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = trimmedMessages
+      .filter(
+        (m: unknown) =>
+          m &&
+          typeof m === "object" &&
+          ["user", "assistant"].includes((m as Record<string, unknown>).role as string) &&
+          typeof (m as Record<string, unknown>).content === "string"
+      )
+      .map((m: Record<string, unknown>) => ({
+        role: (m.role as "user" | "assistant"),
+        content: (m.content as string).slice(0, 2000),
+      }));
+
+    if (safeMessages.length === 0) {
+      return NextResponse.json({ error: "Invalid messages" }, { status: 400 });
+    }
 
     const params: OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming = {
       model: "gpt-4o",
-      messages: [{ role: "system", content: SYSTEM }, ...messages],
+      messages: [{ role: "system", content: SYSTEM }, ...safeMessages],
       max_tokens: 400,
       temperature: 0.65,
     };
@@ -148,28 +211,31 @@ export async function POST(req: NextRequest) {
     }
 
     const response = await openai.chat.completions.create(params);
-
     const choice = response.choices[0];
     const toolCall = choice.message.tool_calls?.[0];
 
     if (toolCall && toolCall.type === "function" && toolCall.function.name === "capture_lead") {
-      const args = JSON.parse(toolCall.function.arguments);
+      let args: Record<string, string> = {};
+      try {
+        args = JSON.parse(toolCall.function.arguments);
+      } catch {
+        // If parsing fails, skip lead capture but continue
+      }
 
-      fetch(SHEET_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: args.name,
-          phone: args.phone,
-          email: "",
-          city: "",
-          address: "",
-          message: `[Chat Lead] ${args.interest || "General inquiry"}`,
-        }),
-      }).catch(() => {});
+      if (args.name && args.phone) {
+        fetch(FORMSPREE_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            name: String(args.name).slice(0, 100),
+            phone: String(args.phone).slice(0, 30),
+            message: `[Chat Lead] ${String(args.interest ?? "General inquiry").slice(0, 200)}`,
+          }),
+        }).catch(() => {});
+      }
 
       return NextResponse.json({
-        content: `Got it, ${args.name}. Your details have been passed to our team — someone will reach out to you at ${args.phone} within the hour. Is there anything else I can help you with?`,
+        content: `Got it, ${args.name ?? ""}. Your details have been passed to our team — someone will reach out to you at ${args.phone ?? "the number provided"} within the hour. Is there anything else I can help you with?`,
         leadCaptured: true,
       });
     }

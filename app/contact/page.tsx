@@ -42,8 +42,6 @@ const faq = [
   },
 ];
 
-const SHEET_URL =
-  "https://script.google.com/macros/s/AKfycbx1Mfb1XjvPt2pfgSj9fNnP4hcsvMK7TpDnPazvuH60HZesjoFkrGuEiASmQXG5PkD0PQ/exec";
 
 export default function ContactPage() {
   const [selected, setSelected] = useState<string[]>([]);
@@ -68,12 +66,12 @@ export default function ContactPage() {
     };
 
     try {
-      await fetch(SHEET_URL, {
+      const res = await fetch("/api/submit", {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+      if (!res.ok) throw new Error("Failed");
       setStatus("success");
       form.reset();
       setSelected([]);
