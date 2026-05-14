@@ -32,18 +32,27 @@ export const NAV_LINKS = [
   {
     label: "Services",
     href: "/services",
-    children: [
-      { label: "All Services", href: "/services", sub: "Overview of everything we do" },
-      { label: "Standing Seam Roofing", href: "/services/standing-seam-roofing", sub: "The gold standard" },
-      { label: "Metal Roofing", href: "/services/metal-roofing", sub: "Our core specialty" },
-      { label: "Residential Metal Roofing", href: "/services/residential-metal-roofing", sub: "For Ontario homes" },
-      { label: "Commercial Metal Roofing", href: "/services/commercial-metal-roofing", sub: "Industrial & retail" },
-      { label: "Roof Replacement", href: "/services/roof-replacement", sub: "Full tear-off & install" },
-      { label: "Metal Fences", href: "/services/metal-fences", sub: "Custom powder-coated fencing" },
-      { label: "Luxury Metal Fences", href: "/services/luxury-metal-fences", sub: "Architectural privacy fencing" },
-      { label: "Custom Steel Fence", href: "/services/custom-steel-fence", sub: "Bespoke fabricated fencing" },
-      { label: "Metal Siding", href: "/services/metal-siding", sub: "Board & batten, lap, corrugated" },
+    columns: [
+      {
+        heading: "Roofing",
+        items: [
+          { label: "Standing Seam Roofing", href: "/services/standing-seam-roofing", sub: "The gold standard" },
+          { label: "Residential Metal Roofing", href: "/services/residential-metal-roofing", sub: "For Ontario homes" },
+          { label: "Commercial Metal Roofing", href: "/services/commercial-metal-roofing", sub: "Industrial & retail" },
+          { label: "Roof Replacement", href: "/services/roof-replacement", sub: "Full tear-off & install" },
+          { label: "Metal Siding", href: "/services/metal-siding", sub: "Board & batten, corrugated" },
+        ],
+      },
+      {
+        heading: "Fencing",
+        items: [
+          { label: "Metal Fences", href: "/services/metal-fences", sub: "All fencing systems" },
+          { label: "Luxury Privacy Fences", href: "/services/luxury-metal-fences", sub: "Architectural privacy fencing" },
+          { label: "Custom Steel Fence", href: "/services/custom-steel-fence", sub: "Bespoke fabricated fencing" },
+        ],
+      },
     ],
+    children: null,
   },
   {
     label: "Locations",

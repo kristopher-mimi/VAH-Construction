@@ -62,8 +62,23 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-7">
-            {NAV_LINKS.map((link) =>
-              link.children ? (
+            {NAV_LINKS.map((link) => {
+              const hasDropdown = link.columns || link.children;
+              if (!hasDropdown) {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-sm font-medium transition-colors duration-200 ${
+                      isActive(link.href) ? "text-amber-400" : "text-neutral-400 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+
+              return (
                 <div
                   key={link.href}
                   className="relative"
@@ -87,39 +102,59 @@ export default function Navbar() {
                   </Link>
 
                   {activeDropdown === link.href && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-neutral-900 border border-neutral-800 rounded-lg shadow-2xl py-2 z-50">
+                    <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-neutral-900 border border-neutral-800 rounded-lg shadow-2xl py-3 z-50 ${link.columns ? "w-[480px]" : "w-64"}`}>
+                      {/* caret */}
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-2 overflow-hidden">
                         <div className="w-3 h-3 bg-neutral-900 border-l border-t border-neutral-800 rotate-45 mx-auto mt-1" />
                       </div>
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className={`flex flex-col px-4 py-3 hover:bg-neutral-800/60 transition-colors group/item ${
-                            isActive(child.href) && child.href !== "/services" ? "bg-neutral-800/40" : ""
-                          }`}
-                        >
-                          <span className={`text-sm font-semibold transition-colors ${isActive(child.href) && child.href !== "/services" ? "text-amber-400" : "text-white group-hover/item:text-amber-400"}`}>
-                            {child.label}
-                          </span>
-                          <span className="text-xs text-neutral-500 mt-0.5">{child.sub}</span>
-                        </Link>
-                      ))}
+
+                      {/* Two-column layout */}
+                      {link.columns ? (
+                        <div className="grid grid-cols-2 gap-0 divide-x divide-neutral-800">
+                          {link.columns.map((col) => (
+                            <div key={col.heading} className="px-2">
+                              <p className="text-[10px] font-bold text-neutral-600 uppercase tracking-[0.14em] px-3 pb-2 pt-1">
+                                {col.heading}
+                              </p>
+                              {col.items.map((item) => (
+                                <Link
+                                  key={item.href}
+                                  href={item.href}
+                                  className={`flex flex-col px-3 py-2.5 hover:bg-neutral-800/60 rounded-md transition-colors group/item ${
+                                    isActive(item.href) ? "bg-neutral-800/40" : ""
+                                  }`}
+                                >
+                                  <span className={`text-sm font-semibold transition-colors ${isActive(item.href) ? "text-amber-400" : "text-white group-hover/item:text-amber-400"}`}>
+                                    {item.label}
+                                  </span>
+                                  <span className="text-xs text-neutral-500 mt-0.5">{item.sub}</span>
+                                </Link>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        /* Single-column layout */
+                        link.children?.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`flex flex-col px-4 py-3 hover:bg-neutral-800/60 transition-colors group/item ${
+                              isActive(child.href) && child.href !== link.href ? "bg-neutral-800/40" : ""
+                            }`}
+                          >
+                            <span className={`text-sm font-semibold transition-colors ${isActive(child.href) && child.href !== link.href ? "text-amber-400" : "text-white group-hover/item:text-amber-400"}`}>
+                              {child.label}
+                            </span>
+                            <span className="text-xs text-neutral-500 mt-0.5">{child.sub}</span>
+                          </Link>
+                        ))
+                      )}
                     </div>
                   )}
                 </div>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    isActive(link.href) ? "text-amber-400" : "text-neutral-400 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
+              );
+            })}
           </div>
 
           {/* Desktop Right */}
@@ -171,46 +206,76 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-neutral-800 bg-neutral-950/98 backdrop-blur-md">
           <div className="px-5 py-4 flex flex-col">
-            {NAV_LINKS.map((link) =>
-              link.children ? (
+            {NAV_LINKS.map((link) => {
+              const hasDropdown = link.columns || link.children;
+              if (!hasDropdown) {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="py-3.5 text-base font-medium text-neutral-300 hover:text-white border-b border-neutral-800 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+
+              const allItems = link.columns
+                ? link.columns.flatMap((col) => col.items.map((item) => ({ ...item, group: col.heading })))
+                : link.children ?? [];
+
+              const isOpen = mobileOpenDropdown === link.href;
+
+              return (
                 <div key={link.href} className="border-b border-neutral-800">
                   <button
-                    onClick={() => setMobileOpenDropdown(mobileOpenDropdown === link.href ? null : link.href)}
+                    onClick={() => setMobileOpenDropdown(isOpen ? null : link.href)}
                     className="w-full flex items-center justify-between py-3.5 text-base font-medium text-neutral-300"
                   >
                     {link.label}
                     <svg
                       viewBox="0 0 16 16"
                       fill="currentColor"
-                      className={`w-4 h-4 transition-transform ${mobileOpenDropdown === link.href ? "rotate-180" : ""}`}
+                      className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
                     >
                       <path fillRule="evenodd" d="M4.22 6.22a.75.75 0 011.06 0L8 8.94l2.72-2.72a.75.75 0 111.06 1.06l-3.25 3.25a.75.75 0 01-1.06 0L4.22 7.28a.75.75 0 010-1.06z" />
                     </svg>
                   </button>
-                  {mobileOpenDropdown === link.href && (
-                    <div className="pb-2 pl-4 flex flex-col gap-1">
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="py-2.5 text-sm text-neutral-400 hover:text-amber-400 transition-colors"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                  {isOpen && (
+                    <div className="pb-3 pl-4 flex flex-col gap-0.5">
+                      {link.columns ? (
+                        link.columns.map((col) => (
+                          <div key={col.heading}>
+                            <p className="text-[10px] font-bold text-neutral-600 uppercase tracking-widest pt-2 pb-1">
+                              {col.heading}
+                            </p>
+                            {col.items.map((item) => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                className="py-2 text-sm text-neutral-400 hover:text-amber-400 transition-colors block"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        ))
+                      ) : (
+                        allItems.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="py-2.5 text-sm text-neutral-400 hover:text-amber-400 transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))
+                      )}
                     </div>
                   )}
                 </div>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="py-3.5 text-base font-medium text-neutral-300 hover:text-white border-b border-neutral-800 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
+              );
+            })}
             <Link
               href="/contact"
               className="mt-4 bg-amber-500 hover:bg-amber-400 text-black font-bold text-center py-3.5 rounded-sm transition-colors"
