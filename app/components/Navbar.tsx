@@ -9,8 +9,8 @@ import { NAV_LINKS, PHONE, PHONE_HREF } from "@/lib/constants";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
@@ -22,15 +22,15 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
-    setMobileServicesOpen(false);
+    setMobileOpenDropdown(null);
   }, [pathname]);
 
-  const openDropdown = () => {
+  const openDropdown = (href: string) => {
     if (dropdownTimer.current) clearTimeout(dropdownTimer.current);
-    setDesktopDropdownOpen(true);
+    setActiveDropdown(href);
   };
   const closeDropdown = () => {
-    dropdownTimer.current = setTimeout(() => setDesktopDropdownOpen(false), 120);
+    dropdownTimer.current = setTimeout(() => setActiveDropdown(null), 120);
   };
 
   const isActive = (href: string) =>
@@ -67,7 +67,7 @@ export default function Navbar() {
                 <div
                   key={link.href}
                   className="relative"
-                  onMouseEnter={openDropdown}
+                  onMouseEnter={() => openDropdown(link.href)}
                   onMouseLeave={closeDropdown}
                 >
                   <Link
@@ -80,13 +80,13 @@ export default function Navbar() {
                     <svg
                       viewBox="0 0 16 16"
                       fill="currentColor"
-                      className={`w-3 h-3 transition-transform duration-200 ${desktopDropdownOpen ? "rotate-180" : ""}`}
+                      className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === link.href ? "rotate-180" : ""}`}
                     >
                       <path fillRule="evenodd" d="M4.22 6.22a.75.75 0 011.06 0L8 8.94l2.72-2.72a.75.75 0 111.06 1.06l-3.25 3.25a.75.75 0 01-1.06 0L4.22 7.28a.75.75 0 010-1.06z" />
                     </svg>
                   </Link>
 
-                  {desktopDropdownOpen && (
+                  {activeDropdown === link.href && (
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-neutral-900 border border-neutral-800 rounded-lg shadow-2xl py-2 z-50">
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-2 overflow-hidden">
                         <div className="w-3 h-3 bg-neutral-900 border-l border-t border-neutral-800 rotate-45 mx-auto mt-1" />
@@ -175,19 +175,19 @@ export default function Navbar() {
               link.children ? (
                 <div key={link.href} className="border-b border-neutral-800">
                   <button
-                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    onClick={() => setMobileOpenDropdown(mobileOpenDropdown === link.href ? null : link.href)}
                     className="w-full flex items-center justify-between py-3.5 text-base font-medium text-neutral-300"
                   >
                     {link.label}
                     <svg
                       viewBox="0 0 16 16"
                       fill="currentColor"
-                      className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                      className={`w-4 h-4 transition-transform ${mobileOpenDropdown === link.href ? "rotate-180" : ""}`}
                     >
                       <path fillRule="evenodd" d="M4.22 6.22a.75.75 0 011.06 0L8 8.94l2.72-2.72a.75.75 0 111.06 1.06l-3.25 3.25a.75.75 0 01-1.06 0L4.22 7.28a.75.75 0 010-1.06z" />
                     </svg>
                   </button>
-                  {mobileServicesOpen && (
+                  {mobileOpenDropdown === link.href && (
                     <div className="pb-2 pl-4 flex flex-col gap-1">
                       {link.children.map((child) => (
                         <Link
