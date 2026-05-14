@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -85,11 +84,7 @@ export default function AboutPage() {
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5 }}
+              <div
                 className="lg:col-span-7"
               >
                 <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block">
@@ -130,13 +125,9 @@ export default function AboutPage() {
                     keep for life.
                   </p>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: 0.15 }}
+              <div
                 className="lg:col-span-5 space-y-4"
               >
                 <div className="bg-[#111111] border border-amber-500/20 rounded-lg p-6">
@@ -173,7 +164,7 @@ export default function AboutPage() {
                     Our warranty is non-prorated and fully transferable.
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -181,11 +172,7 @@ export default function AboutPage() {
         {/* The 4 Pillars */}
         <section className="bg-[#0e0e0e] border-y border-neutral-800/60 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="text-center mb-14 max-w-xl mx-auto"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -194,16 +181,12 @@ export default function AboutPage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 Four Principles. Every Project.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {pillars.map((p, i) => (
-                <motion.div
+                <div
                   key={p.n}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: i * 0.09 }}
                   className="bg-[#141414] border border-neutral-800 rounded-lg p-6 hover:border-amber-500/25 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-sm bg-amber-500/10 group-hover:bg-amber-500 border border-amber-500/20 group-hover:border-amber-500 flex items-center justify-center text-amber-500 group-hover:text-black transition-all duration-300 mb-4">
@@ -212,7 +195,7 @@ export default function AboutPage() {
                   <div className="text-neutral-700 text-xs font-bold tracking-widest mb-1">{p.n}</div>
                   <h3 className="text-white font-bold mb-2">{p.title}</h3>
                   <p className="text-neutral-500 text-xs leading-relaxed">{p.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -221,11 +204,7 @@ export default function AboutPage() {
         {/* What makes us different */}
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-xl mb-12"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -234,16 +213,12 @@ export default function AboutPage() {
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
                 It&apos;s a Philosophy, Not a Pitch.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="space-y-4">
               {differentiators.map((d, i) => (
-                <motion.div
+                <div
                   key={d.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: i * 0.08 }}
                   className="bg-[#111111] border border-neutral-800 rounded-lg p-7 flex gap-6"
                 >
                   <div className="text-3xl font-black text-neutral-800 leading-none flex-shrink-0 pt-0.5">
@@ -253,7 +228,7 @@ export default function AboutPage() {
                     <h3 className="text-white font-bold mb-2">{d.title}</h3>
                     <p className="text-neutral-400 text-sm leading-relaxed">{d.body}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -262,11 +237,7 @@ export default function AboutPage() {
         {/* Service Area */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14"
             >
               <div className="flex-shrink-0">
@@ -291,7 +262,7 @@ export default function AboutPage() {
                   + more
                 </span>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

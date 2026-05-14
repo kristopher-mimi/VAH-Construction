@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -132,11 +131,7 @@ export default function MetalSidingPage() {
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5 }}
+              <div
               >
                 <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block">
                   Why Metal Siding
@@ -155,13 +150,9 @@ export default function MetalSidingPage() {
                     We install coordinated roofing and siding systems from the same manufacturer colour palettes, allowing you to specify the full exterior envelope as a single project — designed to look intentional and perform together for decades.
                   </p>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.55, delay: 0.1 }}
+              <div
                 className="relative rounded-lg overflow-hidden"
               >
                 <div className="relative h-[360px] sm:h-[460px] lg:h-[520px]">
@@ -180,15 +171,11 @@ export default function MetalSidingPage() {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Specs table below */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: 0.1 }}
+            <div
               className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-800/40 rounded-lg overflow-hidden"
             >
               {[
@@ -202,18 +189,14 @@ export default function MetalSidingPage() {
                   <div className="text-neutral-500 text-xs uppercase tracking-wider">{s.label}</div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Profiles */}
         <section className="bg-[#0e0e0e] border-y border-neutral-800/60 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-xl mb-14"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -222,16 +205,12 @@ export default function MetalSidingPage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 Four Systems. One Standard of Installation.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="space-y-4">
               {profiles.map((p, i) => (
-                <motion.div
+                <div
                   key={p.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.07 }}
                   className="bg-[#111111] border border-neutral-800 hover:border-neutral-700 rounded-lg overflow-hidden transition-colors"
                 >
                   <div className="flex flex-col lg:flex-row gap-8 p-8">
@@ -266,7 +245,7 @@ export default function MetalSidingPage() {
                       </ul>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -275,11 +254,7 @@ export default function MetalSidingPage() {
         {/* Benefits */}
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-xl mb-14"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -288,22 +263,18 @@ export default function MetalSidingPage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 Built to Outperform Every Alternative.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {benefits.map((b, i) => (
-                <motion.div
+                <div
                   key={b.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
                   className="bg-[#111111] border border-neutral-800 rounded-lg p-6"
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mb-4" />
                   <h3 className="text-white font-bold text-sm mb-2">{b.title}</h3>
                   <p className="text-neutral-500 text-xs leading-relaxed">{b.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -312,11 +283,7 @@ export default function MetalSidingPage() {
         {/* FAQ */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
           <div className="max-w-3xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="mb-10"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -325,20 +292,16 @@ export default function MetalSidingPage() {
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
                 Metal Siding FAQs.
               </h2>
-            </motion.div>
+            </div>
             <div className="space-y-3">
               {faq.map((item, i) => (
-                <motion.div
+                <div
                   key={item.q}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
                   className="bg-[#111111] border border-neutral-800/60 rounded-sm p-5"
                 >
                   <h3 className="text-white font-bold text-sm mb-2">{item.q}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{item.a}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

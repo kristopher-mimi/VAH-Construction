@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -103,11 +102,7 @@ export default function RoofReplacementPage() {
         {/* Signs you need replacement */}
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-xl mb-14"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -118,16 +113,12 @@ export default function RoofReplacementPage() {
                 <br />
                 Needs Replacement — Not Repair.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {signs.map((sign, i) => (
-                <motion.div
+                <div
                   key={sign.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
                   className="bg-[#111111] border border-neutral-800 rounded-lg p-6 hover:border-amber-500/20 transition-colors"
                 >
                   <div className="flex items-center gap-3 mb-3">
@@ -137,33 +128,25 @@ export default function RoofReplacementPage() {
                     <h3 className="text-white font-bold text-sm leading-tight">{sign.title}</h3>
                   </div>
                   <p className="text-neutral-500 text-xs leading-relaxed">{sign.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: 0.3 }}
+            <p
               className="text-neutral-600 text-sm mt-8 text-center"
             >
               Not sure if you need replacement or repair?{" "}
               <Link href="/contact" className="text-amber-500 hover:text-amber-400 transition-colors">
                 Get a free remote quote — no visit needed.
               </Link>
-            </motion.p>
+            </p>
           </div>
         </section>
 
         {/* Our process */}
         <section className="bg-[#0e0e0e] border-y border-neutral-800/60 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="text-center mb-14"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -172,19 +155,15 @@ export default function RoofReplacementPage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 Every Step. No Shortcuts.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="relative">
               {/* Connecting line — desktop */}
               <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-neutral-800/60 z-0" />
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 relative z-10">
                 {processSteps.map((step, i) => (
-                  <motion.div
+                  <div
                     key={step.n}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.45, delay: i * 0.07 }}
                     className="bg-[#0e0e0e] border border-neutral-800 rounded-lg p-6"
                   >
                     <div className="w-10 h-10 rounded-sm bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 font-black text-sm mb-4">
@@ -192,7 +171,7 @@ export default function RoofReplacementPage() {
                     </div>
                     <h3 className="text-white font-bold mb-2 text-sm">{step.title}</h3>
                     <p className="text-neutral-500 text-xs leading-relaxed">{step.body}</p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -202,11 +181,7 @@ export default function RoofReplacementPage() {
         {/* Materials */}
         <section className="bg-neutral-950 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-xl mb-10"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -215,16 +190,12 @@ export default function RoofReplacementPage() {
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
                 Premium Canadian-Sourced Materials.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid sm:grid-cols-3 gap-5 mb-10">
               {materials.map((mat, i) => (
-                <motion.div
+                <div
                   key={mat.name}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.4, delay: i * 0.09 }}
                   className="bg-[#111111] border border-neutral-800 rounded-lg p-6"
                 >
                   <div className="flex items-center gap-2 mb-3">
@@ -234,7 +205,7 @@ export default function RoofReplacementPage() {
                     </span>
                   </div>
                   <p className="text-neutral-500 text-xs leading-relaxed">{mat.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 

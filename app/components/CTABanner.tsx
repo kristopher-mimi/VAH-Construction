@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface CTABannerProps {
@@ -39,11 +38,7 @@ export default function CTABanner({
   return (
     <section className={`${bg} py-14 lg:py-16`}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.45 }}
+        <div
           className="flex flex-col lg:flex-row lg:items-center justify-between gap-8"
         >
           <div className="max-w-xl">
@@ -69,7 +64,7 @@ export default function CTABanner({
               (437) 247-3371
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

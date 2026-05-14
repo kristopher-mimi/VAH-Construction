@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import AddressAutocomplete from "@/app/components/AddressAutocomplete";
 
 
@@ -54,12 +53,7 @@ export default function FinalCTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 text-center">
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55 }}
-        >
+        <div>
           <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block">
             Ready to Get Started?
           </span>
@@ -203,7 +197,7 @@ export default function FinalCTA() {
               info@vahconstruction.com
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

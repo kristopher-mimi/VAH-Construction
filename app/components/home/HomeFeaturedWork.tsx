@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -44,11 +43,7 @@ export default function HomeFeaturedWork() {
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.45 }}
+          <div
           >
             <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
               Recent Work
@@ -58,7 +53,7 @@ export default function HomeFeaturedWork() {
               <br />
               Across the Region.
             </h2>
-          </motion.div>
+          </div>
           <Link
             href="/projects"
             className="flex-shrink-0 inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-amber-400 font-semibold transition-colors pb-1"
@@ -70,15 +65,11 @@ export default function HomeFeaturedWork() {
           </Link>
         </div>
 
-        {/* Photo grid — editorial layout */}
+        {/* Photo grid — editorial */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
 
           {/* Large left — spans 2 rows on desktop */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.55 }}
+          <div
             className="relative col-span-2 lg:col-span-1 lg:row-span-2 group rounded-lg overflow-hidden"
             style={{ minHeight: "320px" }}
           >
@@ -92,16 +83,12 @@ export default function HomeFeaturedWork() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             </div>
-          </motion.div>
+          </div>
 
           {/* Three smaller images on the right */}
           {photos.slice(1).map((photo, i) => (
-            <motion.div
+            <div
               key={photo.src}
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: (i + 1) * 0.08 }}
               className="group relative rounded-lg overflow-hidden"
             >
               <div className="relative h-48 lg:h-60 overflow-hidden rounded-lg">
@@ -114,16 +101,12 @@ export default function HomeFeaturedWork() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Bottom CTA strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-30px" }}
-          transition={{ duration: 0.4, delay: 0.2 }}
+        <div
           className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800/60 pt-8"
         >
           <p className="text-neutral-500 text-sm">
@@ -138,7 +121,7 @@ export default function HomeFeaturedWork() {
               <path fillRule="evenodd" d="M1.75 8a.75.75 0 01.75-.75h9.19L9.22 4.78a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.47-2.47H2.5A.75.75 0 011.75 8z" />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

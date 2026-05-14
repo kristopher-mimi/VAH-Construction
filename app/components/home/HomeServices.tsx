@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -79,12 +78,8 @@ export default function HomeServices() {
 
         <div className="grid lg:grid-cols-3 gap-5">
           {services.map((s, i) => (
-            <motion.div
+            <div
               key={s.href}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative flex flex-col rounded-lg border overflow-hidden transition-all duration-300 cursor-pointer ${
                 s.accent
                   ? "bg-amber-500/5 border-amber-500/30 hover:border-amber-500/60"
@@ -137,7 +132,7 @@ export default function HomeServices() {
                   </svg>
                 </span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 
 const areas = [
   "Hamilton",
@@ -20,11 +19,7 @@ export default function ServiceAreas() {
   return (
     <section className="bg-[#0e0e0e] border-t border-neutral-800/60 py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
+        <div
           className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16"
         >
           <div className="flex-shrink-0">
@@ -49,7 +44,7 @@ export default function ServiceAreas() {
               + more — we&apos;re flexible
             </span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -29,11 +28,7 @@ export default function HomeProcess() {
   return (
     <section className="bg-[#0e0e0e] border-y border-neutral-800/60 py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.45 }}
+        <div
           className="text-center mb-14"
         >
           <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -42,16 +37,12 @@ export default function HomeProcess() {
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             From First Call to Final Roof.
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-800/40 rounded-lg overflow-hidden">
           {steps.map((step, i) => (
-            <motion.div
+            <div
               key={step.n}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.45, delay: i * 0.09 }}
               className="bg-[#0e0e0e] p-8 hover:bg-[#131313] transition-colors group"
             >
               <div className="text-5xl font-black text-neutral-800 group-hover:text-amber-500/20 transition-colors mb-5 leading-none">
@@ -59,7 +50,7 @@ export default function HomeProcess() {
               </div>
               <h3 className="text-white font-bold text-base mb-3">{step.title}</h3>
               <p className="text-neutral-500 text-sm leading-relaxed">{step.body}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

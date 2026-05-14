@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 const comparisons = [
@@ -20,11 +19,7 @@ export default function HomeWhyMetal() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: text */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.55 }}
+          <div
           >
             <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
               Metal vs. Asphalt
@@ -54,14 +49,10 @@ export default function HomeWhyMetal() {
                 <path fillRule="evenodd" d="M1.75 8a.75.75 0 01.75-.75h9.19L9.22 4.78a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.47-2.47H2.5A.75.75 0 011.75 8z" />
               </svg>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Right: comparison table */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.55 }}
+          <div
           >
             <div className="bg-[#111111] border border-neutral-800 rounded-lg overflow-hidden">
               {/* Table header */}
@@ -94,7 +85,7 @@ export default function HomeWhyMetal() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

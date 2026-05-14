@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
@@ -108,11 +107,7 @@ export default function MetalRoofingPage() {
         {/* Systems */}
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-xl mb-14"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -121,16 +116,12 @@ export default function MetalRoofingPage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 Three Systems. One Standard of Craft.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="space-y-5">
               {systems.map((sys, i) => (
-                <motion.div
+                <div
                   key={sys.title}
-                  initial={{ opacity: 0, y: 22 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: i * 0.07 }}
                   className="bg-[#111111] border border-neutral-800 hover:border-neutral-700 rounded-lg overflow-hidden transition-colors"
                 >
                   <div className="flex flex-col lg:flex-row">
@@ -180,16 +171,12 @@ export default function MetalRoofingPage() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Metal Tile Colour Options */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="mt-14 bg-[#111111] border border-neutral-800 rounded-lg p-8"
             >
               <div className="mb-6">
@@ -222,7 +209,7 @@ export default function MetalRoofingPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -230,11 +217,7 @@ export default function MetalRoofingPage() {
         <section className="bg-[#0e0e0e] border-y border-neutral-800/60 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5 }}
+              <div
               >
                 <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
                   Built for This Climate
@@ -255,13 +238,9 @@ export default function MetalRoofingPage() {
                   designed for exactly these conditions — and our Class 4 hail rating is the
                   highest available, not an upgrade tier.
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5 }}
+              <div
                 className="grid grid-cols-2 gap-4"
               >
                 {[
@@ -276,7 +255,7 @@ export default function MetalRoofingPage() {
                     <div className="text-neutral-600 text-xs">{stat.note}</div>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -284,11 +263,7 @@ export default function MetalRoofingPage() {
         {/* Warranty */}
         <section className="bg-neutral-950 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="text-center mb-12"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -297,15 +272,11 @@ export default function MetalRoofingPage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 What &ldquo;Lifetime Warranty&rdquo; Actually Means.
               </h2>
-            </motion.div>
+            </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {warrantyItems.map((item, i) => (
-                <motion.div
+                <div
                   key={item.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="bg-[#111111] border border-neutral-800 rounded-lg p-6"
                 >
                   <div className="w-8 h-8 rounded-sm bg-amber-500/10 flex items-center justify-center mb-4">
@@ -315,7 +286,7 @@ export default function MetalRoofingPage() {
                   </div>
                   <h3 className="text-white font-bold text-sm mb-2">{item.title}</h3>
                   <p className="text-neutral-500 text-xs leading-relaxed">{item.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -324,11 +295,7 @@ export default function MetalRoofingPage() {
         {/* Vendors */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="text-center mb-12"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -340,7 +307,7 @@ export default function MetalRoofingPage() {
               <p className="text-neutral-400 text-base max-w-2xl mx-auto leading-relaxed">
                 To ensure top quality for our customers, we source exclusively from the world&apos;s leading steel manufacturers. The material behind your roof is as important as the installation.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid sm:grid-cols-3 gap-4">
               {[
@@ -372,12 +339,8 @@ export default function MetalRoofingPage() {
                   desc: "The world's largest steel producer. ArcelorMittal's Magnelis® and Granite coatings deliver corrosion resistance that outlasts the building itself.",
                 },
               ].map((vendor, i) => (
-                <motion.div
+                <div
                   key={vendor.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: i * 0.1 }}
                   className="rounded-lg overflow-hidden flex flex-col"
                   style={{ border: `1px solid ${vendor.accent}55` }}
                 >
@@ -406,7 +369,7 @@ export default function MetalRoofingPage() {
                     </div>
                     <p className="text-neutral-500 text-xs leading-relaxed">{vendor.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -415,11 +378,7 @@ export default function MetalRoofingPage() {
         {/* FAQ */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
           <div className="max-w-3xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="mb-12"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -428,21 +387,17 @@ export default function MetalRoofingPage() {
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
                 Metal Roofing FAQ
               </h2>
-            </motion.div>
+            </div>
 
             <div className="space-y-px">
               {faq.map((item, i) => (
-                <motion.div
+                <div
                   key={item.q}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
                   className="bg-[#111111] border border-neutral-800/60 rounded-sm first:rounded-t-lg last:rounded-b-lg p-6"
                 >
                   <h3 className="text-white font-bold text-sm mb-2.5">{item.q}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{item.a}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

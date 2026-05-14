@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
@@ -137,12 +136,8 @@ export default function ServicesPage() {
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 space-y-6">
             {services.map((s, i) => (
-              <motion.div
+              <div
                 key={s.href}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="bg-[#111111] border border-neutral-800 rounded-lg overflow-hidden"
               >
                 {/* Card header */}
@@ -185,7 +180,7 @@ export default function ServicesPage() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
@@ -193,11 +188,7 @@ export default function ServicesPage() {
         {/* Why specialize */}
         <section className="bg-[#0e0e0e] border-y border-neutral-800/60 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-xl mb-12"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -208,21 +199,17 @@ export default function ServicesPage() {
                 <br />
                 That&apos;s Not a Limitation.
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {whySpecialize.map((item, i) => (
-                <motion.div
+                <div
                   key={item.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.45, delay: i * 0.08 }}
                   className="bg-[#141414] border border-neutral-800 rounded-lg p-6"
                 >
                   <h3 className="text-white font-bold mb-2">{item.title}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

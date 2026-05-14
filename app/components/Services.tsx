@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
 
 const services = [
   {
@@ -56,14 +55,6 @@ const services = [
   },
 ];
 
-const container: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.11 } },
-};
-const card: Variants = {
-  hidden: { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
-};
 
 export default function Services() {
   return (
@@ -71,11 +62,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
+        <div
           className="max-w-2xl mb-14"
         >
           <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -90,20 +77,15 @@ export default function Services() {
             We specialize exclusively in metal — no asphalt, no shortcuts. Every
             system we install is designed to outlast every other option on the market.
           </p>
-        </motion.div>
+        </div>
 
         {/* Grid */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+        <div
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
           {services.map((s) => (
-            <motion.div
+            <div
               key={s.title}
-              variants={card}
               className="group relative bg-[#111111] hover:bg-[#161616] border border-neutral-800 hover:border-amber-500/35 rounded-lg p-6 transition-all duration-300 flex flex-col cursor-default"
             >
               {/* Badge */}
@@ -141,9 +123,9 @@ export default function Services() {
                   <path fillRule="evenodd" d="M1.75 8a.75.75 0 01.75-.75h9.19L9.22 4.78a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.47-2.47H2.5A.75.75 0 011.75 8z" />
                 </svg>
               </a>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

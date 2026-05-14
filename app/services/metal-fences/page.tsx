@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
@@ -100,10 +99,7 @@ export default function MetalFencesPage() {
           <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-amber-500/60 to-transparent" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full pb-20 pt-44">
-            <motion.nav
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4 }}
+            <nav
               className="flex items-center gap-2 text-xs text-neutral-600 mb-6"
             >
               <Link href="/" className="hover:text-neutral-400 transition-colors">Home</Link>
@@ -111,21 +107,15 @@ export default function MetalFencesPage() {
               <Link href="/services" className="hover:text-neutral-400 transition-colors">Services</Link>
               <span>/</span>
               <span className="text-neutral-400">Metal Fences</span>
-            </motion.nav>
+            </nav>
 
-            <motion.span
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.05 }}
+            <span
               className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block"
             >
               Metal Fencing · Southern Ontario
-            </motion.span>
+            </span>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.1 }}
+            <h1
               className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.04] mb-6 max-w-4xl"
             >
               Stop Replacing
@@ -133,22 +123,16 @@ export default function MetalFencesPage() {
               <span className="text-amber-500">The Same Fence</span>
               <br />
               Every 12 Years.
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+            <p
               className="text-neutral-300 text-xl leading-relaxed max-w-2xl mb-10"
             >
               Wood fences are the most expensive option — they just don't look like it on day one.
               Powder-coated metal is built once and lasts a lifetime.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.28 }}
+            <div
               className="flex flex-wrap gap-4"
             >
               <Link
@@ -175,7 +159,7 @@ export default function MetalFencesPage() {
                 </svg>
                 (437) 247-3371
               </a>
-            </motion.div>
+            </div>
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-neutral-950 to-transparent pointer-events-none" />
@@ -185,11 +169,7 @@ export default function MetalFencesPage() {
         <section className="bg-neutral-950 py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5 }}
+              <div
               >
                 <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block">
                   The Real Cost of Wood
@@ -224,13 +204,9 @@ export default function MetalFencesPage() {
                     <div className="mt-3 text-amber-400 text-xs font-semibold">Zero replacements. 50+ year life.</div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.55, delay: 0.1 }}
+              <div
                 className="space-y-3"
               >
                 <div className="text-neutral-500 text-xs font-bold uppercase tracking-wider mb-5">Why wood loses. Every time.</div>
@@ -241,12 +217,8 @@ export default function MetalFencesPage() {
                   { icon: "☀️", issue: "UV Degradation", text: "Sun bleaches wood grey within 2 years. The only fix is paint or stain — every 1–3 years, forever." },
                   { icon: "🔧", issue: "Constant Upkeep", text: "Nails pop. Boards split. Sections fall. A wood fence demands annual attention just to stay presentable." },
                 ].map((item, i) => (
-                  <motion.div
+                  <div
                     key={item.issue}
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 0.4, delay: i * 0.07 }}
                     className="flex gap-4 bg-[#111111] border border-neutral-800 rounded-lg p-4"
                   >
                     <span className="text-xl mt-0.5 flex-shrink-0">{item.icon}</span>
@@ -254,9 +226,9 @@ export default function MetalFencesPage() {
                       <div className="text-white font-bold text-sm mb-1">{item.issue}</div>
                       <div className="text-neutral-500 text-xs leading-relaxed">{item.text}</div>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -264,11 +236,7 @@ export default function MetalFencesPage() {
         {/* HEAD-TO-HEAD COMPARISON TABLE */}
         <section className="bg-[#0a0a0a] border-y border-neutral-800/60 py-20 lg:py-24">
           <div className="max-w-5xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="text-center mb-14"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -280,7 +248,7 @@ export default function MetalFencesPage() {
               <p className="text-neutral-500 mt-4 text-sm max-w-xl mx-auto">
                 The comparison homeowners don't see until after they've replaced a wood fence twice.
               </p>
-            </motion.div>
+            </div>
 
             {/* Table header */}
             <div className="grid grid-cols-2 gap-3 mb-3">
@@ -294,12 +262,8 @@ export default function MetalFencesPage() {
 
             <div className="space-y-2">
               {comparisons.map((row, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
                   className="grid grid-cols-2 gap-3"
                 >
                   <div className="bg-[#111] border border-neutral-800 rounded-lg px-5 py-4 flex items-center gap-3">
@@ -310,7 +274,7 @@ export default function MetalFencesPage() {
                     <span className="text-amber-500 text-sm flex-shrink-0">✓</span>
                     <span className="text-neutral-200 text-sm font-medium">{row.metal}</span>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -319,11 +283,7 @@ export default function MetalFencesPage() {
         {/* WHAT YOU GET */}
         <section className="bg-neutral-950 py-20 lg:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="max-w-2xl mb-14"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -338,14 +298,10 @@ export default function MetalFencesPage() {
                 No stock panels. No adapters. Every fence is fabricated to your exact dimensions,
                 post spacing, and style — then finished in any powder-coat colour you choose.
               </p>
-            </motion.div>
+            </div>
 
             {/* Style reference */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5 }}
+            <div
               className="mb-12 rounded-lg overflow-hidden bg-white"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -360,16 +316,12 @@ export default function MetalFencesPage() {
                   Available fence profiles — all custom fabricated in powder-coated steel &amp; aluminum
                 </span>
               </div>
-            </motion.div>
+            </div>
 
             <div className="space-y-4 mb-16">
               {styles.map((s, i) => (
-                <motion.div
+                <div
                   key={s.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
                   className="bg-[#111111] border border-neutral-800 hover:border-amber-500/30 rounded-lg p-7 transition-colors duration-300"
                 >
                   <div className="flex flex-col lg:flex-row lg:items-start gap-6">
@@ -382,7 +334,7 @@ export default function MetalFencesPage() {
                     </div>
                     <p className="text-neutral-400 text-sm leading-relaxed lg:w-2/3">{s.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -399,12 +351,8 @@ export default function MetalFencesPage() {
                 { src: "/images/projects/fence9.jpg", alt: "Metal fence installation" },
                 { src: "/images/projects/fence10.jpg", alt: "Metal fence installation" },
               ].map((photo, i) => (
-                <motion.div
+                <div
                   key={photo.src}
-                  initial={{ opacity: 0, scale: 0.97 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
                   className="relative h-52 lg:h-64 rounded-lg overflow-hidden group"
                 >
                   <Image
@@ -415,7 +363,7 @@ export default function MetalFencesPage() {
                     sizes="(max-width: 640px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-black/15 group-hover:bg-black/5 transition-colors duration-300" />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -424,11 +372,7 @@ export default function MetalFencesPage() {
         {/* FAQ */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
           <div className="max-w-3xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="mb-10"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -437,20 +381,16 @@ export default function MetalFencesPage() {
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
                 Straight Answers.
               </h2>
-            </motion.div>
+            </div>
             <div className="space-y-3">
               {faq.map((item, i) => (
-                <motion.div
+                <div
                   key={item.q}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
                   className="bg-[#111111] border border-neutral-800/60 rounded-sm p-5"
                 >
                   <h3 className="text-white font-bold text-sm mb-2">{item.q}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{item.a}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -459,11 +399,7 @@ export default function MetalFencesPage() {
         {/* FINAL CTA */}
         <section className="bg-neutral-950 border-t border-neutral-800/60 py-20 lg:py-24">
           <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5 }}
+            <div
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block">
                 Ready to Stop Replacing It?
@@ -494,7 +430,7 @@ export default function MetalFencesPage() {
                   (437) 247-3371
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

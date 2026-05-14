@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import PageHero from "@/app/components/PageHero";
@@ -99,11 +98,7 @@ export default function ContactPage() {
 
               {/* Left: Form */}
               <div className="lg:col-span-3">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <div>
                   {status === "success" ? (
                     <div className="bg-[#111111] border border-amber-500/30 rounded-lg p-10 text-center">
                       <div className="w-14 h-14 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-5">
@@ -228,14 +223,11 @@ export default function ContactPage() {
                       )}
                     </form>
                   )}
-                </motion.div>
+                </div>
               </div>
 
               {/* Right: Contact info + details */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.12 }}
+              <div
                 className="lg:col-span-2 space-y-5"
               >
                 {/* Direct contact card */}
@@ -310,7 +302,7 @@ export default function ContactPage() {
                     <span className="text-xs text-neutral-600 px-2.5 py-1">+ more</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -318,11 +310,7 @@ export default function ContactPage() {
         {/* FAQ */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
           <div className="max-w-3xl mx-auto px-5 sm:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45 }}
+            <div
               className="mb-10"
             >
               <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -331,20 +319,16 @@ export default function ContactPage() {
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
                 Common Questions.
               </h2>
-            </motion.div>
+            </div>
             <div className="space-y-3">
               {faq.map((item, i) => (
-                <motion.div
+                <div
                   key={item.q}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
                   className="bg-[#111111] border border-neutral-800/60 rounded-sm p-5"
                 >
                   <h3 className="text-white font-bold text-sm mb-2">{item.q}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{item.a}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 
 const items = [
   {
@@ -50,11 +49,7 @@ export default function HomeValue() {
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
 
         {/* Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
+        <div
           className="text-center mb-12"
         >
           <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block">
@@ -70,17 +65,13 @@ export default function HomeValue() {
             Every metal system we install adds measurable value to your property —
             documented at resale and recognized by insurers and appraisers across Ontario.
           </p>
-        </motion.div>
+        </div>
 
         {/* Stats */}
         <div className="grid sm:grid-cols-3 gap-4 mb-10">
           {items.map((item, i) => (
-            <motion.div
+            <div
               key={item.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: i * 0.1 }}
               className="bg-[#111111] border border-neutral-800 hover:border-amber-500/30 rounded-lg p-7 flex flex-col items-center text-center transition-colors duration-300 group"
             >
               <div className="w-14 h-14 rounded-sm bg-amber-500/10 group-hover:bg-amber-500 border border-amber-500/20 group-hover:border-amber-500 flex items-center justify-center text-amber-500 group-hover:text-black transition-all duration-300 mb-5">
@@ -91,16 +82,12 @@ export default function HomeValue() {
               </div>
               <div className="text-white font-bold text-lg mb-2">{item.title}</div>
               <div className="text-neutral-500 text-sm leading-snug">{item.desc}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Bottom statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-30px" }}
-          transition={{ duration: 0.4, delay: 0.2 }}
+        <div
           className="bg-amber-500/5 border border-amber-500/20 rounded-lg px-7 py-5 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <p className="text-neutral-300 text-sm sm:text-base font-medium text-center sm:text-left">
@@ -113,7 +100,7 @@ export default function HomeValue() {
           >
             Get Free Quote
           </a>
-        </motion.div>
+        </div>
 
       </div>
     </section>

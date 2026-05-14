@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 
 const pillars = [
   {
@@ -64,11 +63,7 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
+        <div
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
@@ -83,16 +78,12 @@ export default function WhyUs() {
             Our business was built on a single principle: if you chose a different path —
             one built on quality, honesty, and craftsmanship — everything else follows.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-5 lg:gap-6 mb-12">
           {pillars.map((p, i) => (
-            <motion.div
+            <div
               key={p.number}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.09 }}
               className="group bg-[#111111] border border-neutral-800 hover:border-amber-500/30 rounded-lg p-7 transition-colors duration-300"
             >
               <div className="flex items-start gap-5">
@@ -105,16 +96,12 @@ export default function WhyUs() {
                   <p className="text-neutral-500 text-sm leading-relaxed">{p.description}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Additional points + CTA row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
+        <div
           className="grid lg:grid-cols-2 gap-10 items-center bg-[#111111] border border-neutral-800 rounded-lg p-8 lg:p-10"
         >
           <div>
@@ -152,7 +139,7 @@ export default function WhyUs() {
               (437) 247-3371 — call us directly
             </a>
           </div>
-        </motion.div>
+        </div>
 
       </div>
     </section>

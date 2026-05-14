@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const stats = [
   {
     value: "50+",
@@ -45,33 +43,18 @@ const stats = [
   },
 ];
 
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-const item = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
-};
-
 export default function TrustBar() {
   return (
     <section className="bg-[#0e0e0e] border-y border-neutral-800/60">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-12 lg:py-14">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8"
-        >
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s, i) => (
-            <motion.div
+            <div
               key={s.label}
-              variants={item}
-              className={`flex flex-col items-center text-center ${
+              className={`flex flex-col items-center text-center animate-fade-in-up ${
                 i < 3 ? "lg:border-r lg:border-neutral-800/60" : ""
               } lg:px-4`}
+              style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="text-amber-500 mb-3">{s.icon}</div>
               <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-0.5">
@@ -79,9 +62,9 @@ export default function TrustBar() {
               </div>
               <div className="text-sm font-semibold text-white/90 mb-1">{s.label}</div>
               <div className="text-xs text-neutral-500 leading-snug">{s.sub}</div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

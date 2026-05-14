@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -57,10 +56,7 @@ export default function PageHero({
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full pb-16 pt-36 lg:pb-20 lg:pt-40">
         {/* Breadcrumbs */}
         {breadcrumbs && (
-          <motion.nav
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
+          <nav
             className="flex items-center gap-2 text-xs text-neutral-600 mb-6"
             aria-label="Breadcrumb"
           >
@@ -79,22 +75,16 @@ export default function PageHero({
                 )}
               </span>
             ))}
-          </motion.nav>
+          </nav>
         )}
 
-        <motion.span
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
+        <span
           className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block"
         >
           {label}
-        </motion.span>
+        </span>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+        <h1
           className={`font-extrabold text-white tracking-tight leading-[1.06] mb-5 ${
             size === "large"
               ? "text-5xl sm:text-6xl lg:text-7xl"
@@ -108,22 +98,16 @@ export default function PageHero({
               <span className="text-amber-500">{headlineAccent}</span>
             </>
           )}
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.18 }}
+        <p
           className="text-neutral-400 text-lg leading-relaxed max-w-2xl mb-8"
         >
           {subheadline}
-        </motion.p>
+        </p>
 
         {ctaLabel && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.26 }}
+          <div
             className="flex flex-wrap gap-4"
           >
             <Link
@@ -141,7 +125,7 @@ export default function PageHero({
               </svg>
               (437) 247-3371
             </a>
-          </motion.div>
+          </div>
         )}
       </div>
 
