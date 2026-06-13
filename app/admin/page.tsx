@@ -178,7 +178,7 @@ function ProjectForm({
           title: initial.title,
           category: initial.category,
           system: initial.system,
-          area: initial.area,
+          area: initial.area, // kept as full string e.g. "2,400 sq ft"
           colour: initial.colour,
           imageAlt: initial.imageAlt,
           objectPosition: initial.objectPosition,
@@ -320,7 +320,32 @@ function ProjectForm({
             {CATEGORIES.map((c) => <option key={c}>{c}</option>)}
           </select>
         </div>
-        {field("area", "Area", "e.g. 2,400 sq ft")}
+        <div>
+          <label className="text-[11px] text-neutral-500 uppercase tracking-widest block mb-1">Area</label>
+          <div className="flex gap-2">
+            <input
+              className="flex-1 bg-neutral-800 border border-neutral-700 rounded px-3 py-2 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-amber-500"
+              placeholder="e.g. 2400"
+              value={form.area.replace(/[^\d,]/g, "")}
+              onChange={(e) => {
+                const num = e.target.value.replace(/[^\d]/g, "");
+                const unit = form.area.includes("linear ft") ? " linear ft" : " sq ft";
+                setForm((f) => ({ ...f, area: num ? num + unit : "" }));
+              }}
+            />
+            <select
+              className="bg-neutral-800 border border-neutral-700 rounded px-2 py-2 text-sm text-white focus:outline-none focus:border-amber-500"
+              value={form.area.includes("linear ft") ? "linear ft" : "sq ft"}
+              onChange={(e) => {
+                const num = form.area.replace(/[^\d,]/g, "");
+                setForm((f) => ({ ...f, area: num ? `${num} ${e.target.value}` : "" }));
+              }}
+            >
+              <option>sq ft</option>
+              <option>linear ft</option>
+            </select>
+          </div>
+        </div>
         {field("colour", "Colour", "e.g. Matte Black")}
         {field("imageAlt", "Description (optional)", "Brief description for accessibility")}
       </div>
