@@ -28,8 +28,8 @@ interface Project {
 
 const projects: Project[] = [
   { id: "ss-sunset-ridge", category: "Standing Seam", title: "Standing Seam Ridge Detail", system: "Standing Seam", area: "3,200 sq ft", colour: "Slate Grey", image: "/images/projects/ss-sunset-ridge.jpeg", imageAlt: "Standing seam ridge detail at sunset — VAH Construction", imagePosition: "object-center" },
-  { id: "ss-brick-house", category: "Standing Seam", title: "Charcoal Standing Seam on Brick", system: "Standing Seam", area: "2,600 sq ft", colour: "Charcoal", image: "/images/projects/ss-brick-house.jpeg", imageAlt: "Charcoal standing seam roof on red brick home — VAH Construction", imagePosition: "object-top" },
-  { id: "mt-beige-house", category: "Metal Tiles", title: "Metal Tile Residential", system: "Metal Tiles", area: "1,900 sq ft", colour: "Matte Black", image: "/images/projects/mt-beige-house.jpeg", imageAlt: "Dark metal tile roof on residential home — VAH Construction", imagePosition: "object-top" },
+  { id: "ss-brick-house", category: "Standing Seam", title: "Charcoal Standing Seam on Brick", system: "Standing Seam", area: "2,600 sq ft", colour: "Charcoal", image: "/images/projects/ss-brick-house.jpeg", imageAlt: "Charcoal standing seam roof on red brick home — VAH Construction", imagePosition: "object-[50%_60%]" },
+  { id: "mt-beige-house", category: "Metal Tiles", title: "Metal Tile Residential", system: "Metal Tiles", area: "1,900 sq ft", colour: "Matte Black", image: "/images/projects/mt-beige-house.jpeg", imageAlt: "Dark metal tile roof on residential home — VAH Construction", imagePosition: "object-bottom" },
   { id: "ss-aerial-detail", category: "Standing Seam", title: "Multi-Pitch Standing Seam", system: "Standing Seam", area: "2,800 sq ft", colour: "Slate Grey", image: "/images/projects/ss-aerial-detail.jpeg", imageAlt: "Aerial view of grey standing seam multi-pitch roof — VAH Construction", imagePosition: "object-center" },
   { id: "ss-new-build", category: "Standing Seam", title: "New Build with Skylights", system: "Standing Seam", area: "3,800 sq ft", colour: "Matte Black", image: "/images/projects/ss-new-build.jpeg", imageAlt: "New construction matte black standing seam with skylights — VAH Construction", imagePosition: "object-top" },
   { id: "ss-black-shed", category: "Standing Seam", title: "Metal Roof & Siding — Garden Studio", system: "Standing Seam", area: "400 sq ft", colour: "Matte Black", image: "/images/projects/ss-black-shed.jpeg", imageAlt: "Black metal roof and siding on garden studio — VAH Construction", imagePosition: "object-center" },
@@ -93,6 +93,7 @@ function ProjectsGallery() {
     const cat = searchParams.get("category");
     return (categories as string[]).includes(cat ?? "") ? (cat as ProjectCategory) : "All";
   });
+  const [lightbox, setLightbox] = useState<Project | null>(null);
 
   useEffect(() => {
     const cat = searchParams.get("category");
@@ -101,76 +102,131 @@ function ProjectsGallery() {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    if (lightbox) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [lightbox]);
+
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active || p.extraCategory === active);
 
   return (
     <>
-        {/* Filter + grid */}
-        <section className="bg-neutral-950 py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <div className="flex flex-wrap gap-2 mb-10">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActive(cat)}
-                  className={`text-sm font-semibold px-4 py-2 rounded-sm border transition-all duration-200 ${
-                    active === cat
-                      ? "bg-amber-500 border-amber-500 text-black"
-                      : "bg-transparent border-neutral-700 text-neutral-400 hover:border-neutral-500 hover:text-white"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
-            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <AnimatePresence mode="popLayout">
-                {filtered.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.3 }}
-                    className="group bg-[#111111] border border-neutral-800 hover:border-neutral-700 rounded-lg overflow-hidden transition-colors"
-                  >
-                    <div className="relative h-56 sm:h-60 overflow-hidden">
-                      <Image
-                        src={project.image}
-                        alt={project.imageAlt}
-                        fill
-                        className={`object-cover ${project.imagePosition} transition-transform duration-700 group-hover:scale-105`}
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-                      <div className="absolute bottom-3 left-4 right-4">
-                        <span className="text-[10px] font-bold uppercase tracking-widest bg-black/50 text-white/80 px-2.5 py-1 rounded-full backdrop-blur-sm">
-                          {project.system}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-5">
-                      <h3 className="text-white font-bold mb-4">{project.title}</h3>
-                      <div className="flex items-center gap-4 flex-wrap border-t border-neutral-800/60 pt-4">
-                        {[
-                          { label: "Area", value: project.area },
-                          { label: "Colour", value: project.colour },
-                        ].map((spec) => (
-                          <div key={spec.label}>
-                            <div className="text-xs font-bold text-white">{spec.value}</div>
-                            <div className="text-[10px] text-neutral-600 uppercase tracking-wider">{spec.label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative max-w-5xl w-full max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full" style={{ maxHeight: "85vh" }}>
+                <Image
+                  src={lightbox.image}
+                  alt={lightbox.imageAlt}
+                  width={1600}
+                  height={1200}
+                  className="object-contain w-full max-h-[85vh] rounded-lg"
+                  style={{ maxHeight: "85vh" }}
+                />
+              </div>
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute -top-4 -right-4 w-9 h-9 flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 rounded-full text-white transition-colors"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Filter + grid */}
+      <section className="bg-neutral-950 py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <div className="flex flex-wrap gap-2 mb-10">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                className={`text-sm font-semibold px-4 py-2 rounded-sm border transition-all duration-200 ${
+                  active === cat
+                    ? "bg-amber-500 border-amber-500 text-black"
+                    : "bg-transparent border-neutral-700 text-neutral-400 hover:border-neutral-500 hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
-        </section>
+
+          <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <AnimatePresence mode="popLayout">
+              {filtered.map((project) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.3 }}
+                  className="group bg-[#111111] border border-neutral-800 hover:border-neutral-700 rounded-lg overflow-hidden transition-colors"
+                >
+                  <div
+                    className="relative h-56 sm:h-60 overflow-hidden cursor-zoom-in"
+                    onClick={() => setLightbox(project)}
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      className={`object-cover ${project.imagePosition} transition-transform duration-700 group-hover:scale-105`}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-widest bg-black/50 text-white/80 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        {project.system}
+                      </span>
+                      <span className="text-[10px] text-white/50 bg-black/40 px-2 py-1 rounded-full backdrop-blur-sm">tap to expand</span>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-white font-bold mb-4">{project.title}</h3>
+                    <div className="flex items-center gap-4 flex-wrap border-t border-neutral-800/60 pt-4">
+                      {[
+                        { label: "Area", value: project.area },
+                        { label: "Colour", value: project.colour },
+                      ].map((spec) => (
+                        <div key={spec.label}>
+                          <div className="text-xs font-bold text-white">{spec.value}</div>
+                          <div className="text-[10px] text-neutral-600 uppercase tracking-wider">{spec.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 }
