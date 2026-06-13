@@ -446,7 +446,7 @@ export default function AdminPage() {
             <h1 className="text-white font-extrabold text-lg leading-tight">Admin Panel</h1>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-neutral-500 text-sm">{projects.length} projects</span>
+            <span className="text-neutral-500 text-sm hidden sm:block">{projects.length} projects · saves auto-deploy in ~2 min</span>
             <button
               onClick={() => { setShowForm(true); setEditing(null); }}
               className="bg-amber-500 hover:bg-amber-400 text-black font-bold px-4 py-2 rounded-sm text-sm transition-colors"
