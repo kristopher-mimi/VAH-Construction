@@ -6,6 +6,7 @@ import HomeServices from "@/app/components/home/HomeServices";
 import HomeFeaturedWork from "@/app/components/home/HomeFeaturedWork";
 import HomeProcess from "@/app/components/home/HomeProcess";
 import HomeWhyMetal from "@/app/components/home/HomeWhyMetal";
+import HomeValue from "@/app/components/home/HomeValue";
 import WhyUs from "@/app/components/WhyUs";
 import ServiceAreas from "@/app/components/ServiceAreas";
 import FinalCTA from "@/app/components/FinalCTA";
@@ -21,6 +22,7 @@ export default function HomePage() {
         <HomeFeaturedWork />
         <HomeProcess />
         <HomeWhyMetal />
+        <HomeValue />
         <WhyUs />
         <ServiceAreas />
         <FinalCTA />
