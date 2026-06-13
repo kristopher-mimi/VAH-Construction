@@ -56,13 +56,8 @@ export default function HomeServices() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
           <div>
-            <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
-              What We Do
-            </span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.06]">
-              Roofing Services Built
-              <br />
-              for Southern Ontario.
+              What we install.
             </h2>
           </div>
           <Link
@@ -106,9 +101,6 @@ export default function HomeServices() {
 
               {/* Content */}
               <div className="flex flex-col flex-1 p-7">
-                <span className="text-amber-500 text-xs font-bold tracking-widest uppercase mb-3 block">
-                  {s.label}
-                </span>
                 <h3 className="text-xl font-extrabold text-white mb-3">{s.title}</h3>
                 <p className="text-neutral-500 text-sm leading-relaxed mb-6">{s.desc}</p>
 

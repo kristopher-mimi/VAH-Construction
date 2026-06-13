@@ -31,9 +31,6 @@ export default function HomeProcess() {
         <div
           className="text-center mb-14"
         >
-          <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
-            How It Works
-          </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             From First Call to Final Roof.
           </h2>

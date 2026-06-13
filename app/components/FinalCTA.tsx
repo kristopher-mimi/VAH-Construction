@@ -54,10 +54,6 @@ export default function FinalCTA() {
       <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 text-center">
 
         <div>
-          <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-4 block">
-            Ready to Get Started?
-          </span>
-
           <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-white tracking-tight leading-[1.06] mb-6">
             Your Home Deserves
             <br />

@@ -3,7 +3,6 @@
 
 const pillars = [
   {
-    number: "01",
     title: "Safety First. Always.",
     description:
       "Every crew member uses proper tie-offs on steep-pitch roofs. No exceptions. We hold ourselves to the highest safety standards so your project runs without incident — and your property is protected throughout.",
@@ -14,8 +13,7 @@ const pillars = [
     ),
   },
   {
-    number: "02",
-    title: "Uncompromising Quality",
+    title: "Metal Only. No Generalists.",
     description:
       "We partner exclusively with leading Canadian metal roofing manufacturers. Every install follows current industry techniques and is executed by trained specialists — not generalist roofers who dabble in metal.",
     icon: (
@@ -25,8 +23,7 @@ const pillars = [
     ),
   },
   {
-    number: "03",
-    title: "Efficient Execution",
+    title: "We Show Up When We Say We Will.",
     description:
       "We plan every project before we arrive. Materials are staged, crews are briefed, and work starts on the committed date. We move with purpose — delivering on schedule without cutting corners.",
     icon: (
@@ -36,7 +33,6 @@ const pillars = [
     ),
   },
   {
-    number: "04",
     title: "Spotless Cleanup",
     description:
       "We do a magnetic sweep for fasteners, haul away every scrap of material, and do a final walkthrough with you before we leave. You'll never find our mess in your yard the next morning.",
@@ -51,7 +47,7 @@ const pillars = [
 const additionalPoints = [
   "No subcontracting — your roof is installed by our own crew",
   "Transparent written quotes with zero hidden charges",
-  "Full WSIB coverage + $5M liability insurance",
+  "Full WSIB coverage + $2.5M liability insurance",
   "Direct communication — no call centers, no runaround",
   "We specialize in metal only — depth over breadth",
   "Lifetime warranty is non-prorated and fully transferable",
@@ -70,9 +66,9 @@ export default function WhyUs() {
             Why VAH Construction
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 leading-[1.08]">
-            We Know How to Make
+            The work speaks.
             <br />
-            <span className="text-amber-500">Our Clients Happy.</span>
+            <span className="text-amber-500">So do our clients.</span>
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed">
             Our business was built on a single principle: if you chose a different path —
@@ -81,9 +77,9 @@ export default function WhyUs() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-5 lg:gap-6 mb-12">
-          {pillars.map((p, i) => (
+          {pillars.map((p) => (
             <div
-              key={p.number}
+              key={p.title}
               className="group bg-[#111111] border border-neutral-800 hover:border-amber-500/30 rounded-lg p-7 transition-colors duration-300"
             >
               <div className="flex items-start gap-5">
@@ -91,7 +87,6 @@ export default function WhyUs() {
                   {p.icon}
                 </div>
                 <div>
-                  <div className="text-amber-500/50 text-xs font-bold tracking-widest mb-1">{p.number}</div>
                   <h3 className="text-white font-bold text-base mb-2">{p.title}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{p.description}</p>
                 </div>
@@ -104,19 +99,16 @@ export default function WhyUs() {
         <div
           className="grid lg:grid-cols-2 gap-10 items-center bg-[#111111] border border-neutral-800 rounded-lg p-8 lg:p-10"
         >
-          <div>
-            <h3 className="text-white font-bold text-xl mb-5">More reasons homeowners choose VAH:</h3>
-            <ul className="space-y-3">
-              {additionalPoints.map((pt) => (
-                <li key={pt} className="flex items-start gap-3 text-sm text-neutral-400">
-                  <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0">
-                    <path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z" />
-                  </svg>
-                  {pt}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="space-y-3">
+            {additionalPoints.map((pt) => (
+              <li key={pt} className="flex items-start gap-3 text-sm text-neutral-400">
+                <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0">
+                  <path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z" />
+                </svg>
+                {pt}
+              </li>
+            ))}
+          </ul>
 
           <div className="flex flex-col gap-4">
             <p className="text-neutral-400 text-sm leading-relaxed">

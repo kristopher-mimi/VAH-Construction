@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -25,16 +26,44 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full py-36 lg:py-0">
         <div className="max-w-3xl">
 
-          <div
-            className="inline-flex items-center gap-2.5 border border-amber-500/30 bg-black/30 backdrop-blur-sm rounded-full px-4 py-1.5 mb-7 animate-fade-in"
-            style={{ animationDelay: "0ms" }}
+          {/* Animated badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 border border-amber-500/30 bg-black/30 backdrop-blur-sm rounded-full px-4 py-1.5 mb-7 relative overflow-hidden"
+            style={{
+              boxShadow: "0 0 0px rgba(217,119,6,0)",
+            }}
           >
-            <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
-            <span className="text-amber-400 text-xs font-semibold tracking-[0.12em] uppercase">
+            {/* Shimmer sweep */}
+            <motion.div
+              className="absolute inset-0 rounded-full pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent 0%, rgba(217,119,6,0.12) 50%, transparent 100%)",
+                backgroundSize: "200% 100%",
+              }}
+              animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "linear", repeatDelay: 1.5 }}
+            />
+
+            {/* Radar-ping dot */}
+            <span className="relative flex items-center justify-center w-3 h-3 flex-shrink-0">
+              <motion.span
+                className="absolute rounded-full bg-amber-400/40"
+                animate={{ scale: [1, 2.6], opacity: [0.6, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
+                style={{ width: "100%", height: "100%" }}
+              />
+              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full relative z-10" />
+            </span>
+
+            <span className="text-amber-400 text-xs font-semibold tracking-[0.12em] uppercase relative z-10">
               <span className="hidden sm:inline">20+ Years Experience · Southern Ontario&apos;s Metal Roofing Specialists</span>
               <span className="sm:hidden">20+ Years · Metal Roofing Specialists</span>
             </span>
-          </div>
+          </motion.div>
 
           <h1
             className="text-4xl sm:text-6xl lg:text-[72px] font-extrabold text-white leading-[1.04] tracking-tight mb-6 animate-fade-in-up"
