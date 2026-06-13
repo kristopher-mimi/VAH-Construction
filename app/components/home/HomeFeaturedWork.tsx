@@ -6,32 +6,32 @@ import Link from "next/link";
 
 const photos = [
   {
-    src: "/images/projects/lakefront-metal-tile-roof.jpeg",
-    alt: "Lakefront home with dark grey metal tile roof — VAH Construction",
+    src: "/images/projects/ss-sunset-ridge.jpeg",
+    alt: "Standing seam ridge detail at sunset — VAH Construction",
     position: "object-center",
     large: true,
   },
   {
-    src: "/images/projects/F925D882-1DBE-44F3-B990-68554A328A6C_1_201_a.jpeg",
-    alt: "Standing seam metal roof — VAH Construction project",
+    src: "/images/projects/ss-brick-house.jpeg",
+    alt: "Charcoal standing seam roof on red brick home — VAH Construction",
+    position: "object-top",
+    large: false,
+  },
+  {
+    src: "/images/projects/mt-beige-house.jpeg",
+    alt: "Dark metal tile roof on residential home — VAH Construction",
+    position: "object-top",
+    large: false,
+  },
+  {
+    src: "/images/projects/ss-aerial-detail.jpeg",
+    alt: "Aerial view of grey standing seam roof detail — VAH Construction",
     position: "object-center",
     large: false,
   },
   {
-    src: "/images/projects/5965F2DB-0262-4966-9379-092C7E6DA345_1_105_c.jpeg",
-    alt: "Contemporary standing seam roofline — Southern Ontario",
-    position: "object-top",
-    large: false,
-  },
-  {
-    src: "/images/projects/2F08072E-E307-4A65-A595-37D076267522_1_105_c.jpeg",
-    alt: "Custom metal roof by VAH Construction",
-    position: "object-top",
-    large: false,
-  },
-  {
-    src: "/images/projects/F88A833F-F30B-4477-941C-F6D159B8199E_1_105_c.jpeg",
-    alt: "Heritage district chocolate brown metal tile roof — Guelph, ON",
+    src: "/images/projects/ss-new-build.jpeg",
+    alt: "New construction matte black standing seam with skylights — VAH Construction",
     position: "object-top",
     large: false,
   },
