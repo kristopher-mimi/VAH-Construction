@@ -48,6 +48,7 @@ function ProjectsGallery() {
     return (categories as string[]).includes(cat ?? "") ? (cat as ProjectCategory) : "All";
   });
   const [lightbox, setLightbox] = useState<Project | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     const cat = searchParams.get("category");
@@ -57,18 +58,34 @@ function ProjectsGallery() {
   }, [searchParams]);
 
   useEffect(() => {
-    if (lightbox) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => { document.body.style.overflow = ""; };
-  }, [lightbox]);
+    if (!lightbox) { document.body.style.overflow = ""; return; }
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") navigate(1);
+      if (e.key === "ArrowLeft") navigate(-1);
+      if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lightbox, lightboxIndex]);
 
   const filtered =
     active === "All"
       ? projects
       : projects.filter((p) => p.category === active || p.extraCategory === active);
+
+  const openLightbox = (project: Project) => {
+    const idx = filtered.findIndex((p) => p.id === project.id);
+    setLightboxIndex(idx);
+    setLightbox(project);
+  };
+
+  const navigate = (dir: 1 | -1) => {
+    const next = (lightboxIndex + dir + filtered.length) % filtered.length;
+    setLightboxIndex(next);
+    setLightbox(filtered[next]);
+  };
 
   return (
     <>
@@ -83,12 +100,22 @@ function ProjectsGallery() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
             onClick={() => setLightbox(null)}
           >
+            {/* Prev */}
+            <button
+              onClick={(e) => { e.stopPropagation(); navigate(-1); }}
+              className="absolute left-3 sm:left-6 z-10 w-11 h-11 flex items-center justify-center bg-black/60 hover:bg-black/90 rounded-full text-white transition-colors border border-white/10"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
             <motion.div
-              initial={{ scale: 0.94, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.94, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="relative max-w-5xl w-full"
+              key={lightbox.id}
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-5xl w-full mx-14"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
@@ -99,6 +126,7 @@ function ProjectsGallery() {
                 className="object-contain w-full max-h-[85vh] rounded-lg"
                 style={{ maxHeight: "85vh" }}
               />
+              {/* Close */}
               <button
                 onClick={() => setLightbox(null)}
                 className="absolute -top-4 -right-4 w-9 h-9 flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 rounded-full text-white transition-colors"
@@ -107,7 +135,21 @@ function ProjectsGallery() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+              {/* Counter */}
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-neutral-500 text-xs">
+                {lightboxIndex + 1} / {filtered.length}
+              </div>
             </motion.div>
+
+            {/* Next */}
+            <button
+              onClick={(e) => { e.stopPropagation(); navigate(1); }}
+              className="absolute right-3 sm:right-6 z-10 w-11 h-11 flex items-center justify-center bg-black/60 hover:bg-black/90 rounded-full text-white transition-colors border border-white/10"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -145,7 +187,7 @@ function ProjectsGallery() {
                 >
                   <div
                     className="relative h-56 sm:h-60 overflow-hidden cursor-zoom-in"
-                    onClick={() => setLightbox(project)}
+                    onClick={() => openLightbox(project)}
                   >
                     <Image
                       src={project.image}
