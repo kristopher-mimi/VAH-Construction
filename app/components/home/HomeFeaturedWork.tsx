@@ -1,14 +1,21 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const photos = [
   {
+    src: "/images/projects/lakefront-metal-tile-roof.jpeg",
+    alt: "Lakefront home with dark grey metal tile roof — VAH Construction",
+    position: "object-center",
+    large: true,
+  },
+  {
     src: "/images/projects/F925D882-1DBE-44F3-B990-68554A328A6C_1_201_a.jpeg",
     alt: "Standing seam metal roof — VAH Construction project",
     position: "object-center",
-    large: true,
+    large: false,
   },
   {
     src: "/images/projects/5965F2DB-0262-4966-9379-092C7E6DA345_1_105_c.jpeg",
@@ -28,12 +35,6 @@ const photos = [
     position: "object-top",
     large: false,
   },
-  {
-    src: "/images/projects/3EDB244D-24FF-4503-B02F-0D77DBCBE3D8.png",
-    alt: "Custom horizontal metal privacy fence — VAH Construction",
-    position: "object-center",
-    large: false,
-  },
 ];
 
 export default function HomeFeaturedWork() {
@@ -43,7 +44,11 @@ export default function HomeFeaturedWork() {
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.45 }}
           >
             <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
               Recent Work
@@ -53,7 +58,7 @@ export default function HomeFeaturedWork() {
               <br />
               Across the Region.
             </h2>
-          </div>
+          </motion.div>
           <Link
             href="/projects"
             className="flex-shrink-0 inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-amber-400 font-semibold transition-colors pb-1"
@@ -65,11 +70,15 @@ export default function HomeFeaturedWork() {
           </Link>
         </div>
 
-        {/* Photo grid — editorial */}
+        {/* Photo grid — editorial layout */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
 
           {/* Large left — spans 2 rows on desktop */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.55 }}
             className="relative col-span-2 lg:col-span-1 lg:row-span-2 group rounded-lg overflow-hidden"
             style={{ minHeight: "320px" }}
           >
@@ -83,12 +92,16 @@ export default function HomeFeaturedWork() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Three smaller images on the right */}
           {photos.slice(1).map((photo, i) => (
-            <div
+            <motion.div
               key={photo.src}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: (i + 1) * 0.08 }}
               className="group relative rounded-lg overflow-hidden"
             >
               <div className="relative h-48 lg:h-60 overflow-hidden rounded-lg">
@@ -101,12 +114,16 @@ export default function HomeFeaturedWork() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA strip */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800/60 pt-8"
         >
           <p className="text-neutral-500 text-sm">
@@ -121,7 +138,7 @@ export default function HomeFeaturedWork() {
               <path fillRule="evenodd" d="M1.75 8a.75.75 0 01.75-.75h9.19L9.22 4.78a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.47-2.47H2.5A.75.75 0 011.75 8z" />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

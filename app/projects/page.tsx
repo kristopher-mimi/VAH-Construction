@@ -29,6 +29,7 @@ interface Project {
 }
 
 const projects: Project[] = [
+  { id: "lakefront-metal-tile", category: "Metal Tiles", title: "Lakefront Home Metal Tile Roof", location: "Lake Erie, ON", year: "2025", system: "Metal Tiles", area: "2,800 sq ft", colour: "Slate Grey", image: "/images/projects/lakefront-metal-tile-roof.jpeg", imageAlt: "Lakefront home with dark grey metal tile roof — VAH Construction", imagePosition: "object-center" },
   { id: "contemporary-custom-build", category: "Metal Tiles", title: "Contemporary Custom Build", location: "Stoney Creek, ON", year: "2024", system: "Metal Tiles", area: "2,100 sq ft", colour: "Slate Grey", image: "/images/projects/49873DA8-BCD9-44BE-8B32-0BCD3F9FDAAD_1_105_c.jpeg", imageAlt: "Contemporary metal tile roof — Stoney Creek, ON", imagePosition: "object-top" },
   { id: "horizontal-privacy-fence", category: "Metal Fence", title: "Horizontal Privacy Fence", location: "Smithville, ON", year: "2024", system: "Metal Fence", area: "160 linear ft", colour: "Matte Black", image: "/images/projects/3EDB244D-24FF-4503-B02F-0D77DBCBE3D8.png", imageAlt: "Custom horizontal metal privacy fence — Smithville, ON", imagePosition: "object-center" },
   { id: "residential-standing-seam", category: "Standing Seam", title: "Residential Standing Seam", location: "Orillia, ON", year: "2024", system: "Standing Seam", area: "4,000 sq ft", colour: "Matte Black", image: "/images/projects/886E6DAC-D710-4799-A310-170D73314D9F_1_102_o.jpeg", imageAlt: "Residential standing seam metal roof — Orillia, ON", imagePosition: "object-top" },
