@@ -2,7 +2,7 @@
 
 const stats = [
   {
-    value: "50+",
+    value: "50",
     label: "Years Warranty",
     sub: "Non-prorated & fully transferable",
     icon: (
