@@ -32,7 +32,7 @@ const stats = [
     ),
   },
   {
-    value: "20+",
+    value: "23+",
     label: "Years Experience",
     sub: "We started in metal. We stayed in metal.",
     icon: (
