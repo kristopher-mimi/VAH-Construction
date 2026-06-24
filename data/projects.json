@@ -1,5 +1,16 @@
 [
   {
+    "id": "rt",
+    "category": "Standing Seam",
+    "title": "rt",
+    "system": "Standing Seam",
+    "area": "32532 sq ft",
+    "colour": "s",
+    "image": "/images/projects/img_6946.jpg",
+    "imageAlt": "rt — VAH Construction",
+    "objectPosition": "50% 50%"
+  },
+  {
     "id": "standing-seam-on-muskoka",
     "category": "Standing Seam",
     "title": "Standing Seam on Muskoka",
