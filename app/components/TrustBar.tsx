@@ -22,12 +22,12 @@ const stats = [
     ),
   },
   {
-    value: "30+",
-    label: "Cities Served",
-    sub: "Hamilton, Kitchener, Muskoka & beyond",
+    value: "270+",
+    label: "Projects Completed",
+    sub: "Across Southern Ontario",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        <path d="M3 9.5L12 3l9 6.5V21H3V9.5zm9-4.5L5 9.9V19h14V9.9L12 5zm-1 10.17l-2.59-2.58L8 14l3 3 5-5-1.41-1.42L11 15.17z" />
       </svg>
     ),
   },
