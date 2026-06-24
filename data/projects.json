@@ -1,5 +1,16 @@
 [
   {
+    "id": "beautiful-standing-seam-roof",
+    "category": "Standing Seam",
+    "title": "Beautiful Standing Seam roof",
+    "system": "Standing Seam",
+    "area": "1800 sq ft",
+    "colour": "Matte Black",
+    "image": "/images/projects/img_2801.jpg",
+    "imageAlt": "Beautiful Standing Seam roof — VAH Construction",
+    "objectPosition": "50% 99%"
+  },
+  {
     "id": "standing-seam-on-muskoka",
     "category": "Standing Seam",
     "title": "Standing Seam on Muskoka",
