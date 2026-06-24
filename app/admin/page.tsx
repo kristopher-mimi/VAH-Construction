@@ -192,20 +192,50 @@ function ProjectForm({
   const [error, setError] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
 
+  const compressImage = (file: File): Promise<Blob> =>
+    new Promise((resolve, reject) => {
+      const img = document.createElement("img");
+      const url = URL.createObjectURL(file);
+      img.onload = () => {
+        URL.revokeObjectURL(url);
+        const MAX = 1920;
+        let { width, height } = img;
+        if (width > MAX || height > MAX) {
+          if (width >= height) { height = Math.round(height * MAX / width); width = MAX; }
+          else { width = Math.round(width * MAX / height); height = MAX; }
+        }
+        const canvas = document.createElement("canvas");
+        canvas.width = width; canvas.height = height;
+        canvas.getContext("2d")!.drawImage(img, 0, 0, width, height);
+        canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error("Canvas failed")), "image/jpeg", 0.85);
+      };
+      img.onerror = () => reject(new Error("Image load failed"));
+      img.src = url;
+    });
+
   const handleFile = async (file: File) => {
     setPreviewSrc(URL.createObjectURL(file));
     setUploading(true);
-    const fd = new FormData();
-    fd.append("file", file);
-    const res = await fetch("/api/admin/upload", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: fd,
-    });
-    const data = await res.json();
-    setUploading(false);
-    if (res.ok) setImageUrl(data.url);
-    else setError("Upload failed");
+    setError("");
+    try {
+      const blob = await compressImage(file);
+      const safeName = file.name.replace(/\.[^.]+$/, ".jpg");
+      const compressed = new File([blob], safeName, { type: "image/jpeg" });
+      const fd = new FormData();
+      fd.append("file", compressed);
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: fd,
+      });
+      const data = await res.json();
+      if (res.ok) setImageUrl(data.url);
+      else setError(`Upload failed: ${data.error ?? res.status}`);
+    } catch (err) {
+      setError("Upload failed — check your connection and try again.");
+    } finally {
+      setUploading(false);
+    }
   };
 
   const handleDrop = (e: React.DragEvent) => {
