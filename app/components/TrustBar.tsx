@@ -2,12 +2,12 @@
 
 const stats = [
   {
-    value: "50",
-    label: "Years Warranty",
-    sub: "Non-prorated & fully transferable",
+    value: "270+",
+    label: "Projects Completed",
+    sub: "Across Southern Ontario",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+        <path d="M3 9.5L12 3l9 6.5V21H3V9.5zm9-4.5L5 9.9V19h14V9.9L12 5zm-1 10.17l-2.59-2.58L8 14l3 3 5-5-1.41-1.42L11 15.17z" />
       </svg>
     ),
   },
@@ -22,12 +22,12 @@ const stats = [
     ),
   },
   {
-    value: "270+",
-    label: "Projects Completed",
-    sub: "Across Southern Ontario",
+    value: "50",
+    label: "Years Warranty",
+    sub: "Non-prorated & fully transferable",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path d="M3 9.5L12 3l9 6.5V21H3V9.5zm9-4.5L5 9.9V19h14V9.9L12 5zm-1 10.17l-2.59-2.58L8 14l3 3 5-5-1.41-1.42L11 15.17z" />
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
       </svg>
     ),
   },
