@@ -127,7 +127,7 @@ export default function HomeFeaturedWork() {
           className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800/60 pt-8"
         >
           <p className="text-neutral-500 text-sm">
-            250+ completed projects across Southern Ontario — standing seam, metal tiles, siding, and custom fencing.
+            270+ completed projects across Southern Ontario — standing seam, metal tiles, siding, and custom fencing.
           </p>
           <Link
             href="/projects"
