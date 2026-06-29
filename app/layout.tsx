@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.jpg",
-    apple: "/icon.jpg",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
   openGraph: {
     title: "VAH Construction | Metal Roofing & Metal Fencing — Southern Ontario",
