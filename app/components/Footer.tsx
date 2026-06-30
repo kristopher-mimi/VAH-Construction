@@ -152,7 +152,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-600">
-          <p>&copy; {new Date().getFullYear()} {COMPANY} Services. All rights reserved.</p>
+          <p>&copy; 2024 {COMPANY} Services. All rights reserved.</p>
           <p>Licensed &amp; Insured · WSIB Covered · Smithville, Ontario</p>
         </div>
       </div>
