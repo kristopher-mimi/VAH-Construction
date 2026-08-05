@@ -14,13 +14,13 @@ const photos = [
   {
     src: "/images/projects/ss-brick-house.jpeg",
     alt: "Charcoal standing seam roof on red brick home — VAH Construction",
-    position: "object-top",
+    position: "object-bottom",
     large: false,
   },
   {
-    src: "/images/projects/mt-beige-house.jpeg",
-    alt: "Dark metal tile roof on residential home — VAH Construction",
-    position: "object-top",
+    src: "/images/projects/dji-standing-seam-black.jpg",
+    alt: "Aerial view of matte black standing seam fan-hip roof — VAH Construction",
+    position: "object-center",
     large: false,
   },
   {
