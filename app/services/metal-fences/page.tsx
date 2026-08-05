@@ -342,6 +342,7 @@ export default function MetalFencesPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {[
                 { src: "/images/projects/img-3185-fence.jpeg", alt: "Horizontal metal privacy fence" },
+                { src: "/images/projects/3EDB244D-24FF-4503-B02F-0D77DBCBE3D8.png", alt: "Wood-look horizontal privacy fence with charcoal posts" },
                 { src: "/images/projects/Aluminum-Fence-5-1536x1152.webp", alt: "Aluminum perimeter fence" },
                 { src: "/images/projects/zabor-galuzy.jpg", alt: "Decorative steel fence" },
                 { src: "/images/projects/fence.jpg", alt: "Vertical picket metal fence" },
