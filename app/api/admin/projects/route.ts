@@ -34,8 +34,14 @@ export async function GET(req: NextRequest) {
     const { projects } = await readProjects();
     return NextResponse.json(projects);
   } catch (err) {
-    console.error("GET /api/admin/projects error:", err);
-    return NextResponse.json({ error: String(err) }, { status: 500 });
+    // GitHub token may be expired — fall back to the bundled data file
+    try {
+      const projects = JSON.parse(readFileSync(DATA_PATH, "utf-8"));
+      return NextResponse.json(projects);
+    } catch {
+      console.error("GET /api/admin/projects error:", err);
+      return NextResponse.json({ error: String(err) }, { status: 500 });
+    }
   }
 }
 
