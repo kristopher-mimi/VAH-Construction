@@ -87,7 +87,7 @@ export default function MetalFencesPage() {
         {/* HERO */}
         <section className="relative min-h-[85vh] flex items-end overflow-hidden">
           <Image
-            src="/images/projects/3EDB244D-24FF-4503-B02F-0D77DBCBE3D8.png"
+            src="/images/projects/img-3185-fence.jpeg"
             alt="Custom metal fence by VAH Construction"
             fill
             className="object-cover object-center"
@@ -341,7 +341,7 @@ export default function MetalFencesPage() {
             {/* Gallery */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {[
-                { src: "/images/projects/3EDB244D-24FF-4503-B02F-0D77DBCBE3D8.png", alt: "Horizontal metal privacy fence" },
+                { src: "/images/projects/img-3185-fence.jpeg", alt: "Horizontal metal privacy fence" },
                 { src: "/images/projects/Aluminum-Fence-5-1536x1152.webp", alt: "Aluminum perimeter fence" },
                 { src: "/images/projects/zabor-galuzy.jpg", alt: "Decorative steel fence" },
                 { src: "/images/projects/fence.jpg", alt: "Vertical picket metal fence" },

@@ -30,8 +30,13 @@ async function saveProjects(projects: unknown[], sha: string | undefined) {
 
 export async function GET(req: NextRequest) {
   if (!checkAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  const { projects } = await readProjects();
-  return NextResponse.json(projects);
+  try {
+    const { projects } = await readProjects();
+    return NextResponse.json(projects);
+  } catch (err) {
+    console.error("GET /api/admin/projects error:", err);
+    return NextResponse.json({ error: String(err) }, { status: 500 });
+  }
 }
 
 export async function POST(req: NextRequest) {

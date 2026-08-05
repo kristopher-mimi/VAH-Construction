@@ -1,5 +1,49 @@
 [
   {
+    "id": "standing-seam-fan-hip-black",
+    "category": "Standing Seam",
+    "title": "Standing Seam — Fan Hip Roof",
+    "system": "Standing Seam",
+    "area": "2,100 sq ft",
+    "colour": "Matte Black",
+    "image": "/images/projects/dji-standing-seam-black.jpg",
+    "imageAlt": "Black standing seam fan hip roof — VAH Construction",
+    "objectPosition": "50% 50%"
+  },
+  {
+    "id": "metal-tiles-aerial-rustic-brown",
+    "category": "Metal Tiles",
+    "title": "Metal Tiles — Two-Storey Aerial",
+    "system": "Metal Tiles",
+    "area": "2,800 sq ft",
+    "colour": "Rustic Brown",
+    "image": "/images/projects/dji-metal-tiles-aerial.jpg",
+    "imageAlt": "Aerial view of brown metal tile roof — VAH Construction",
+    "objectPosition": "50% 40%"
+  },
+  {
+    "id": "standing-seam-cottage-charcoal",
+    "category": "Standing Seam",
+    "title": "Standing Seam — Cottage Roofline",
+    "system": "Standing Seam",
+    "area": "1,400 sq ft",
+    "colour": "Charcoal",
+    "image": "/images/projects/img-3128-standing-seam.jpeg",
+    "imageAlt": "Charcoal standing seam roof with tree backdrop — VAH Construction",
+    "objectPosition": "70% 40%"
+  },
+  {
+    "id": "metal-fence-horizontal-privacy-black",
+    "category": "Metal Fence",
+    "title": "Metal Fence — Horizontal Privacy with Gate",
+    "system": "Metal Fence",
+    "area": "85 linear ft",
+    "colour": "Matte Black",
+    "image": "/images/projects/img-3185-fence.jpeg",
+    "imageAlt": "Black horizontal metal privacy fence with gate — VAH Construction",
+    "objectPosition": "50% 50%"
+  },
+  {
     "id": "beautiful-standing-seam-roof",
     "category": "Standing Seam",
     "title": "Beautiful Standing Seam roof",

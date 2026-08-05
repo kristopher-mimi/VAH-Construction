@@ -30,7 +30,7 @@ const services = [
   },
   {
     href: "/services/metal-fences",
-    image: "/images/projects/3EDB244D-24FF-4503-B02F-0D77DBCBE3D8.png",
+    image: "/images/projects/img-3185-fence.jpeg",
     imagePosition: "object-center",
     label: "Custom Fabrication",
     title: "Metal Fences",

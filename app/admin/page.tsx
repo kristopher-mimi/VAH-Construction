@@ -412,6 +412,7 @@ export default function AdminPage() {
   const [editing, setEditing] = useState<Project | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const [filter, setFilter] = useState<"All" | Category>("All");
+  const [fetchError, setFetchError] = useState("");
 
   useEffect(() => {
     const saved = sessionStorage.getItem("admin-token");
@@ -420,8 +421,20 @@ export default function AdminPage() {
 
   const fetchProjects = async (t: string) => {
     setLoading(true);
-    const res = await fetch("/api/admin/projects", { headers: { Authorization: `Bearer ${t}` } });
-    if (res.ok) setProjects(await res.json());
+    setFetchError("");
+    try {
+      const res = await fetch("/api/admin/projects", { headers: { Authorization: `Bearer ${t}` } });
+      if (res.ok) {
+        const data = await res.json();
+        setProjects(Array.isArray(data) ? data : []);
+        if (!Array.isArray(data)) setFetchError(`Unexpected response: ${JSON.stringify(data).slice(0, 200)}`);
+      } else {
+        const err = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
+        setFetchError(err.error ?? `HTTP ${res.status}`);
+      }
+    } catch (e) {
+      setFetchError(String(e));
+    }
     setLoading(false);
   };
 
@@ -547,6 +560,19 @@ export default function AdminPage() {
             </button>
           ))}
         </div>
+
+        {/* Fetch error */}
+        {fetchError && (
+          <div className="bg-red-950/40 border border-red-800 rounded-lg p-4 flex items-start justify-between gap-4">
+            <div>
+              <p className="text-red-400 text-sm font-semibold mb-1">Failed to load projects</p>
+              <p className="text-red-500/80 text-xs font-mono break-all">{fetchError}</p>
+            </div>
+            <button onClick={() => fetchProjects(token!)} className="flex-shrink-0 text-xs text-amber-400 hover:text-amber-300 font-semibold border border-amber-500/30 px-3 py-1.5 rounded-sm">
+              Retry
+            </button>
+          </div>
+        )}
 
         {/* Project grid */}
         {loading ? (
