@@ -11,6 +11,7 @@ const systems = [
   {
     title: "Standing Seam Metal Roofing",
     badge: "Most Specified",
+    href: "/services/standing-seam-roofing",
     image: "/images/services/1F0A9C32-2383-4B3B-84F3-6E6839994207_1_105_c.jpeg",
     imageAlt: "Standing seam metal roofing — aerial close-up of panel system",
     imagePosition: "object-top",
@@ -27,6 +28,7 @@ const systems = [
   {
     title: "Metal Tile Systems",
     badge: "Class 4 Hail",
+    href: "/services/metal-tiles",
     image: "/images/services/F88A833F-F30B-4477-941C-F6D159B8199E_1_105_c.jpeg",
     imageAlt: "Metal tile roofing — aerial view of completed residential installation",
     imagePosition: "object-top",
@@ -122,8 +124,9 @@ export default function MetalRoofingPage() {
               {systems.map((sys, i) => (
                 <div
                   key={sys.title}
-                  className="bg-[#111111] border border-neutral-800 hover:border-neutral-700 rounded-lg overflow-hidden transition-colors"
+                  className="relative bg-[#111111] border border-neutral-800 hover:border-amber-500/40 rounded-lg overflow-hidden transition-colors cursor-pointer group"
                 >
+                  <Link href={sys.href} className="absolute inset-0 z-10" aria-label={sys.title} />
                   <div className="flex flex-col lg:flex-row">
                     {/* Image — full height on desktop, fixed height on mobile */}
                     <div className="relative h-56 lg:h-auto lg:w-[320px] xl:w-[380px] flex-shrink-0 overflow-hidden">
