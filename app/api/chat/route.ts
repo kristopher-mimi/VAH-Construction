@@ -1,8 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-const FORMSPREE_URL = "https://formspree.io/f/mbdqvgvw";;
+// Instantiated lazily so a missing OPENAI_API_KEY cannot fail the production build.
+let openaiClient: OpenAI | null = null;
+function getOpenAI(): OpenAI {
+  if (!openaiClient) {
+    openaiClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  }
+  return openaiClient;
+}
+
+const FORMSPREE_URL = "https://formspree.io/f/mbdqvgvw";
 
 // Simple in-memory rate limit — per IP, max 20 requests per minute
 const rateLimitMap = new Map<string, { count: number; ts: number }>();
@@ -210,7 +218,7 @@ export async function POST(req: NextRequest) {
       params.tool_choice = "auto";
     }
 
-    const response = await openai.chat.completions.create(params);
+    const response = await getOpenAI().chat.completions.create(params);
     const choice = response.choices[0];
     const toolCall = choice.message.tool_calls?.[0];
 

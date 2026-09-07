@@ -6,7 +6,7 @@ import PageHero from "@/app/components/PageHero";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Custom Steel Fence Installation Ontario | VAH Construction",
+  title: "Custom Steel Fence Installation Ontario",
   description:
     "Custom-fabricated powder-coated steel fence installation in Ontario. Bespoke steel fence panels, gates, and privacy screens. Serving Niagara Region, Hamilton, Burlington, Oakville. Free written quote.",
   alternates: { canonical: "https://www.vahconstruction.com/services/custom-steel-fence" },

@@ -6,7 +6,7 @@ import { LOCATIONS } from "@/lib/locations";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Metal Roofing Service Areas — Southern Ontario | VAH Construction",
+  title: "Metal Roofing Service Areas — Southern Ontario",
   description:
     "VAH Construction serves Niagara Region, Hamilton, Burlington, Oakville and all of Southern Ontario. Standing seam metal roofing specialists — free satellite quote anywhere we serve.",
   alternates: { canonical: "https://www.vahconstruction.com/locations" },

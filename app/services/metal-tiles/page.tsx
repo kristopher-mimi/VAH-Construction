@@ -6,7 +6,7 @@ import PageHero from "@/app/components/PageHero";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Metal Tile Roofing Ontario | VAH Construction",
+  title: "Metal Tile Roofing Ontario",
   description:
     "Class 4 hail-rated metal tile roofing for Ontario homes. Engineered steel shingles with the look of traditional tiles — 50-year non-prorated warranty. Serving Niagara, Hamilton, Burlington, Oakville.",
   alternates: { canonical: "https://www.vahconstruction.com/services/metal-tiles" },
@@ -61,12 +61,9 @@ const serviceSchema = {
   name: "Metal Tile Roofing",
   description:
     "Class 4 impact-rated metal tile roofing installation for residential properties in Ontario. 50-year non-prorated warranty.",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "VAH Construction",
-    url: "https://www.vahconstruction.com",
-    telephone: "+14372473371",
-  },
+  // Reference the single business entity declared in the root layout rather
+  // than declaring a second, competing one here.
+  provider: { "@id": "https://www.vahconstruction.com/#business" },
   areaServed: "Southern Ontario, Canada",
   serviceType: "Metal Tile Roofing Installation",
 };

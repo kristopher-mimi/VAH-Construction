@@ -102,6 +102,76 @@ const services = [
   },
 ];
 
+// Every published service route, grouped for scanning. Keep in sync with
+// app/sitemap.ts so no service page becomes orphaned.
+const SERVICE_INDEX = [
+  {
+    heading: "Metal Roofing",
+    items: [
+      {
+        href: "/services/metal-roofing",
+        title: "Metal Roofing",
+        desc: "Overview of the metal roofing systems we install across Southern Ontario.",
+      },
+      {
+        href: "/services/standing-seam-roofing",
+        title: "Standing Seam Roofing",
+        desc: "Concealed-fastener panels running continuously from ridge to eave.",
+      },
+      {
+        href: "/services/metal-tiles",
+        title: "Metal Tile Roofing",
+        desc: "Interlocking steel panels profiled like dimensional shingles.",
+      },
+      {
+        href: "/services/residential-metal-roofing",
+        title: "Residential Metal Roofing",
+        desc: "Metal roofing for Ontario homes, from bungalows to custom builds.",
+      },
+      {
+        href: "/services/commercial-metal-roofing",
+        title: "Commercial Metal Roofing",
+        desc: "Retail, industrial, agricultural, and institutional buildings.",
+      },
+      {
+        href: "/services/roof-replacement",
+        title: "Roof Replacement",
+        desc: "Full tear-off, deck inspection, and new metal system installation.",
+      },
+    ],
+  },
+  {
+    heading: "Metal Fencing",
+    items: [
+      {
+        href: "/services/metal-fences",
+        title: "Metal Fences",
+        desc: "Powder-coated steel and aluminum fencing built to your dimensions.",
+      },
+      {
+        href: "/services/luxury-metal-fences",
+        title: "Luxury Metal Fences",
+        desc: "Architectural privacy fencing and premium screen profiles.",
+      },
+      {
+        href: "/services/custom-steel-fence",
+        title: "Custom Steel Fences",
+        desc: "Fabricated steel fencing built to bespoke dimensions and colours.",
+      },
+    ],
+  },
+  {
+    heading: "Exterior Cladding",
+    items: [
+      {
+        href: "/services/metal-siding",
+        title: "Metal Siding",
+        desc: "Board-and-batten, horizontal lap, and corrugated steel cladding.",
+      },
+    ],
+  },
+];
+
 const whySpecialize = [
   {
     title: "Depth of Knowledge",
@@ -211,6 +281,57 @@ export default function ServicesPage() {
                   <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Complete service index — every published service page is reachable
+            from this hub, including the specialised fencing pages. */}
+        <section className="bg-neutral-950 border-t border-neutral-800/60 py-20 lg:py-24">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <div className="max-w-xl mb-12">
+              <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
+                Full Service Index
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                Every Service We Offer.
+              </h2>
+            </div>
+
+            <div className="space-y-10">
+              {SERVICE_INDEX.map((group) => (
+                <div key={group.heading}>
+                  <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4 pb-3 border-b border-neutral-800/60">
+                    {group.heading}
+                  </h3>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="group bg-[#111111] border border-neutral-800 hover:border-amber-500/40 rounded-lg p-5 transition-colors"
+                      >
+                        <h4 className="text-white font-bold text-sm mb-1.5 group-hover:text-amber-400 transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-neutral-500 text-xs leading-relaxed">{item.desc}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-neutral-800/60 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+              <Link href="/metal-roof-cost-ontario" className="text-neutral-400 hover:text-amber-400 font-semibold transition-colors">
+                How metal roofing is priced in Ontario
+              </Link>
+              <Link href="/locations" className="text-neutral-400 hover:text-amber-400 font-semibold transition-colors">
+                Areas we serve
+              </Link>
+              <Link href="/projects" className="text-neutral-400 hover:text-amber-400 font-semibold transition-colors">
+                Completed projects
+              </Link>
             </div>
           </div>
         </section>

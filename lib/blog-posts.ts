@@ -27,7 +27,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-04-15",
     readTime: "9 min read",
     category: "Metal Roofing",
-    metaTitle: "Standing Seam Metal Roofing: Complete Ontario Guide | VAH Construction",
+    metaTitle: "Standing Seam Metal Roofing: Complete Ontario Guide",
     metaDescription:
       "Comprehensive guide to standing seam metal roofing for Ontario homeowners. Costs, lifespan, installation, weather performance, and why it's the best roofing system for Southern Ontario.",
     content: [
@@ -126,7 +126,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-04-08",
     readTime: "7 min read",
     category: "Metal Roofing",
-    metaTitle: "Metal Roof Durability for Ontario Homes | VAH Construction",
+    metaTitle: "Metal Roof Durability for Ontario Homes",
     metaDescription:
       "Why Ontario's climate demands metal roofing. Freeze-thaw cycling, snow load, UV damage, and high humidity all shorten asphalt shingle lifespan. Metal roofing lasts 50–70 years in these conditions.",
     content: [
@@ -195,7 +195,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-03-28",
     readTime: "6 min read",
     category: "Metal Roofing",
-    metaTitle: "Metal Roofing vs Ontario Weather: Complete Protection Guide | VAH Construction",
+    metaTitle: "Metal Roofing vs Ontario Weather: Complete Protection Guide",
     metaDescription:
       "How standing seam metal roofing protects Ontario homes from lake-effect snow, ice dams, hail, high winds, and freeze-thaw cycling. The permanent weather solution for Southern Ontario.",
     content: [
@@ -259,7 +259,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-03-10",
     readTime: "7 min read",
     category: "Metal Roofing",
-    metaTitle: "Snow Load and Ice Dams: Metal Roofing Solution for Ontario | VAH Construction",
+    metaTitle: "Snow Load and Ice Dams: Metal Roofing Solution for Ontario",
     metaDescription:
       "Ice dams cause thousands of dollars in damage to Ontario homes every winter. Standing seam metal roofing eliminates ice dam formation permanently. Learn how and why.",
     content: [
@@ -318,7 +318,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-02-20",
     readTime: "6 min read",
     category: "Metal Roofing",
-    metaTitle: "Metal Roofing Energy Efficiency in Ontario | VAH Construction",
+    metaTitle: "Metal Roofing Energy Efficiency in Ontario",
     metaDescription:
       "How metal roofing reduces cooling costs by 15–25% in Ontario summers. Cool roof technology, reflective coatings, and better attic ventilation explained.",
     content: [
@@ -377,7 +377,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-02-05",
     readTime: "7 min read",
     category: "Metal Fencing",
-    metaTitle: "Modern Metal Fencing Ontario: Premium Alternative to Wood | VAH Construction",
+    metaTitle: "Modern Metal Fencing Ontario: Premium Alternative to Wood",
     metaDescription:
       "Why Ontario homeowners are choosing modern powder-coated metal fencing over wood and vinyl. Cost comparison, lifespan, maintenance, and design options explained.",
     content: [
@@ -441,7 +441,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-01-22",
     readTime: "6 min read",
     category: "Metal Fencing",
-    metaTitle: "Steel vs Wood Fence Cost Comparison Ontario | VAH Construction",
+    metaTitle: "Steel vs Wood Fence Cost Comparison Ontario",
     metaDescription:
       "20-year cost comparison of steel vs wood fencing in Ontario. Accounting for maintenance, replacement, and repairs — steel fencing is significantly cheaper over the long term.",
     content: [
@@ -514,7 +514,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-01-08",
     readTime: "8 min read",
     category: "Metal Roofing",
-    metaTitle: "Metal vs Asphalt Roofing: 10 Reasons Metal Wins in Ontario | VAH Construction",
+    metaTitle: "Metal vs Asphalt Roofing: 10 Reasons Metal Wins in Ontario",
     metaDescription:
       "Honest comparison of metal roofing vs asphalt shingles for Ontario homeowners. Lifespan, cost, weather performance, warranty, and resale value compared.",
     content: [
@@ -595,7 +595,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2024-12-15",
     readTime: "7 min read",
     category: "Metal Roofing",
-    metaTitle: "Hidden Fastener Metal Roofing Systems Explained | VAH Construction",
+    metaTitle: "Hidden Fastener Metal Roofing Systems Explained",
     metaDescription:
       "How hidden fastener metal roofing systems work, why they outperform exposed fastener panels, and what makes them the premium choice for Ontario residential and commercial roofing.",
     content: [
@@ -659,7 +659,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2024-12-01",
     readTime: "6 min read",
     category: "Luxury Exteriors",
-    metaTitle: "Luxury Metal Roofing + Metal Fencing Combinations Ontario | VAH Construction",
+    metaTitle: "Luxury Metal Roofing + Metal Fencing Combinations Ontario",
     metaDescription:
       "Premium exterior upgrades combining standing seam metal roofing with custom powder-coated metal fencing. Design combinations, cost, and why the combination delivers maximum property value.",
     content: [

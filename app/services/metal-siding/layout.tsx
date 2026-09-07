@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Metal Siding Ontario — Standing Seam & Corrugated Steel Cladding | VAH Construction",
+  title: "Metal Siding Ontario — Standing Seam & Corrugated Cladding",
   description:
     "Standing seam, corrugated, and board-and-batten metal siding for Ontario homes and commercial buildings. VAH Construction serves Niagara Region, Hamilton, Burlington, and Oakville.",
   alternates: { canonical: "https://www.vahconstruction.com/services/metal-siding" },

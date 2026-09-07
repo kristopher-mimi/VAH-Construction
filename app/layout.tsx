@@ -19,11 +19,13 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vahconstruction.com"),
   title: {
-    default: "VAH Construction | Metal Roofing Specialists — Southern Ontario",
+    // `default` is used as-is (the template is not applied to it), so the brand
+    // is written out here exactly once.
+    default: "Metal Roofing Contractors in Southern Ontario | VAH Construction",
     template: "%s | VAH Construction",
   },
   description:
-    "Ontario's standing seam metal roofing and custom metal fencing specialists. Class 4 hail-rated, 50-year non-prorated transferable warranty. Serving Niagara Region, Hamilton, Burlington, Oakville and all of Southern Ontario. Free satellite quote — no site visit required.",
+    "Standing seam metal roofing, metal tile roofing and custom metal fencing across Southern Ontario. Serving Niagara Region, Hamilton, Burlington and Oakville. Request a free written quote.",
   keywords: [
     "metal roofing Ontario",
     "standing seam roofing Ontario",
@@ -70,10 +72,12 @@ export const metadata: Metadata = {
     locale: "en_CA",
     images: [
       {
-        url: "/images/logo25-transparent.png",
-        width: 260,
-        height: 60,
-        alt: "VAH Construction Logo",
+        // Real project photograph — landscape crop reads far better than the
+        // logo in social/link previews.
+        url: "/images/hero/945B6F87-E210-447A-BE3B-5905563CC77B_1_105_c.jpeg",
+        width: 1182,
+        height: 665,
+        alt: "Standing seam metal roof installed by VAH Construction in Southern Ontario",
       },
     ],
   },
@@ -128,8 +132,9 @@ const localBusinessSchema = {
   logo: {
     "@type": "ImageObject",
     url: "https://www.vahconstruction.com/images/logo25-transparent.png",
-    width: 260,
-    height: 60,
+    // Actual intrinsic dimensions of the source file.
+    width: 4000,
+    height: 800,
   },
   sameAs: ["https://www.instagram.com/vah_construction/"],
   openingHoursSpecification: [
@@ -222,21 +227,13 @@ const websiteSchema = {
   publisher: {
     "@id": "https://www.vahconstruction.com/#business",
   },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://www.vahconstruction.com/search?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
-  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
+    <html lang="en-CA" className={`${geist.variable}`}>
       <head>
         <script
           type="application/ld+json"

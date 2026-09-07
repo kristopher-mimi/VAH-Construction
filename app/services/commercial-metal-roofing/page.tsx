@@ -6,7 +6,7 @@ import PageHero from "@/app/components/PageHero";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Commercial Metal Roofing Ontario | VAH Construction",
+  title: "Commercial Metal Roofing Ontario",
   description:
     "Commercial metal roofing for industrial, retail, agricultural and institutional buildings in Ontario. Standing seam, low-slope and steep-slope systems. 50-year warranties. Niagara Region, Hamilton, Burlington.",
   alternates: { canonical: "https://www.vahconstruction.com/services/commercial-metal-roofing" },

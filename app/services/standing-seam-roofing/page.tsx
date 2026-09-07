@@ -6,7 +6,7 @@ import PageHero from "@/app/components/PageHero";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Standing Seam Metal Roofing Ontario | VAH Construction",
+  title: "Standing Seam Metal Roofing Ontario",
   description:
     "Ontario's standing seam metal roofing specialists. Concealed fastener, continuous panels, Class 4 hail-rated. 50-year non-prorated transferable warranty. Free satellite quote — Niagara, Hamilton, Burlington, Oakville.",
   alternates: { canonical: "https://www.vahconstruction.com/services/standing-seam-roofing" },
@@ -61,12 +61,9 @@ const serviceSchema = {
   name: "Standing Seam Metal Roofing",
   description:
     "Concealed fastener standing seam metal roofing installation for residential and commercial properties in Ontario. Class 4 impact-rated, 50-year non-prorated warranty.",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "VAH Construction",
-    url: "https://www.vahconstruction.com",
-    telephone: "+14372473371",
-  },
+  // Reference the single business entity declared in the root layout rather
+  // than declaring a second, competing one here.
+  provider: { "@id": "https://www.vahconstruction.com/#business" },
   areaServed: "Southern Ontario, Canada",
   serviceType: "Standing Seam Metal Roofing Installation",
 };

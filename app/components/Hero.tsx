@@ -30,7 +30,7 @@ export default function Hero() {
             className="text-4xl sm:text-6xl lg:text-[72px] font-extrabold text-white leading-[1.04] tracking-tight mb-6 animate-fade-in-up"
             style={{ animationDelay: "80ms" }}
           >
-            Built to Last.
+            Metal Roofing Built to Last.
             <br />
             <span className="text-amber-500">Backed for Life.</span>
           </h1>

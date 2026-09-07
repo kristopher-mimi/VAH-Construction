@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Metal Roofing & Fencing Projects — Ontario | VAH Construction",
+  title: "Metal Roofing & Fencing Projects — Ontario",
   description:
     "Gallery of VAH Construction's metal roofing and metal fencing installations across Ontario. Standing seam roofing, custom steel fencing, and metal siding projects in Niagara Region, Hamilton, Burlington, and Oakville.",
   alternates: { canonical: "https://www.vahconstruction.com/projects" },

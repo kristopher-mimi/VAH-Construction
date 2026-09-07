@@ -36,7 +36,9 @@ export const NAV_LINKS = [
       {
         heading: "Roofing",
         items: [
+          { label: "Metal Roofing", href: "/services/metal-roofing", sub: "All systems we install" },
           { label: "Standing Seam Roofing", href: "/services/standing-seam-roofing", sub: "The gold standard" },
+          { label: "Metal Tile Roofing", href: "/services/metal-tiles", sub: "The look of shingles" },
           { label: "Residential Metal Roofing", href: "/services/residential-metal-roofing", sub: "For Ontario homes" },
           { label: "Commercial Metal Roofing", href: "/services/commercial-metal-roofing", sub: "Industrial & retail" },
           { label: "Roof Replacement", href: "/services/roof-replacement", sub: "Full tear-off & install" },
@@ -47,6 +49,14 @@ export const NAV_LINKS = [
         heading: "Fencing",
         items: [
           { label: "Metal Fences", href: "/services/metal-fences", sub: "Custom powder-coated fencing" },
+          { label: "Luxury Metal Fences", href: "/services/luxury-metal-fences", sub: "Architectural privacy" },
+          { label: "Custom Steel Fences", href: "/services/custom-steel-fence", sub: "Built to your dimensions" },
+        ],
+      },
+      {
+        heading: "Planning",
+        items: [
+          { label: "Metal Roofing Cost", href: "/metal-roof-cost-ontario", sub: "How quotes are calculated" },
         ],
       },
     ],

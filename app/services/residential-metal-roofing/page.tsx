@@ -6,7 +6,7 @@ import PageHero from "@/app/components/PageHero";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Residential Metal Roofing Ontario | VAH Construction",
+  title: "Residential Metal Roofing Ontario",
   description:
     "Premium residential metal roofing for Ontario homes. Standing seam, metal tile, and hidden fastener systems with 50-year non-prorated warranties. Serving Niagara Region, Hamilton, Burlington, Oakville.",
   alternates: { canonical: "https://www.vahconstruction.com/services/residential-metal-roofing" },

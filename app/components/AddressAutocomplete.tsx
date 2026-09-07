@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useId } from "react";
 
 interface Suggestion {
   place_id: number;
@@ -51,6 +51,9 @@ export default function AddressAutocomplete({
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [active, setActive] = useState(-1);
+  // Stable across server and client render, so the label association survives
+  // hydration and stays unique if the component is used more than once.
+  const inputId = useId();
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -126,12 +129,13 @@ export default function AddressAutocomplete({
 
   return (
     <div className="flex flex-col gap-1.5" ref={containerRef}>
-      <label className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+      <label htmlFor={inputId} className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">
         {label} {required && "*"}
       </label>
 
       <div className="relative">
         <input
+          id={inputId}
           type="text"
           value={value}
           onChange={handleChange}
@@ -139,7 +143,12 @@ export default function AddressAutocomplete({
           onFocus={() => suggestions.length > 0 && setOpen(true)}
           required={required}
           placeholder={placeholder}
+          // Browser autofill is suppressed deliberately: this field has its own
+          // suggestion list, and the two dropdowns would overlap.
           autoComplete="off"
+          role="combobox"
+          aria-expanded={open}
+          aria-autocomplete="list"
           className={`${baseInput} ${inputClassName} pr-9`}
         />
 

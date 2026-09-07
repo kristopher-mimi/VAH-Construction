@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { trackFormStart, trackLeadSubmitted } from "@/lib/analytics";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import PageHero from "@/app/components/PageHero";
@@ -46,12 +47,23 @@ export default function ContactPage() {
   const [selected, setSelected] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [address, setAddress] = useState("");
+  const startedRef = useRef(false);
 
   const toggle = (s: string) =>
     setSelected((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
 
+  // Fires once per visit, the first time someone edits the form.
+  function handleFirstInput() {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackFormStart("contact");
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // Guard against a second submit slipping through before the button
+    // disables (double click, or Enter held down).
+    if (status === "loading") return;
     setStatus("loading");
 
     const form = e.currentTarget;
@@ -71,6 +83,9 @@ export default function ContactPage() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Failed");
+      // Only counted as a lead once the backend has accepted it. On failure we
+      // fall through to the catch and the entered values are left in place.
+      trackLeadSubmitted("contact");
       setStatus("success");
       form.reset();
       setSelected([]);
@@ -113,28 +128,33 @@ export default function ContactPage() {
                       </p>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} onInput={handleFirstInput} className="space-y-5">
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+                          <label htmlFor="contact-name" className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
                             Full Name *
                           </label>
                           <input
+                            id="contact-name"
                             name="name"
                             type="text"
                             required
+                            autoComplete="name"
                             placeholder="Sarah Johnson"
                             className="bg-[#111111] border border-neutral-700 focus:border-amber-500 text-white placeholder-neutral-600 rounded-sm px-4 py-3 text-sm outline-none transition-colors"
                           />
                         </div>
                         <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+                          <label htmlFor="contact-phone" className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
                             Phone *
                           </label>
                           <input
+                            id="contact-phone"
                             name="phone"
                             type="tel"
                             required
+                            autoComplete="tel"
+                            inputMode="tel"
                             placeholder="(905) 555-0100"
                             className="bg-[#111111] border border-neutral-700 focus:border-amber-500 text-white placeholder-neutral-600 rounded-sm px-4 py-3 text-sm outline-none transition-colors"
                           />
@@ -143,23 +163,28 @@ export default function ContactPage() {
 
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+                          <label htmlFor="contact-email" className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
                             Email
                           </label>
                           <input
+                            id="contact-email"
                             name="email"
                             type="email"
+                            autoComplete="email"
+                            inputMode="email"
                             placeholder="sarah@email.com"
                             className="bg-[#111111] border border-neutral-700 focus:border-amber-500 text-white placeholder-neutral-600 rounded-sm px-4 py-3 text-sm outline-none transition-colors"
                           />
                         </div>
                         <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+                          <label htmlFor="contact-city" className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
                             City / Town
                           </label>
                           <input
+                            id="contact-city"
                             name="city"
                             type="text"
+                            autoComplete="address-level2"
                             placeholder="St. Catharines"
                             className="bg-[#111111] border border-neutral-700 focus:border-amber-500 text-white placeholder-neutral-600 rounded-sm px-4 py-3 text-sm outline-none transition-colors"
                           />
@@ -192,10 +217,11 @@ export default function ContactPage() {
                       </div>
 
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+                        <label htmlFor="contact-message" className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
                           Additional Details
                         </label>
                         <textarea
+                          id="contact-message"
                           name="message"
                           rows={4}
                           placeholder="Tell us about your property, current roof condition, any specific concerns, or questions you have..."

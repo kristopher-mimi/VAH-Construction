@@ -23,7 +23,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Niagara Region",
     province: "Ontario",
     population: "92,000+",
-    metaTitle: "Metal Roofing Niagara Falls | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Niagara Falls, Ontario",
     metaDescription:
       "Premium standing seam metal roofing in Niagara Falls, ON. VAH Construction installs Class 4 hail-rated metal roofs with 50-year transferable warranties. Free satellite quote — no site visit needed.",
     heroHeadline: "Metal Roofing in",
@@ -62,7 +62,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Niagara Region",
     province: "Ontario",
     population: "140,000+",
-    metaTitle: "Metal Roofing St. Catharines | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in St. Catharines, Ontario",
     metaDescription:
       "Premium standing seam metal roofing in St. Catharines, ON. VAH Construction installs Class 4 hail-rated metal roofs with 50-year transferable warranties. Free satellite quote — no appointment needed.",
     heroHeadline: "Metal Roofing in",
@@ -101,7 +101,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Hamilton Area",
     province: "Ontario",
     population: "570,000+",
-    metaTitle: "Metal Roofing Hamilton | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Hamilton, Ontario",
     metaDescription:
       "Premium standing seam metal roofing in Hamilton, ON. Class 4 hail-rated metal roofs, 50-year non-prorated warranty. VAH Construction serves all of Hamilton — free satellite quote, no visit needed.",
     heroHeadline: "Metal Roofing in",
@@ -140,7 +140,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Halton Region",
     province: "Ontario",
     population: "200,000+",
-    metaTitle: "Metal Roofing Burlington | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Burlington, Ontario",
     metaDescription:
       "Premium standing seam metal roofing in Burlington, ON. VAH Construction installs Class 4 hail-rated metal roofs with 50-year non-prorated warranties. Free written quote — no site visit required.",
     heroHeadline: "Metal Roofing in",
@@ -179,7 +179,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Halton Region",
     province: "Ontario",
     population: "225,000+",
-    metaTitle: "Metal Roofing Oakville | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Oakville, Ontario",
     metaDescription:
       "Premium standing seam metal roofing in Oakville, ON. VAH Construction installs Class 4 hail-rated systems with 50-year non-prorated warranties. Free satellite quote — no appointment needed.",
     heroHeadline: "Metal Roofing in",
@@ -218,7 +218,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Niagara Region",
     province: "Ontario",
     population: "55,000+",
-    metaTitle: "Metal Roofing Welland | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Welland, Ontario",
     metaDescription:
       "Premium standing seam metal roofing in Welland, ON. Class 4 hail-rated, 50-year warranty. VAH Construction serves all of Welland — free satellite quote, no site visit needed.",
     heroHeadline: "Metal Roofing in",
@@ -253,7 +253,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Niagara Region",
     province: "Ontario",
     population: "20,000+",
-    metaTitle: "Metal Roofing Thorold | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Thorold, Ontario",
     metaDescription:
       "Premium metal roofing in Thorold, ON. VAH Construction installs standing seam metal roofs with 50-year warranties. Free remote quote — same-day response.",
     heroHeadline: "Metal Roofing in",
@@ -284,7 +284,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Niagara West",
     province: "Ontario",
     population: "30,000+",
-    metaTitle: "Metal Roofing Grimsby | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Grimsby, Ontario",
     metaDescription:
       "Premium standing seam metal roofing in Grimsby, ON. VAH Construction serves the Niagara West area with Class 4-rated metal roofs and 50-year warranties. Free remote quote.",
     heroHeadline: "Metal Roofing in",
@@ -315,7 +315,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Niagara Region",
     province: "Ontario",
     population: "35,000+",
-    metaTitle: "Metal Roofing Fort Erie | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in Fort Erie, Ontario",
     metaDescription:
       "Premium metal roofing in Fort Erie, ON. VAH Construction installs standing seam metal roofs with 50-year non-prorated warranties. Serving all of Fort Erie and the Lake Erie shoreline.",
     heroHeadline: "Metal Roofing in",
@@ -346,7 +346,7 @@ export const LOCATIONS: LocationData[] = [
     region: "Niagara Region",
     province: "Ontario",
     population: "475,000+",
-    metaTitle: "Metal Roofing Niagara Region | VAH Construction — Standing Seam Specialists",
+    metaTitle: "Metal Roofing in the Niagara Region, Ontario",
     metaDescription:
       "Ontario's top-rated metal roofing company serving all of Niagara Region. VAH Construction installs standing seam metal roofs with 50-year warranties. Free remote quote — no site visit needed.",
     heroHeadline: "Metal Roofing Across",
@@ -394,4 +394,16 @@ export const LOCATIONS: LocationData[] = [
 
 export function getLocationBySlug(slug: string): LocationData | undefined {
   return LOCATIONS.find((l) => l.slug === slug);
+}
+
+/**
+ * Resolve a free-text "nearby area" name to a location page, when one exists.
+ *
+ * Many nearby areas are neighbourhoods or towns without their own page (e.g.
+ * "Chippawa", "Stoney Creek"). Those intentionally return undefined so callers
+ * can render them as plain text instead of inventing a link to a 404.
+ */
+export function getLocationByName(name: string): LocationData | undefined {
+  const needle = name.trim().toLowerCase();
+  return LOCATIONS.find((l) => l.name.toLowerCase() === needle);
 }

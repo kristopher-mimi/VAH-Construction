@@ -106,19 +106,10 @@ export default async function BlogPostPage({
     description: post.metaDescription,
     datePublished: post.date,
     dateModified: post.date,
-    author: {
-      "@type": "Organization",
-      name: "VAH Construction",
-      url: "https://www.vahconstruction.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "VAH Construction",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.vahconstruction.com/images/logo25-transparent.png",
-      },
-    },
+    // Honest organizational authorship — no individual author is established
+    // for these posts. Both reference the single business entity by @id.
+    author: { "@id": "https://www.vahconstruction.com/#business" },
+    publisher: { "@id": "https://www.vahconstruction.com/#business" },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://www.vahconstruction.com/blog/${post.slug}`,

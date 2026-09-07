@@ -58,3 +58,18 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #d97706;
 }
+
+/* Respect the OS "reduce motion" setting.
+   Animations are collapsed to a near-instant step rather than removed, so
+   animation-driven end states (such as .animate-fade-in-up's final opacity)
+   still apply and content never gets stuck invisible. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

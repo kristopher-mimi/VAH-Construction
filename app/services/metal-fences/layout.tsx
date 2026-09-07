@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Metal Fencing Ontario — Custom Powder-Coated Steel & Aluminum | VAH Construction",
+  title: "Metal Fencing Ontario — Powder-Coated Steel & Aluminum",
   description:
     "Custom powder-coated steel and aluminum fencing for Ontario properties. Horizontal slat, privacy screen, and architectural profiles. Lasts 40+ years. Serving Niagara Region, Hamilton, Burlington, Oakville.",
   alternates: { canonical: "https://www.vahconstruction.com/services/metal-fences" },

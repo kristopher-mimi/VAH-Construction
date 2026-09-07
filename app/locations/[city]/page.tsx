@@ -2,13 +2,48 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import { LOCATIONS, getLocationBySlug } from "@/lib/locations";
+import { LOCATIONS, getLocationBySlug, getLocationByName } from "@/lib/locations";
 import { PHONE, PHONE_HREF, EMAIL_HREF, EMAIL } from "@/lib/constants";
 import Link from "next/link";
 
 export async function generateStaticParams() {
   return LOCATIONS.map((loc) => ({ city: loc.slug }));
 }
+
+// Services linked from every city page, so each location connects into the
+// service hub rather than being a dead end.
+const CITY_SERVICES = [
+  {
+    href: "/services/standing-seam-roofing",
+    title: "Standing Seam Roofing",
+    body: "Concealed-fastener panels running ridge to eave, with no exposed screws through the panel face.",
+  },
+  {
+    href: "/services/metal-tiles",
+    title: "Metal Tile Roofing",
+    body: "Interlocking steel panels profiled to match the look of dimensional shingles.",
+  },
+  {
+    href: "/services/roof-replacement",
+    title: "Roof Replacement",
+    body: "Full tear-off, deck inspection, and installation of a new metal roofing system.",
+  },
+  {
+    href: "/services/metal-fences",
+    title: "Metal Fencing",
+    body: "Powder-coated steel and aluminum fencing built to your dimensions and colour.",
+  },
+  {
+    href: "/services/metal-siding",
+    title: "Metal Siding",
+    body: "Board-and-batten, horizontal lap, and corrugated steel cladding for full exteriors.",
+  },
+  {
+    href: "/services/commercial-metal-roofing",
+    title: "Commercial Roofing",
+    body: "Low-slope and steep-slope metal systems for retail, industrial, and agricultural buildings.",
+  },
+];
 
 export async function generateMetadata({
   params,
@@ -25,7 +60,9 @@ export async function generateMetadata({
       canonical: `https://www.vahconstruction.com/locations/${loc.slug}`,
     },
     openGraph: {
-      title: loc.metaTitle,
+      // Open Graph titles do not pass through the root title template, so the
+      // brand is appended explicitly here.
+      title: `${loc.metaTitle} | VAH Construction`,
       description: loc.metaDescription,
       url: `https://www.vahconstruction.com/locations/${loc.slug}`,
     },
@@ -51,13 +88,17 @@ export default async function LocationPage({
     ],
   };
 
-  const localSchema = {
+  // A Service offered in this city by the single VAH business entity defined in
+  // the root layout. Referencing that entity by @id avoids declaring a separate
+  // business (and implying a separate physical office) for every city page.
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "RoofingContractor",
-    name: "VAH Construction",
-    description: `Standing seam metal roofing specialists serving ${loc.name}, ${loc.province}. Class 4 hail-rated, 50-year non-prorated warranty.`,
+    "@type": "Service",
+    name: `Metal Roofing in ${loc.name}`,
+    serviceType: "Metal Roofing Installation",
+    description: `Standing seam and metal tile roofing installation serving ${loc.name}, ${loc.province}.`,
     url: `https://www.vahconstruction.com/locations/${loc.slug}`,
-    telephone: "+14372473371",
+    provider: { "@id": "https://www.vahconstruction.com/#business" },
     areaServed: {
       "@type": "City",
       name: loc.name,
@@ -78,7 +119,7 @@ export default async function LocationPage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main>
@@ -270,14 +311,72 @@ export default async function LocationPage({
               <div>
                 <h3 className="text-white font-semibold text-sm mb-4">Also Serving Nearby Areas:</h3>
                 <div className="flex flex-wrap gap-2">
-                  {loc.nearbyAreas.map((area) => (
-                    <span key={area} className="text-xs text-neutral-400 bg-neutral-800/60 border border-neutral-700/50 px-3 py-1.5 rounded-full">
-                      {area}
-                    </span>
-                  ))}
+                  {loc.nearbyAreas.map((area) => {
+                    const target = getLocationByName(area);
+                    // Areas without their own page stay plain text rather than
+                    // linking to a URL that does not exist.
+                    return target ? (
+                      <Link
+                        key={area}
+                        href={`/locations/${target.slug}`}
+                        className="text-xs text-neutral-300 bg-neutral-800/60 border border-neutral-700/50 hover:border-amber-500/50 hover:text-amber-400 px-3 py-1.5 rounded-full transition-colors"
+                      >
+                        Metal roofing in {area}
+                      </Link>
+                    ) : (
+                      <span
+                        key={area}
+                        className="text-xs text-neutral-400 bg-neutral-800/60 border border-neutral-700/50 px-3 py-1.5 rounded-full"
+                      >
+                        {area}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             )}
+          </div>
+        </section>
+
+        {/* Services offered in this city */}
+        <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <div className="mb-10">
+              <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">
+                What We Install
+              </span>
+              <h2 className="text-3xl font-extrabold text-white tracking-tight">
+                Our Services in {loc.name}.
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {CITY_SERVICES.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group bg-[#111111] border border-neutral-800 hover:border-amber-500/40 rounded-lg p-6 transition-colors"
+                >
+                  <h3 className="text-white font-bold mb-2 group-hover:text-amber-400 transition-colors">
+                    {service.title} in {loc.name}
+                  </h3>
+                  <p className="text-neutral-500 text-sm leading-relaxed">{service.body}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+              <Link href="/services" className="text-neutral-400 hover:text-amber-400 font-semibold transition-colors">
+                View all services
+              </Link>
+              <Link href="/metal-roof-cost-ontario" className="text-neutral-400 hover:text-amber-400 font-semibold transition-colors">
+                How metal roofing is priced
+              </Link>
+              <Link href="/projects" className="text-neutral-400 hover:text-amber-400 font-semibold transition-colors">
+                See completed projects
+              </Link>
+              <Link href="/locations" className="text-neutral-400 hover:text-amber-400 font-semibold transition-colors">
+                All service areas
+              </Link>
+            </div>
           </div>
         </section>
 

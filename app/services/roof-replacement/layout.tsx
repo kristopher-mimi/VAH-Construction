@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Metal Roof Replacement Ontario — Replace Asphalt with Standing Seam | VAH Construction",
+  title: "Metal Roof Replacement Ontario — Asphalt to Standing Seam",
   description:
     "Replace your aging asphalt roof with a permanent standing seam metal roofing system. Full tear-off and installation with 50-year warranty. Serving Niagara Region, Hamilton, Burlington, Oakville, Ontario.",
   alternates: { canonical: "https://www.vahconstruction.com/services/roof-replacement" },

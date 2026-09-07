@@ -6,7 +6,7 @@ import PageHero from "@/app/components/PageHero";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Luxury Metal Fencing Ontario | VAH Construction — Privacy & Architectural Fences",
+  title: "Luxury Metal Fencing Ontario — Architectural Privacy Fences",
   description:
     "Luxury powder-coated steel and aluminum privacy fencing for Ontario's premium properties. Custom architectural metal fences, privacy screens, and gate systems. Niagara Region, Hamilton, Oakville, Burlington.",
   alternates: { canonical: "https://www.vahconstruction.com/services/luxury-metal-fences" },

@@ -5,7 +5,7 @@ import Footer from "@/app/components/Footer";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Metal Roofing & Fencing Blog — Ontario Homeowner Resources | VAH Construction",
+  title: "Metal Roofing & Fencing Blog — Ontario Homeowners",
   description:
     "Expert articles on standing seam metal roofing, metal fencing, Ontario weather protection, energy efficiency, and premium exterior upgrades from VAH Construction's metal roofing specialists.",
   alternates: { canonical: "https://www.vahconstruction.com/blog" },

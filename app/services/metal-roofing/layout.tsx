@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Metal Roofing Ontario — Standing Seam Specialists | VAH Construction",
+  title: "Metal Roofing Ontario — Standing Seam Specialists",
   description:
     "Premium metal roofing systems for Ontario homes and businesses. Standing seam, hidden fastener, and metal tile roofing with 50-year non-prorated warranties. Niagara Region, Hamilton, Burlington, Oakville.",
   alternates: { canonical: "https://www.vahconstruction.com/services/metal-roofing" },
