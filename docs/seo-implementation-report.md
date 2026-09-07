@@ -171,6 +171,38 @@ commercial pages; no broken internal links; genuine 404; OG image resolves.
 | Sitemap URLs | 37 | 38 |
 | Form fields with an associated label | 0 of 6 | 6 of 6 |
 
+## Deployment and production verification
+
+| Item | Value |
+| --- | --- |
+| Commit | `bdbe347` — *feat: strengthen VAH website SEO and conversions* |
+| Branch / remote | `main` → `origin` (fast-forward, no force) |
+| Push | `12bceb2..bdbe347` |
+| Deploy | Vercel Git integration (no `vercel.json`, no CLI, no GitHub Actions) |
+| Live after | ~60 s from push |
+| Rollback needed | No |
+
+Verified against `https://www.vahconstruction.com` after deploy:
+
+- `npm run seo:check` against production: **13 passed, 0 failed**
+- Home `<title>`: `VAH Construction | Metal Roofing Specialists — Southern Ontario`
+  → `Metal Roofing Contractors in Southern Ontario | VAH Construction`
+- `/metal-roof-cost-ontario`: 404 → **200**
+- `/projects`: 200, **102 area values** server-rendered (was 0)
+- `/locations/hamilton`: title `Metal Roofing in Hamilton, Ontario | VAH Construction`,
+  3 references to the `#business` `@id`, nearby-area anchors live
+- `https://vahconstruction.com` → `https://www.vahconstruction.com` (single 307, no loop)
+- `/contact`: 200, rendered only — **no test submission was sent**
+
+### Trade-off: `/projects` is now request-rendered
+
+Reading `searchParams` on the server is a request-time API, so `/projects` moved
+from prerendered (○) to server-rendered on demand (ƒ). Content is fully in the
+HTML on every request, so the SEO objective holds, and the page reads a static
+JSON import with no database call. The alternative — prerendering only the "All"
+view — would have broken the existing `/projects?category=Metal+Fence` link from
+the metal fences page, so the query-param support was kept.
+
 ## Limitations
 
 - **Core Web Vitals: NOT MEASURED.** No Lighthouse or headless browser was
