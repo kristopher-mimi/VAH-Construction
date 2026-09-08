@@ -1,5 +1,16 @@
 [
   {
+    "id": "metal-tiles-complex-roof",
+    "category": "Metal Tiles",
+    "title": "Metal Tiles - complex roof ",
+    "system": "Metal Tiles",
+    "area": "3800 sq ft",
+    "colour": "Slate Grey",
+    "image": "/images/projects/dji_fly_20260828_221026_224_1788459443237_photo_optimized.jpg",
+    "imageAlt": "Metal Tiles - complex roof  — VAH Construction",
+    "objectPosition": "50% 68%"
+  },
+  {
     "id": "standing-seam-fan-hip-black",
     "category": "Standing Seam",
     "title": "Standing Seam — Fan Hip Roof",
