@@ -1,5 +1,16 @@
 [
   {
+    "id": "metal-tiles-cross-gable-roof",
+    "category": "Metal Tiles",
+    "title": "Metal Tiles - Cross Gable roof",
+    "system": "Metal Tiles",
+    "area": "3600 sq ft",
+    "colour": "Slate Grey",
+    "image": "/images/projects/img_4693.jpg",
+    "imageAlt": "Metal Tiles - Cross Gable roof — VAH Construction",
+    "objectPosition": "51% 68%"
+  },
+  {
     "id": "metal-tiles-complex-roof",
     "category": "Metal Tiles",
     "title": "Metal Tiles - complex roof ",
