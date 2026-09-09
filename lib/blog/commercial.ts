@@ -401,7 +401,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "The other realities of a farm re-roof deserve mention: livestock have to be managed or moved away from the work, feed and bedding need protection from debris, and every fastener and offcut that hits the ground is a puncture waiting to happen in a tractor tyre or an animal's foot. A magnet sweep at the end of every day is not optional on a farm. Working around milking, harvest and planting is normal too — the calendar on a working farm is not flexible.",
+        text: "The other realities of a farm re-roof deserve mention: livestock have to be managed or moved away from the work, feed and bedding need protection from debris, and every fastener and offcut that hits the ground is a puncture waiting to happen in a tractor tire or an animal's foot. A magnet sweep at the end of every day is not optional on a farm. Working around milking, harvest and planting is normal too — the calendar on a working farm is not flexible.",
       },
       {
         type: "h2",
@@ -1195,16 +1195,16 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
     slug: "commercial-metal-roof-maintenance-inspection-programs",
     title: "Commercial Metal Roof Maintenance and Inspection Programs",
     excerpt:
-      "Metal roofing is low maintenance, not no maintenance. What a real inspection programme covers, which components wear out first, and why the roof file matters as much as the roof.",
+      "Metal roofing is low maintenance, not no maintenance. What a real inspection program covers, which components wear out first, and why the roof file matters as much as the roof.",
     readTime: "9 min read",
     category: "Metal Roofing",
     metaTitle: "Commercial Metal Roof Maintenance and Inspection Programs",
     metaDescription:
-      "How to run a commercial metal roof maintenance programme — twice-yearly inspection scope, wear components, roof access control and documentation.",
+      "How to run a commercial metal roof maintenance program — twice-yearly inspection scope, wear components, roof access control and documentation.",
     content: [
       {
         type: "p",
-        text: "A metal roof is a low-maintenance assembly. It is not a maintenance-free one, and the difference costs building owners real money. Metal roofs that reach a long service life are almost always roofs that someone looked at twice a year, cleaned, and repaired small things before they became big ones. Roofs that fail early are usually roofs that nobody went on until water appeared on a ceiling tile. This is what a workable programme looks like for a commercial, agricultural or institutional building.",
+        text: "A metal roof is a low-maintenance assembly. It is not a maintenance-free one, and the difference costs building owners real money. Metal roofs that reach a long service life are almost always roofs that someone looked at twice a year, cleaned, and repaired small things before they became big ones. Roofs that fail early are usually roofs that nobody went on until water appeared on a ceiling tile. This is what a workable program looks like for a commercial, agricultural or institutional building.",
       },
       {
         type: "h2",
@@ -1274,7 +1274,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "From inspection to capital plan",
-        text: "The point of an inspection programme is not just to catch leaks. It is to give you a defensible view of remaining service life so the roof appears in a capital plan on your schedule rather than as an emergency on its own. Components have different cycles: sealants and boots on a short one, fasteners and accessories on a medium one, panels on a long one. A programme that tracks condition over time lets you budget for a sealant and boot renewal cycle at one point and for panel replacement much later, instead of treating the whole roof as a single item that is either fine or finished.",
+        text: "The point of an inspection program is not just to catch leaks. It is to give you a defensible view of remaining service life so the roof appears in a capital plan on your schedule rather than as an emergency on its own. Components have different cycles: sealants and boots on a short one, fasteners and accessories on a medium one, panels on a long one. A program that tracks condition over time lets you budget for a sealant and boot renewal cycle at one point and for panel replacement much later, instead of treating the whole roof as a single item that is either fine or finished.",
       },
       {
         type: "h2",
@@ -1473,7 +1473,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "Fixing at the ridge means all of the movement occurs at the eave, so the eave detail, the trough relationship and any eave-mounted accessory have to accommodate a panel end that travels. Fixing at the eave means the movement occurs at the ridge, so the ridge assembly has to absorb it while remaining weather-tight and, where applicable, ventilated. Which is better depends on the building, the slope, the rainware and the details involved, and it should be an explicit part of the design rather than something decided by whoever starts fastening first.",
+        text: "Fixing at the ridge means all of the movement occurs at the eave, so the eave detail, the trough relationship and any eave-mounted accessory have to accommodate a panel end that travels. Fixing at the eave puts the movement at the ridge, which then has to absorb it while staying weather-tight and, where applicable, ventilated. Which is better depends on the building, and it should be an explicit part of the design rather than something decided by whoever starts fastening first.",
       },
       {
         type: "callout",
@@ -1482,11 +1482,11 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Everything that can accidentally become a second fixed point",
-        text: "The fixed point is easy to specify and easy to undermine. Anything that fastens through the panel into the structure pins the panel at that location. That includes a curb that is fastened to both the structure and the panels, a row of snow guards through-fastened rather than clamped to the seams, a solar racking system anchored to the structure through the panel, a walkway support screwed down, a pipe support run screwed into the panel, a satellite dish bracket, a sign bracket, and an end lap detail that fixes the panel where it laps.",
+        text: "The fixed point is easy to specify and easy to undermine. Anything fastened through the panel into the structure pins the panel there: a curb fastened to both structure and panels, a row of snow guards through-fastened rather than clamped to the seams, solar racking anchored through the panel, a walkway or pipe support screwed down, a satellite or sign bracket, or an end lap detail that fixes the panel where it laps.",
       },
       {
         type: "p",
-        text: "On standing seam, the correct approach for accessories is clamping to the seam so the accessory travels with the panel. On anything that must be fastened to structure, the flashing between it and the panel has to be a two-piece, movement-tolerant detail with generous overlap and flexible sealant. This is the reason a roof access policy matters technically as well as administratively: a well-intentioned technician who screws a conduit support to a panel has created a second fixed point on a run that was designed to have one.",
+        text: "On standing seam, the correct approach for accessories is clamping to the seam so they travel with the panel. Anything that must be fastened to structure needs a two-piece, movement-tolerant flashing with generous overlap and flexible sealant. This is why a roof access policy matters technically as well as administratively: a well-intentioned technician who screws a conduit support to a panel has created a second fixed point on a run designed to have one.",
       },
       {
         type: "h2",
@@ -1503,11 +1503,11 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
         faqs: [
           {
             q: "How long can a metal panel run be before it needs an expansion joint?",
-            a: "It depends on the clip system's rated travel, the panel material, and the temperature range the roof will work through — which is affected by colour and exposure. The manufacturer publishes guidance for the specific system. What matters is that somebody checked the number against the actual run length on your building rather than assuming it would be fine.",
+            a: "It depends on the clip system's rated travel, the panel material, and the temperature range the roof works through, which colour and exposure affect. The manufacturer publishes guidance for the specific system. What matters is that somebody checked it against the actual run length on your building.",
           },
           {
             q: "Our metal roof makes banging noises in the evening. Is something wrong?",
-            a: "Usually it is thermal movement, and some sound is normal on a large roof. Loud, repeated banging often indicates the panels are binding somewhere and releasing suddenly, which is worth investigating — it can point to a clip that has run out of travel, an accidental second fixed point, or accessories fastened through the panel. It is a symptom worth looking at rather than living with.",
+            a: "Usually thermal movement, and some sound is normal on a large roof. Loud, repeated banging often means panels are binding and releasing suddenly, which can point to a clip that has run out of travel, an accidental second fixed point, or accessories fastened through the panel. It is worth investigating rather than living with.",
           },
           {
             q: "Why do through-fastened roofs leak at the screws over time?",
