@@ -360,7 +360,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Condensation is the most common complaint",
-        text: "Ask farmers about metal roofs and the word that comes up is not leak, it is drip. A cold steel roof over a warm, humid building will condense moisture on its underside, and on a clear night after a mild day it will rain inside the barn. This ruins hay, corrodes equipment, wets bedding and rusts the roof from below. It is not a defect in the roof; it is a building science problem that the roof assembly has to be designed around.",
+        text: "Ask farmers about metal roofs and the word that comes up is not leak, it is drip. A cold steel roof over a warm, humid building condenses moisture on its underside, and on a clear night after a mild day it rains inside the barn. This ruins hay, corrodes equipment, wets bedding and rusts the roof from below. It is not a defect in the roof; it is a building science problem the assembly has to be designed around.",
       },
       {
         type: "ul",
@@ -397,11 +397,11 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Re-roofing an older barn",
-        text: "Older barns present a specific set of conditions. The original roof may be board sheathing with gaps, cedar shakes, an old steel roof over strapping, or several of those in layers. Strapping may be sound or may be rotted at the eaves where ice has been sitting for decades. The purlins may not be square, the rafters may not be evenly spaced, and the ridge may have a sag that a straight panel run will highlight rather than hide. A realistic re-roof starts with an assessment of what is actually up there and a plan for making a straight, adequately fastened plane for new panels — usually new strapping or purlins over the existing structure, shimmed where required.",
+        text: "The original roof may be board sheathing with gaps, cedar shakes, old steel over strapping, or several of those in layers. Strapping may be sound or rotted at the eaves where ice has sat for decades. Purlins may not be square, rafters may not be evenly spaced, and the ridge may have a sag that a straight panel run will highlight rather than hide. A realistic re-roof starts with an assessment of what is actually up there and a plan for making a straight, adequately fastened plane — usually new strapping or purlins over the existing structure, shimmed where required.",
       },
       {
         type: "p",
-        text: "The other practical realities of a farm re-roof deserve mention: livestock have to be managed or moved away from the work, feed and bedding need protection from debris, and every fastener and offcut that hits the ground is a puncture waiting to happen in a tractor tyre or an animal's foot. A magnet sweep at the end of every day is not optional on a farm. Work around milking schedules, harvest and planting is also normal — the calendar on a working farm is not flexible, and a contractor who understands that will plan around it.",
+        text: "The other realities of a farm re-roof deserve mention: livestock have to be managed or moved away from the work, feed and bedding need protection from debris, and every fastener and offcut that hits the ground is a puncture waiting to happen in a tractor tyre or an animal's foot. A magnet sweep at the end of every day is not optional on a farm. Working around milking, harvest and planting is normal too — the calendar on a working farm is not flexible.",
       },
       {
         type: "h2",
@@ -413,7 +413,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
         faqs: [
           {
             q: "Which coating should we use on a livestock barn?",
-            a: "Ask the panel manufacturer directly what they recommend for animal confinement, because some coating systems that perform very well outdoors are specifically not recommended in that environment. The backside coating and the fastener washer material are as important as the face coating, and a supplier who does agricultural work regularly will have a clear answer.",
+            a: "Ask the panel manufacturer directly what they recommend for animal confinement, because some coating systems that perform very well outdoors are specifically not recommended there. The backside coating and the fastener washer material matter as much as the face coating.",
           },
           {
             q: "Do we need to insulate a barn roof?",
@@ -429,7 +429,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
           },
           {
             q: "How long does an agricultural metal roof last?",
-            a: "There is a wide range, driven mostly by the interior environment, the coating specification and how the fasteners were installed and maintained. A drive shed and a livestock barn with the same panel on them will not have the same service life. Ventilation, an appropriate backside coating and correctly driven fasteners are what move that number, and periodic inspection is what protects it.",
+            a: "There is a wide range, driven mostly by the interior environment, the coating specification and how the fasteners were installed and maintained. A drive shed and a livestock barn with the same panel will not have the same service life. Ventilation, an appropriate backside coating and correctly driven fasteners are what move that number.",
           },
         ],
       },
@@ -1464,7 +1464,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "There is a practical installation point here that matters enormously and is easy to miss. The sliding tab has to be pre-set according to the temperature on the day of installation. Fit panels on a hot July afternoon with the tabs centred, and the roof has full travel available to expand into but only half the travel it needs to contract on a cold January night. The tabs should be offset toward the appropriate end of their range for the installation-day temperature, so the available travel matches the movement still to come in each direction. A crew that does this without being asked is a crew that has installed long runs before.",
+        text: "There is a practical installation point here that is easy to miss and matters enormously. The sliding tab has to be pre-set according to the temperature on the day of installation. Fit panels on a hot July afternoon with the tabs centred and the roof has full travel to expand into but only half the travel it needs to contract on a cold January night. Tabs should be offset toward the appropriate end of their range for the installation-day temperature, so available travel matches the movement still to come in each direction.",
       },
       {
         type: "h2",
