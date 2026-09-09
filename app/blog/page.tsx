@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import { BLOG_POSTS } from "@/lib/blog-posts";
+import { BLOG_POSTS, getBlogCategories } from "@/lib/blog-posts";
+
+const POSTS_PER_PAGE = 24;
 
 export const metadata: Metadata = {
   title: "Metal Roofing & Fencing Blog — Ontario Homeowners",
@@ -20,12 +22,49 @@ export const metadata: Metadata = {
 const categoryColors: Record<string, string> = {
   "Metal Roofing": "bg-amber-500/10 text-amber-400 border-amber-500/20",
   "Metal Fencing": "bg-neutral-700/50 text-neutral-300 border-neutral-600/30",
+  "Metal Siding": "bg-neutral-700/40 text-neutral-300 border-neutral-600/30",
+  "Buying Guide": "bg-amber-500/5 text-amber-500/90 border-amber-500/15",
   "Luxury Exteriors": "bg-neutral-800 text-neutral-400 border-neutral-700",
 };
 
-export default function BlogIndexPage() {
-  const featured = BLOG_POSTS[0];
-  const rest = BLOG_POSTS.slice(1);
+/** Build a /blog URL preserving the active category and page. */
+function blogHref(category: string | null, page: number): string {
+  const params = new URLSearchParams();
+  if (category) params.set("category", category);
+  if (page > 1) params.set("page", String(page));
+  const qs = params.toString();
+  return qs ? `/blog?${qs}` : "/blog";
+}
+
+export default async function BlogIndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const params = await searchParams;
+  const categories = getBlogCategories();
+
+  // Only honour a category that actually exists, so a junk query string falls
+  // back to the full list instead of rendering an empty page.
+  const rawCategory = typeof params.category === "string" ? params.category : undefined;
+  const activeCategory = rawCategory && categories.includes(rawCategory) ? rawCategory : null;
+
+  const filtered = activeCategory
+    ? BLOG_POSTS.filter((p) => p.category === activeCategory)
+    : BLOG_POSTS;
+
+  // The featured card is only used for the unfiltered listing. `listing`
+  // excludes it entirely so pagination cannot show the same post twice.
+  const usesFeatured = !activeCategory;
+  const featured = usesFeatured ? filtered[0] : undefined;
+  const listing = usesFeatured ? filtered.slice(1) : filtered;
+
+  const rawPage = typeof params.page === "string" ? Number.parseInt(params.page, 10) : 1;
+  const totalPages = Math.max(1, Math.ceil(listing.length / POSTS_PER_PAGE));
+  const page = Number.isFinite(rawPage) ? Math.min(Math.max(rawPage, 1), totalPages) : 1;
+
+  const showFeatured = usesFeatured && page === 1;
+  const rest = listing.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   return (
     <>
@@ -55,6 +94,7 @@ export default function BlogIndexPage() {
         </section>
 
         {/* Featured post */}
+        {showFeatured && featured && (
         <section className="bg-neutral-950 py-14 lg:py-16">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <p className="text-xs font-bold text-neutral-600 uppercase tracking-widest mb-5">Featured Article</p>
@@ -84,10 +124,52 @@ export default function BlogIndexPage() {
             </Link>
           </div>
         </section>
+        )}
 
         {/* All posts */}
         <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-14 lg:py-16">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
+
+            {/* Category filter — real links so crawlers can follow them */}
+            <nav aria-label="Filter articles by category" className="flex flex-wrap gap-2 mb-8">
+              <Link
+                href={blogHref(null, 1)}
+                aria-current={!activeCategory ? "page" : undefined}
+                className={`text-xs font-semibold px-3.5 py-2 rounded-full border transition-colors ${
+                  !activeCategory
+                    ? "bg-amber-500 text-black border-amber-500"
+                    : "bg-transparent text-neutral-400 border-neutral-700 hover:border-neutral-500 hover:text-white"
+                }`}
+              >
+                All articles ({BLOG_POSTS.length})
+              </Link>
+              {categories.map((cat) => {
+                const count = BLOG_POSTS.filter((p) => p.category === cat).length;
+                const isActive = activeCategory === cat;
+                return (
+                  <Link
+                    key={cat}
+                    href={blogHref(cat, 1)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`text-xs font-semibold px-3.5 py-2 rounded-full border transition-colors ${
+                      isActive
+                        ? "bg-amber-500 text-black border-amber-500"
+                        : "bg-transparent text-neutral-400 border-neutral-700 hover:border-neutral-500 hover:text-white"
+                    }`}
+                  >
+                    {cat} ({count})
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <p className="text-neutral-500 text-sm mb-6">
+              {activeCategory
+                ? `${filtered.length} articles in ${activeCategory}`
+                : `${filtered.length} articles`}
+              {totalPages > 1 && ` — page ${page} of ${totalPages}`}
+            </p>
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {rest.map((post) => (
                 <Link
@@ -121,6 +203,49 @@ export default function BlogIndexPage() {
                 </Link>
               ))}
             </div>
+
+            {/* Pagination — real anchors, not JS handlers */}
+            {totalPages > 1 && (
+              <nav
+                aria-label="Article pagination"
+                className="mt-12 pt-8 border-t border-neutral-800/60 flex flex-wrap items-center justify-center gap-2"
+              >
+                {page > 1 && (
+                  <Link
+                    href={blogHref(activeCategory, page - 1)}
+                    rel="prev"
+                    className="text-sm font-semibold px-4 py-2.5 rounded-sm border border-neutral-700 text-neutral-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors"
+                  >
+                    ← Previous
+                  </Link>
+                )}
+
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                  <Link
+                    key={n}
+                    href={blogHref(activeCategory, n)}
+                    aria-current={n === page ? "page" : undefined}
+                    className={`text-sm font-semibold min-w-[42px] text-center px-3 py-2.5 rounded-sm border transition-colors ${
+                      n === page
+                        ? "bg-amber-500 text-black border-amber-500"
+                        : "border-neutral-700 text-neutral-400 hover:border-neutral-500 hover:text-white"
+                    }`}
+                  >
+                    {n}
+                  </Link>
+                ))}
+
+                {page < totalPages && (
+                  <Link
+                    href={blogHref(activeCategory, page + 1)}
+                    rel="next"
+                    className="text-sm font-semibold px-4 py-2.5 rounded-sm border border-neutral-700 text-neutral-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors"
+                  >
+                    Next →
+                  </Link>
+                )}
+              </nav>
+            )}
           </div>
         </section>
       </main>

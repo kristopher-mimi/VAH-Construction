@@ -1,5 +1,17 @@
 # Owner input needed
 
+> **Most urgent item: the 10 original blog posts.** The 216 new articles were
+> written to avoid every unsupported claim. The 10 original posts still contain
+> a "50-year non-prorated" transferable warranty, the statement that *all*
+> standing seam systems VAH installs carry a Class 4 impact rating, specific
+> dollar comparisons ($30,000 vs $68,000) reading as VAH pricing, and
+> insurance-discount language. Three separate reviewers flagged this
+> independently. Those posts were left untouched because rewriting published
+> pricing and warranty copy is the owner's decision, not mine — but the site now
+> states two different things, and the older file is where the exposure sits.
+> See items 1 and 2 below.
+
+
 Short list of things code cannot resolve. Nothing here blocked the rest of the
 implementation — every item below was worked around by using neutral wording or
 by omitting the unverifiable element rather than inventing one.

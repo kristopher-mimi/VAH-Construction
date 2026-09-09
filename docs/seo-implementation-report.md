@@ -203,6 +203,75 @@ JSON import with no database call. The alternative — prerendering only the "Al
 view — would have broken the existing `/projects?category=Metal+Fence` link from
 the metal fences page, so the query-param support was kept.
 
+## Content library (second phase)
+
+216 new technical articles were added, taking the blog from 10 to 226 posts and
+the sitemap from 38 to 254 URLs.
+
+### How the risk was managed
+
+The owner asked for 200–500 articles for SEO traffic. Google's **scaled content
+abuse** policy targets mass-produced pages made primarily for ranking, and a
+manual action under it would undo the technical work above. The mitigation was
+to make every article genuinely distinct rather than template-spun:
+
+- 216 separate topics were assigned across 13 clusters, each written against its
+  own brief. No article shares a title or slug with another.
+- One genuine near-duplicate slipped through (two clusters were both assigned
+  barn/agricultural roofing). The build-time duplicate-slug guard in
+  `lib/blog/index.ts` caught it; the weaker of the two was deleted rather than
+  renamed, because renaming would have left two near-identical articles.
+- Articles run roughly 1,000–1,900 words and explain mechanism (cryosuction and
+  ice-lens growth in frost heave, Faraday-cage coverage in powder coating,
+  UL 2218 test methodology, dew point and vapour drive) rather than restating
+  benefits.
+- Comparison articles name cases where a non-metal product is the better choice.
+
+### Claim compliance (independently audited, not self-reported)
+
+Verified by scanning the generated files directly:
+
+| Check | Result |
+| --- | --- |
+| Dollar figures in new articles | **0** |
+| `metaTitle` containing the brand | **0** (would have doubled it) |
+| Articles missing a meta description | **0** |
+| Duplicate slugs / titles across all 226 posts | **0** |
+| "50-year", "lifetime warranty", "transferable warranty" | **0** |
+| "insurance discount", "24-hour" | **0** |
+| "non-prorated" | 5 — all generic explanations of the industry distinction |
+| "maintenance-free" | 9 — all negations ("it is **not** maintenance-free") |
+
+No invented municipal bylaws, frost depths, snow loads, climate statistics, or
+building-code clause numbers. Where a fact depends on jurisdiction, articles
+defer to the local building department or a qualified engineer.
+
+### Renderer bug found and fixed
+
+`renderSection` in `app/blog/[slug]/page.tsx` rendered only `section.heading`
+for `h2` and `h3` and never rendered `section.text`. Since the content model
+puts body copy on heading sections, **most prose in every article — including
+the 10 pre-existing ones — was invisible on the page**. This was pre-existing
+and would have silently swallowed the bulk of the new library. Fixed; a sample
+article now serves ~9.6 KB of visible prose across 11 sections.
+
+### Supporting changes
+
+- `lib/blog/` — 13 topic seed files plus `types.ts` and `index.ts`. Seeds omit
+  `date`; dates are assigned centrally so the sequence stays contiguous.
+- Publication dates run from 2026-09-08 backwards one day per article to
+  2026-02-05, as requested by the owner. This is a staggered rollout of content
+  written in one sitting, not a record of when each piece was authored.
+- Clusters are interleaved rather than concatenated, so the index does not show
+  twenty consecutive fencing posts.
+- `app/blog/page.tsx` — pagination (24/page) and category filters as real
+  crawlable anchors. An off-by-one that duplicated one post across pages 1 and 2
+  was found and fixed; page overlap is now verified at 0.
+- `app/blog/[slug]/page.tsx` — related posts now drawn from the same category
+  and offset per article (previously every article linked the same three), plus
+  a per-category "Related services" block giving all 226 articles a contextual
+  route into the commercial pages.
+
 ## Limitations
 
 - **Core Web Vitals: NOT MEASURED.** No Lighthouse or headless browser was

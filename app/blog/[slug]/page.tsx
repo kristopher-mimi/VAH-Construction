@@ -10,6 +10,50 @@ export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
 
+/**
+ * Service pages linked from each article, chosen by category. Gives every
+ * article a contextual route into the commercial pages instead of leaving the
+ * library as a dead end.
+ */
+const SERVICE_LINKS: Record<string, { href: string; label: string }[]> = {
+  "Metal Roofing": [
+    { href: "/services/metal-roofing", label: "Metal roofing systems" },
+    { href: "/services/standing-seam-roofing", label: "Standing seam roofing" },
+    { href: "/services/metal-tiles", label: "Metal tile roofing" },
+    { href: "/metal-roof-cost-ontario", label: "How metal roofing is priced" },
+  ],
+  "Metal Fencing": [
+    { href: "/services/metal-fences", label: "Metal fencing" },
+    { href: "/services/luxury-metal-fences", label: "Luxury metal fences" },
+    { href: "/services/custom-steel-fence", label: "Custom steel fences" },
+    { href: "/projects", label: "Completed projects" },
+  ],
+  "Metal Siding": [
+    { href: "/services/metal-siding", label: "Metal siding" },
+    { href: "/services/metal-roofing", label: "Metal roofing systems" },
+    { href: "/projects", label: "Completed projects" },
+    { href: "/contact", label: "Request a quote" },
+  ],
+  "Buying Guide": [
+    { href: "/metal-roof-cost-ontario", label: "How metal roofing is priced" },
+    { href: "/services/metal-roofing", label: "Metal roofing systems" },
+    { href: "/projects", label: "Completed projects" },
+    { href: "/contact", label: "Request a free quote" },
+  ],
+  "Luxury Exteriors": [
+    { href: "/services/metal-roofing", label: "Metal roofing systems" },
+    { href: "/services/metal-siding", label: "Metal siding" },
+    { href: "/services/luxury-metal-fences", label: "Luxury metal fences" },
+    { href: "/projects", label: "Completed projects" },
+  ],
+  default: [
+    { href: "/services", label: "All services" },
+    { href: "/metal-roof-cost-ontario", label: "How metal roofing is priced" },
+    { href: "/projects", label: "Completed projects" },
+    { href: "/contact", label: "Request a quote" },
+  ],
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -34,17 +78,23 @@ export async function generateMetadata({
 
 function renderSection(section: BlogSection, idx: number) {
   switch (section.type) {
+    // Heading sections carry their own body copy in `text`. Rendering only the
+    // heading silently dropped most of the prose in every article.
     case "h2":
       return (
-        <h2 key={idx} className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-10 mb-4">
-          {section.heading}
-        </h2>
+        <div key={idx}>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-10 mb-4">
+            {section.heading}
+          </h2>
+          {section.text && <p className="text-neutral-400 leading-relaxed mb-5">{section.text}</p>}
+        </div>
       );
     case "h3":
       return (
-        <h3 key={idx} className="text-xl font-bold text-white mt-8 mb-3">
-          {section.heading}
-        </h3>
+        <div key={idx}>
+          <h3 className="text-xl font-bold text-white mt-8 mb-3">{section.heading}</h3>
+          {section.text && <p className="text-neutral-400 leading-relaxed mb-5">{section.text}</p>}
+        </div>
       );
     case "p":
       return (
@@ -97,7 +147,17 @@ export default async function BlogPostPage({
   const post = getBlogPostBySlug(slug);
   if (!post) notFound();
 
-  const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  // Prefer articles from the same category, and start from this post's own
+  // position in the list so each article surfaces a different set. Slicing the
+  // first three of every list would give all articles identical "related" links
+  // and produce a very poor internal link graph.
+  const sameCategory = BLOG_POSTS.filter((p) => p.category === post.category && p.slug !== slug);
+  const pool = sameCategory.length >= 3 ? sameCategory : BLOG_POSTS.filter((p) => p.slug !== slug);
+  const startAt = Math.max(0, pool.findIndex((p) => p.date < post.date));
+  const relatedPosts = [...pool.slice(startAt), ...pool.slice(0, startAt)].slice(0, 3);
+
+  // Contextual links from every article into the commercial pages.
+  const relatedServices = SERVICE_LINKS[post.category] ?? SERVICE_LINKS.default;
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -206,6 +266,26 @@ export default async function BlogPostPage({
               <a href={PHONE_HREF} className="text-white font-semibold hover:text-amber-400 transition-colors text-sm">
                 {PHONE}
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Related services — contextual internal links */}
+        <section className="bg-neutral-950 border-t border-neutral-800/60 py-12">
+          <div className="max-w-3xl mx-auto px-5 sm:px-8">
+            <h2 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-5">
+              Related services
+            </h2>
+            <div className="flex flex-wrap gap-2.5">
+              {relatedServices.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="text-sm font-semibold text-neutral-300 bg-[#111111] border border-neutral-800 hover:border-amber-500/40 hover:text-amber-400 px-4 py-2.5 rounded-sm transition-colors"
+                >
+                  {service.label}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

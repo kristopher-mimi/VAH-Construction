@@ -1,24 +1,14 @@
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  category: string;
-  metaTitle: string;
-  metaDescription: string;
-  content: BlogSection[];
-}
+import { GENERATED_POSTS } from "./blog/index";
+import type { BlogPost, BlogSection } from "./blog/types";
 
-export interface BlogSection {
-  type: "h2" | "h3" | "p" | "ul" | "callout" | "faq";
-  heading?: string;
-  text?: string;
-  items?: string[];
-  faqs?: { q: string; a: string }[];
-}
+// Re-exported so existing importers of "@/lib/blog-posts" keep working.
+export type { BlogPost, BlogSection } from "./blog/types";
 
-export const BLOG_POSTS: BlogPost[] = [
+/**
+ * The original hand-written articles, with their real publication dates.
+ * Newer library articles live in lib/blog/ and are merged in below.
+ */
+const ORIGINAL_POSTS: BlogPost[] = [
   {
     slug: "standing-seam-metal-roofing-complete-guide",
     title: "Standing Seam Metal Roofing: The Complete Ontario Homeowner Guide",
@@ -722,6 +712,16 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ];
 
+/** Every published article, newest first. */
+export const BLOG_POSTS: BlogPost[] = [...ORIGINAL_POSTS, ...GENERATED_POSTS].sort(
+  (a, b) => b.date.localeCompare(a.date),
+);
+
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
+}
+
+/** Categories present in the library, for filtering the blog index. */
+export function getBlogCategories(): string[] {
+  return [...new Set(BLOG_POSTS.map((p) => p.category))].sort();
 }
