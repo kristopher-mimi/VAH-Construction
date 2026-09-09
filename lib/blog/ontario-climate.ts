@@ -1350,7 +1350,7 @@ export const ONTARIO_CLIMATE_POSTS: BlogPostSeed[] = [
       {
         type: "h3",
         heading: "Ventilation Balance",
-        text: "A properly vented attic flushes any heat that does get in with outdoor air, keeping the deck near outdoor temperature. The failures are almost always on the intake side: soffit vents buried under blown insulation, perforated soffit installed over a solid original soffit that was never cut open, or baffles that were never fitted. When intake is starved, added exhaust does not help — it just puts the attic under greater negative pressure and pulls more warm air up through the ceiling. That is the situation where installing more roof vents makes ice damming worse, which surprises people every year.",
+        text: "A properly vented attic flushes any heat that does get in with outdoor air, keeping the deck near outdoor temperature. The failures are almost always on the intake side: soffit vents buried under blown insulation, perforated soffit installed over a solid original soffit that was never cut open, or baffles that were never fitted. When intake is starved, added exhaust does not help — it puts the attic under greater negative pressure and pulls more warm air up through the ceiling. That is how installing more roof vents makes ice damming worse, which surprises people every year.",
       },
       {
         type: "h3",
@@ -1360,17 +1360,12 @@ export const ONTARIO_CLIMATE_POSTS: BlogPostSeed[] = [
       {
         type: "h3",
         heading: "Shading, Orientation and the Sun",
-        text: "A slope in full winter sun sheds its snow sooner and may never build a pack thick enough to insulate the deck. A north slope, or one shaded by mature trees or a neighbouring building, holds snow for weeks. A house with an unshaded south slope and a heavily shaded north slope will often dam only on the north side. And solar melting on an upper slope that drains onto a shaded lower roof is a very common way to get a dam on a roof section that has almost no heat loss of its own.",
+        text: "A slope in full winter sun sheds its snow sooner and may never build a pack thick enough to insulate the deck. A north slope, or one shaded by mature trees or a neighbouring building, holds snow for weeks, and a house with an unshaded south slope will often dam only on the north side. Solar melting on an upper slope that drains onto a shaded lower roof is a very common way to get a dam on a section with almost no heat loss of its own.",
       },
       {
         type: "h3",
-        heading: "Heat Sources Inside the Attic",
-        text: "Anything warm in the attic space warms the deck. Heating ducts and an air handler in the attic, particularly leaky ones. Recessed lights that are not sealed, insulation-contact rated fixtures. A masonry chimney carrying flue heat. An old furnace flue. Even the difference between a house that keeps its thermostat high and one that does not is measurable at the eaves.",
-      },
-      {
-        type: "h3",
-        heading: "The Eavestrough and What Is Already in It",
-        text: "The trough does not cause an ice dam, but it does give one a place to start. A trough left full of leaves over winter holds water that freezes into a solid block at the very edge of the roof, and that block is the first ledge for ice to build on. A clean, free-draining trough is not a cure, but it removes a head start.",
+        heading: "Heat Sources Inside the Attic and in the Eavestrough",
+        text: "Anything warm in the attic warms the deck: heating ducts and an air handler up there, particularly leaky ones, recessed fixtures that are not sealed and rated for insulation contact, a masonry chimney carrying flue heat, an old furnace flue. The eavestrough plays a smaller but real part. It does not cause a dam, but a trough left full of leaves over winter freezes into a solid block at the very edge of the roof, and that block is the first ledge for ice to build on.",
       },
       {
         type: "h2",

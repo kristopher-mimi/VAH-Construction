@@ -559,7 +559,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "How the building is put together",
-        text: "A post-frame building carries its loads on posts set into the ground or on brackets and piers, rather than on continuous foundation walls. Trusses or rafters bear on the posts, typically spaced well apart — often at intervals of two to three metres rather than the closely spaced framing of stick construction. Between the trusses, purlins run horizontally to carry the roof steel, and girts run horizontally on the walls to carry the wall steel. There is no plywood deck and often no sheathing anywhere in the building. The steel cladding is the skin, the weather barrier and, importantly, part of the structural system.",
+        text: "A post-frame building carries its loads on posts set into the ground or on brackets and piers, rather than on continuous foundation walls. Trusses or rafters bear on the posts, spaced well apart — often at intervals of two to three metres rather than the closely spaced framing of stick construction. Between them, purlins carry the roof steel and girts carry the wall steel. There is no plywood deck and often no sheathing anywhere in the building. The steel cladding is the skin, the weather barrier and, importantly, part of the structural system.",
       },
       {
         type: "h2",
@@ -605,12 +605,12 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "Two failure patterns show up repeatedly on post-frame buildings. The first is generic closures that do not match the rib profile, leaving gaps for snow. The second is fasteners in trim that land in air rather than in framing, which is easy to do on a building where the framing is widely spaced and invisible from outside. Both are avoidable with attention and neither is expensive to do properly at the time.",
+        text: "Two failure patterns show up repeatedly. The first is generic closures that do not match the rib profile, leaving gaps for snow. The second is fasteners in trim that land in air rather than in framing, which is easy to do where framing is widely spaced and invisible from outside. Both are avoidable with attention.",
       },
       {
         type: "h2",
         heading: "Condensation in an uninsulated shop",
-        text: "The classic post-frame shop is unheated most of the time and heated occasionally, which is the worst case for condensation. Steel roof, no deck, no insulation, a concrete slab giving off moisture, and a torpedo heater run for an afternoon — and the underside of the roof drips for the rest of the day. The usual solutions are a condensation control membrane on the underside of the panel, a ventilated assembly with intake and exhaust, or a proper insulated assembly with a vapour control layer and no air leakage, depending on how the building is used. A vapour barrier under the slab at construction time is a small item that prevents a large ongoing moisture source.",
+        text: "The classic post-frame shop is unheated most of the time and heated occasionally, which is the worst case for condensation. Steel roof, no deck, no insulation, a slab giving off moisture, and a torpedo heater run for an afternoon — and the underside of the roof drips for the rest of the day. The usual answers are a condensation control membrane on the underside of the panel, a ventilated assembly with intake and exhaust, or a properly detailed insulated assembly with vapour control and no air leakage. A vapour barrier under the slab at construction time prevents a large ongoing moisture source.",
       },
       {
         type: "h2",
@@ -619,7 +619,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "The decision to re-screw or re-roof turns on the panel itself. If the coating is chalking heavily, the panel has corroded at the eaves and laps, or the holes have elongated to the point where a larger screw will not seal, re-screwing is throwing labour at a roof that is finished. If the panel is sound and only the fasteners have aged, re-screwing is good value. A close inspection tells you which, and it is worth doing before deciding. On buildings where the panel is sound but the owner wants a long-term answer, installing purlins and a new roof over the existing steel keeps the building dry and avoids tear-off, provided the structural review supports the added load and the anchorage path.",
+        text: "The decision turns on the panel itself. If the coating is chalking heavily, the panel has corroded at the eaves and laps, or the holes have elongated past what a larger screw will seal, re-screwing is throwing labour at a roof that is finished. If the panel is sound and only the fasteners have aged, re-screwing is good value, and a close inspection tells you which. Where the panel is sound but the owner wants a long-term answer, installing purlins and a new roof over the existing steel keeps the building dry and avoids tear-off, provided the structural review supports the added load and anchorage path.",
       },
       {
         type: "faq",
@@ -691,11 +691,11 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Protecting what is underneath",
-        text: "Tear-off drops debris and dust through a deck, through ceiling tiles and around penetrations. Steel deck buildings shed years of accumulated dust from the flutes the moment anyone starts working above. In a warehouse this means covering racked product; in an office it means poly over workstations and equipment; in a food plant, a clinic or a lab it means a much more rigorous protection plan and often relocating operations out of the area entirely.",
+        text: "Tear-off drops debris and dust through a deck, through ceiling tiles and around penetrations, and steel deck buildings shed years of accumulated dust from the flutes the moment anyone works above. In a warehouse that means covering racked product; in an office, poly over workstations and equipment; in a food plant, a clinic or a lab, a far more rigorous plan and often relocating operations out of the area entirely.",
       },
       {
         type: "p",
-        text: "Below the active work area, access has to be controlled. Falling objects are the hazard that puts occupants at risk, and the answer is an exclusion zone that is physically closed off, not a sign. That extends outdoors as well: entrances, walkways, loading docks and parking under the work area need protection, covered walkways or rerouting, with someone responsible for maintaining the barricades as the work moves.",
+        text: "Below the active work area, access has to be controlled. Falling objects are the hazard that puts occupants at risk, and the answer is an exclusion zone that is physically closed off, not a sign. That extends outdoors: entrances, walkways, loading docks and parking under the work area need protection, covered walkways or rerouting, with someone responsible for maintaining the barricades as the work moves.",
       },
       {
         type: "h2",
@@ -717,22 +717,21 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "The alarm and sprinkler systems need coordination too. Dust from tear-off sets off smoke detection, so zones need to be put on test with the monitoring company before work starts and taken off test at the end of each day — with a written procedure so it is never forgotten. Sprinkler piping hung from the deck can be damaged by fastening from above, and a struck sprinkler line in an occupied building is a serious water event. Locating that piping before anchors are driven is part of the pre-construction survey.",
+        text: "The alarm and sprinkler systems need coordination too. Dust from tear-off sets off smoke detection, so zones need to be put on test with the monitoring company before work starts and taken off test at the end of each day, with a written procedure so it is never forgotten. Sprinkler piping hung from the deck can be damaged by fastening from above, and a struck line in an occupied building is a serious water event. Locating that piping before anchors are driven is part of the pre-construction survey.",
       },
       {
         type: "h2",
-        heading: "Mechanical, electrical and roof-mounted services",
-        text: "Rooftop units serving occupied space cannot simply be shut off. Each unit that has to come offline, be raised or be relocated needs a plan for the space it serves — temporary cooling, scheduling around occupancy, or doing that section on a weekend. Kitchen exhaust for a restaurant tenant, refrigeration condensers for a grocery, process exhaust for a plant and server room cooling are all critical services that have to be sequenced deliberately. Antennas, communications equipment and rooftop electrical belong on the same list, and the owners of that equipment are often third parties who need notice.",
+        heading: "Mechanical services and site logistics",
+        text: "Rooftop units serving occupied space cannot simply be shut off. Each unit that has to come offline, be raised or be relocated needs a plan for the space it serves — temporary cooling, scheduling around occupancy, or doing that section on a weekend. Kitchen exhaust, refrigeration condensers, process exhaust and server room cooling are critical services that have to be sequenced deliberately, and antennas and rooftop electrical often belong to third parties who need notice.",
       },
       {
-        type: "h2",
-        heading: "Logistics on a working site",
-        text: "The site around the building is part of the project. Debris chutes and bins have to go somewhere that does not block a fire route, a loading dock, an accessible parking space or the tenant's own truck traffic. Crane or telehandler set-up needs space and it needs the area below closed. Deliveries of long panels require room to turn and unload. Crew parking, washroom facilities and a staging area all take space that the business is currently using. Working these out in a pre-construction meeting with the property manager avoids a week of daily arguments.",
+        type: "p",
+        text: "The site around the building matters as much. Debris chutes and bins cannot block a fire route, a loading dock, an accessible parking space or the tenant's truck traffic. Crane set-up needs space and needs the area below closed. Long panel deliveries need room to turn and unload. Crew parking, facilities and a staging area all take space the business is currently using, and working these out in a pre-construction meeting with the property manager avoids a week of daily arguments.",
       },
       {
         type: "h2",
         heading: "Communication is a deliverable",
-        text: "The difference between a smooth occupied re-roof and a miserable one is usually communication rather than technique. A pre-construction meeting with everyone affected, a written look-ahead each week showing which areas are being worked and when, advance notice of the genuinely disruptive days, a single named point of contact on each side, and a short daily check-in during active work. Tenants tolerate a great deal of disruption they were warned about and very little they were not.",
+        text: "The difference between a smooth occupied re-roof and a miserable one is usually communication rather than technique. A pre-construction meeting with everyone affected, a written weekly look-ahead showing which areas are being worked and when, advance notice of the genuinely disruptive days, a single named contact on each side, and a short daily check-in. Tenants tolerate a great deal of disruption they were warned about and very little they were not.",
       },
       {
         type: "faq",
