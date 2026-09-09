@@ -346,12 +346,12 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "This is why the same panel that performs indefinitely on a drive shed can pin-hole from the inside on a barn. It is also why a good supplier will ask what is going in the building before recommending a product, and why panel manufacturers commonly publish specific cautions about which coatings are and are not appropriate for animal confinement. Read those cautions rather than assuming the heaviest coating is automatically the right one — some coating systems that perform extremely well in ordinary exposure are explicitly not recommended in confinement environments.",
+        text: "This is why the same panel that performs indefinitely on a drive shed can pin-hole from the inside on a barn, and why panel manufacturers commonly publish specific cautions about which coatings suit animal confinement. Read those cautions rather than assuming the heaviest coating is automatically right — some systems that perform extremely well in ordinary exposure are explicitly not recommended in confinement environments.",
       },
       {
         type: "h2",
         heading: "Coating, backer and cut edges",
-        text: "Three separate things determine how long a farm panel lasts, and they are easy to confuse. The metallic coating on the steel — galvanized or an aluminum-zinc coating — is the corrosion protection. The paint system on the exposed face resists UV, chalking and fading. And the backer coat on the underside is what stands between the interior environment and the steel. On agricultural buildings the backer matters more than it does anywhere else, and a heavier, purpose-made backside coating is worth asking about specifically.",
+        text: "Three separate things determine how long a farm panel lasts. The metallic coating on the steel — galvanized or an aluminum-zinc coating — is the corrosion protection. The paint system on the exposed face resists UV, chalking and fading. And the backer coat on the underside is what stands between the interior environment and the steel. On agricultural buildings the backer matters more than anywhere else, and a heavier, purpose-made backside coating is worth asking about specifically.",
       },
       {
         type: "p",
@@ -379,7 +379,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Fasteners on a farm roof",
-        text: "Most agricultural roofs are through-fastened: screws driven through the panel flat or the rib into the purlin below, with a sealing washer under the head. It is an economical and appropriate system for the application, and its life is largely determined by the fasteners rather than the panel. Screws should be long enough to fully engage the purlin with thread to spare, coated or made from a material suitable for the environment, and driven to the correct depth — deep enough to compress the washer evenly, not so deep that the washer squeezes out or the panel dimples. An over-driven screw is a slow leak with a start date.",
+        text: "Most agricultural roofs are through-fastened: screws driven through the panel into the purlin below, with a sealing washer under the head. It is an economical and appropriate system, and its life is largely determined by the fasteners rather than the panel. Screws should fully engage the purlin with thread to spare, be suited to the environment, and be driven to the correct depth — deep enough to compress the washer evenly, not so deep that the washer squeezes out or the panel dimples. An over-driven screw is a slow leak with a start date.",
       },
       {
         type: "p",
@@ -787,16 +787,12 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "The upslope side needs a cricket: a small sloped diverter, built into the curb assembly, that takes water arriving from above and splits it around the two sides of the curb. Without one, water arriving at a wide curb ponds against the flashing across its full width, sits there, freezes, and eventually gets under the flashing lap. A cricket should be at least as wide as the curb it protects and pitched steeply enough to actually move water rather than just look like a slope on a drawing. On wide units, the cricket is a substantial piece of sheet metal work and it is not the place to save effort.",
+        text: "The upslope side needs a cricket: a sloped diverter, built into the curb assembly, that takes water arriving from above and splits it around both sides of the curb. Without one, water arriving at a wide curb ponds against the flashing across its full width, sits, freezes, and eventually gets under the lap. A cricket should be at least as wide as the curb it protects and pitched steeply enough to actually move water rather than just look like a slope on a drawing.",
       },
       {
         type: "h2",
         heading: "Where a curb sits relative to the seams",
-        text: "On a standing seam roof, the seams are the strength of the system and cutting one is a serious matter. Wherever possible, curbs and penetrations should be located and sized to fall within the panel module — between seams — so the seam runs past uninterrupted. When a curb must cross a seam, the seam has to be properly terminated and flashed on both sides, which is skilled sheet metal work and a permanent weak point relative to an uninterrupted seam.",
-      },
-      {
-        type: "p",
-        text: "This is why coordinating equipment layout with panel layout early is worth doing. On new construction, a mechanical layout produced before the panel module is fixed usually means several curbs land badly. Moving a unit half a metre on a drawing is free; cutting seams in the field is not.",
+        text: "On a standing seam roof the seams are the strength of the system, and cutting one is a serious matter. Wherever possible, curbs and penetrations should be sized and located to fall within the panel module — between seams — so the seam runs past uninterrupted. When a curb must cross a seam, that seam has to be properly terminated and flashed on both sides, which is skilled sheet metal work and a permanent weak point. This is why coordinating equipment layout with panel layout early is worth doing: moving a unit half a metre on a drawing is free, and cutting seams in the field is not.",
       },
       {
         type: "h2",
@@ -834,17 +830,12 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "h2",
-        heading: "Snow, drift and equipment",
-        text: "A rooftop unit is a snow fence. Snow drifts against its upslope side and builds a load the roof did not have before the unit was installed, and on a sloped metal roof a snow slide arriving at speed can shear a curb or damage a unit outright. Two consequences follow. Adding equipment to an existing roof is a structural question because of the drift load as much as the unit's own weight, and it should go to a structural engineer. And on a sloped metal roof, snow retention placed upslope of the equipment protects both the unit and the curb from impact.",
+        heading: "Snow, drift, condensate and service access",
+        text: "A rooftop unit is a snow fence. Snow drifts against its upslope side and builds a load the roof did not have before the unit was installed, and on a sloped metal roof a slide arriving at speed can shear a curb or damage a unit outright. So adding equipment to an existing roof is a structural question because of the drift load as much as the unit's own weight, and it should go to a structural engineer. Snow retention placed upslope of the equipment protects both the unit and the curb from impact.",
       },
       {
         type: "p",
-        text: "Condensate is the smaller cousin of the same issue. Condensate discharged onto a metal panel stains the coating, encourages corrosion and builds ice in winter at the point of discharge and again wherever it refreezes downslope. Condensate lines should be piped to a drainage point, not simply dumped on the roof.",
-      },
-      {
-        type: "h2",
-        heading: "Access and service traffic",
-        text: "Every piece of rooftop equipment gets serviced, which means people walking on the roof with tools and parts. On a standing seam roof, walking on the seams or across the flat of a panel unsupported can dent panels and distort seams. Designated walkways — walk pads or raised platforms clamped to the seams — protect the roof and give technicians safe footing on a surface that is slippery when wet and dangerous when frosted. Service platforms and access ladders around tall units are worth including at installation, particularly where a technician would otherwise be standing on a sloped roof beside a running unit.",
+        text: "Condensate discharged onto a metal panel stains the coating, encourages corrosion and builds ice at the point of discharge and wherever it refreezes downslope, so condensate lines should be piped to a drainage point rather than dumped on the roof. And every unit gets serviced, which means people on the roof with tools. Designated walkways — walk pads or platforms clamped to the seams — protect the panels from denting and give technicians footing on a surface that is slippery wet and dangerous frosted.",
       },
       {
         type: "faq",
@@ -927,7 +918,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "Anchors on a metal roof have to reach the building structure — purlins, joists, beams or a structural deck — through a properly designed and flashed penetration, and the structure itself has to be verified capable of taking the load. On standing seam roofs there are engineered anchor devices that clamp to the seam and have been tested with the specific seam profile as part of the assembly; those are legitimate where the manufacturer's testing and an engineer support their use on your particular roof and seam. In both cases the words that matter are designed, tested and verified for this building. Anchors should be designed by a qualified engineer, installed to that design, documented, inspected on a defined schedule and re-certified as required.",
+        text: "Anchors on a metal roof have to reach the building structure — purlins, joists, beams or a structural deck — through a properly designed and flashed penetration, and the structure itself has to be verified capable of taking the load. On standing seam roofs there are engineered anchor devices that clamp to the seam and have been tested with that specific seam profile as part of the assembly, which are legitimate where the manufacturer's testing and an engineer support their use on your roof. Either way, anchors should be designed by a qualified engineer, installed to that design, documented, inspected on a schedule and re-certified as required.",
       },
       {
         type: "callout",
@@ -936,22 +927,22 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Horizontal lifelines and rigid rail systems",
-        text: "Where people need to move along a roof, a horizontal lifeline or rigid rail lets them stay attached while they travel. These are engineered systems, not assemblies of parts. The forces developed at the end anchors of a lifeline during a fall are considerably higher than the falling person's weight, because of the geometry of a cable under tension. That means the end anchors and the structure carrying them need a structural design, and it means a lifeline strung between two convenient points by a well-meaning contractor is genuinely dangerous. Rigid rail systems reduce fall distance and forces and are worth considering where access is frequent.",
+        text: "Where people need to move along a roof, a horizontal lifeline or rigid rail lets them stay attached while they travel. These are engineered systems, not assemblies of parts. Because of the geometry of a cable under tension, the forces developed at the end anchors during a fall are considerably higher than the falling person's weight, so those anchors and the structure carrying them need a structural design — and a lifeline strung between two convenient points by a well-meaning contractor is genuinely dangerous.",
       },
       {
         type: "h2",
         heading: "Openings, skylights and translucent panels",
-        text: "Skylights, smoke vents, translucent daylight panels and hatch openings are fall-through hazards, and they are the ones people forget because they do not look like edges. An aged translucent panel in an agricultural or industrial roof can look identical to the steel next to it and support none of a person's weight. Guards, screens or fixed railings around openings are the reliable answer. At a minimum, know where every opening and light panel on your roof is, mark them, and include them in the briefing anyone gets before going up.",
+        text: "Skylights, smoke vents, translucent daylight panels and hatch openings are fall-through hazards, and they are the ones people forget because they do not look like edges. An aged translucent panel in an agricultural or industrial roof can look identical to the steel next to it and support none of a person's weight. Guards, screens or fixed railings around openings are the reliable answer. At a minimum, know where every opening and light panel is, mark them, and include them in the briefing anyone gets before going up.",
       },
       {
         type: "h2",
         heading: "Winter, and the case for staying off",
-        text: "A metal roof with frost, snow or ice on it is not a walkable surface. It is slippery in ways that are not obvious until someone is already moving, and a slope that felt secure in October is a slide in January. The safest policy on most commercial metal roofs is that nobody goes up in those conditions except with a plan specific to the conditions, and that snow and ice removal — when it is genuinely necessary for structural reasons — is done by a crew trained and equipped for it, using tools that will not damage the panels or the seams. Metal shovels, ice chippers and salt on a coated steel roof cause damage that is expensive and permanent.",
+        text: "A metal roof with frost, snow or ice on it is not a walkable surface. It is slippery in ways that are not obvious until someone is already moving, and a slope that felt secure in October is a slide in January. The safest policy is that nobody goes up in those conditions without a plan specific to them, and that snow and ice removal — when genuinely necessary for structural reasons — is done by a crew trained and equipped for it. Metal shovels, ice chippers and salt on a coated steel roof cause damage that is expensive and permanent.",
       },
       {
         type: "h2",
         heading: "What a facility manager can do about it",
-        text: "A short, written roof access procedure is one of the most cost-effective documents a building owner can produce. It should record how to get on the roof, who authorizes access, what protection is available and where, where the hazards and openings are, what the rescue plan is, and a log of who went up and why. Combine that with a requirement that any contractor going on the roof provides evidence of training and insurance and reports any penetration or damage, and you protect both the people and the roof itself.",
+        text: "A short written roof access procedure is one of the most cost-effective documents a building owner can produce. It should record how to get on the roof, who authorizes access, what protection is available and where, where the hazards and openings are, what the rescue plan is, and a log of who went up and why. Add a requirement that any contractor provides evidence of training and insurance and reports any penetration or damage, and you protect both the people and the roof.",
       },
       {
         type: "faq",
@@ -998,7 +989,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Sizing is a calculation, not a habit",
-        text: "The size and number of drains, scuppers, troughs and downpipes is determined by the roof area served and the rainfall intensity used for design at your location, together with the slope of the roof and the geometry of the drainage path. Those design rainfall figures come from the applicable code and reference data for the site, and the calculation belongs to a designer or engineer. Any proposal that specifies rainware without reference to the area served and a rainfall basis is guessing. On a re-roof this matters especially when the drainage strategy changes — converting a flat roof to sloped metal means the same water leaves the building through completely different openings, and the old sizing tells you nothing about the new requirement.",
+        text: "The size and number of drains, scuppers, troughs and downpipes is determined by the roof area served and the rainfall intensity used for design at your location, together with the slope and the geometry of the drainage path. Those design rainfall figures come from the applicable code and reference data for the site, and the calculation belongs to a designer or engineer. This matters most on a re-roof where the drainage strategy changes — converting a flat roof to sloped metal means the same water leaves through completely different openings, and the old sizing tells you nothing about the new requirement.",
       },
       {
         type: "h2",
@@ -1012,7 +1003,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Scuppers and leader boxes",
-        text: "A scupper is an opening through a parapet or wall that lets water off the roof. It can discharge freely, or into a conductor head — the open leader box you see on many commercial and institutional buildings — which then feeds a downpipe. Scuppers are simple, visible and easy to inspect, which are all advantages, and they have two common failure modes. They block, because anything floating on the roof ends up at the scupper. And they ice up, because the opening is at the coldest exposed edge of the roof, in a metal-lined throat, and a partly frozen scupper turns into a dam. Generous sizing and a maintenance schedule address both. A leader box also needs to be able to overflow safely at its front rather than back up into the wall.",
+        text: "A scupper is an opening through a parapet or wall that lets water off the roof, discharging freely or into a conductor head — the open leader box seen on many commercial and institutional buildings — which then feeds a downpipe. Scuppers are simple, visible and easy to inspect, and they have two common failure modes. They block, because anything floating on the roof ends up there. And they ice up, because the opening sits at the coldest exposed edge of the roof and a partly frozen scupper becomes a dam. Generous sizing and a maintenance schedule address both, and a leader box needs to overflow safely at its front rather than back up into the wall.",
       },
       {
         type: "h2",
@@ -1050,17 +1041,17 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "Self-regulating heat trace cable in troughs, downpipes and scuppers is a common and effective control where problems recur. It needs a proper electrical installation with ground fault protection and a control that turns it on when it is useful and off when it is not, because heat trace run all winter is an expense with no benefit on a dry cold day. Heat trace does not fix a drainage system that is undersized or blocked; it manages ice on one that works.",
+        text: "Self-regulating heat trace cable in troughs, downpipes and scuppers is a common and effective control where problems recur. It needs a proper electrical installation with ground fault protection and a control that turns it on when it is useful, because heat trace running all winter is an expense with no benefit on a dry cold day. It does not fix a drainage system that is undersized or blocked; it manages ice on one that works.",
       },
       {
         type: "h2",
         heading: "Where the water goes after it leaves the roof",
-        text: "Discharge is part of the design. Water dumped at grade next to a foundation ends up in a basement or undermines a slab. Water discharged across a sidewalk or a driveway becomes ice. Water directed onto a neighbouring property becomes a dispute. Downpipes should discharge to splash pads leading away from the building, to a storm connection where one is available and permitted, or to a stormwater management feature designed for it. Many municipalities have rules about roof drainage connections and about infiltration versus storm sewer discharge on commercial sites, so this is a question for your municipality and your site's civil design rather than something to settle on the day of installation.",
+        text: "Discharge is part of the design. Water dumped at grade next to a foundation ends up in a basement or undermines a slab; water across a sidewalk or driveway becomes ice; water directed onto a neighbouring property becomes a dispute. Downpipes should discharge to splash pads leading away from the building, to a storm connection where one is available and permitted, or to a stormwater feature designed for it. Many municipalities have rules about roof drainage connections on commercial sites, so this is a question for your municipality and your site's civil design rather than something to settle on installation day.",
       },
       {
         type: "h2",
         heading: "Maintenance is the whole ball game",
-        text: "Most commercial drainage failures are maintenance failures, not design failures. Leaves, seeds, gravel, packaging, tennis balls and bird nests all end up at outlets. In Southern Ontario a reasonable baseline is a clean-out and inspection in the spring after the thaw and again in the late fall after leaf drop, plus a check before a forecast heavy rain if the building has a history. Strainer domes on internal drains should be present and intact — a missing dome puts everything on the roof into the piping. Overflow paths should be verified clear, because they are the ones you are counting on when the primary fails.",
+        text: "Most commercial drainage failures are maintenance failures, not design failures. Leaves, seeds, gravel, packaging and bird nests all end up at outlets. In Southern Ontario a reasonable baseline is a clean-out and inspection in the spring after the thaw and again in late fall after leaf drop, plus a check before a forecast heavy rain if the building has a history. Strainer domes on internal drains should be present and intact — a missing dome puts everything on the roof into the piping — and overflow paths should be verified clear, because they are what you are counting on when the primary fails.",
       },
       {
         type: "faq",
@@ -1111,7 +1102,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "That is why institutional roofing is a sheet metal trade as much as a roofing trade, and why the crew's fabrication capability matters more than on a simple building. It is also why a bid on this kind of building is a different exercise: the labour is in the details, and a proposal priced from a roof area calculation has almost certainly missed something.",
+        text: "That is why institutional roofing is a sheet metal trade as much as a roofing trade, and why fabrication capability matters more than on a simple building. It is also why a bid here is a different exercise: the labour is in the details, and a proposal priced from a roof area calculation has almost certainly missed something.",
       },
       {
         type: "h2",
@@ -1120,7 +1111,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "The practical advice is to establish the status early by calling the municipality and asking directly whether the property is designated or listed and what approvals a roof replacement would need. If it is, expect the process to take time and expect to have to demonstrate that the proposed profile and finish are appropriate. Traditional metal roofing details — narrow standing seam pans, batten seam, flat-lock panels — are often the route to an approvable design, because they reproduce what the building would historically have had.",
+        text: "Establish the status early by calling the municipality and asking directly whether the property is designated or listed and what approvals a roof replacement would need. If it is, expect the process to take time and expect to demonstrate that the proposed profile and finish are appropriate. Traditional metal roofing details — narrow standing seam pans, batten seam, flat-lock panels — are often the route to an approvable design, because they reproduce what the building would historically have had.",
       },
       {
         type: "h2",
@@ -1153,11 +1144,11 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Access, staging and the public below",
-        text: "These buildings are tall, steep and usually surrounded by people. Working on a spire or a tall gable means scaffolding, swing stages or lifts rather than ladders, and it means protecting the ground below: hoarding, covered walkways over sidewalks and entrances, closed-off drop zones, and coordination with the municipality if any of it encroaches on a public sidewalk or road. Access permits from the municipality are commonly required for that, and they take lead time.",
+        text: "These buildings are tall, steep and usually surrounded by people. Working on a spire or a tall gable means scaffolding, swing stages or lifts rather than ladders, and it means protecting the ground below: hoarding, covered walkways over sidewalks and entrances, closed-off drop zones, and coordination with the municipality where any of it encroaches on a public sidewalk or road. Access permits are commonly required for that and they take lead time.",
       },
       {
         type: "p",
-        text: "Where the building is a place of worship, the schedule has to accommodate services, weddings, funerals, and whatever else uses the space. Funerals in particular cannot be scheduled around. Where the building houses a daycare, a food bank, an after-school programme or community meals in the basement, those users need to be part of the communication plan and their entrances need to stay clear and protected.",
+        text: "Where the building is a place of worship, the schedule has to accommodate services, weddings and funerals — funerals in particular cannot be scheduled around. Where the building houses a daycare, a food bank or community meals in the basement, those users belong in the communication plan and their entrances need to stay clear and protected.",
       },
       {
         type: "h2",
@@ -1171,7 +1162,7 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "On the procurement side, institutional and public owners typically work through tendered documents with prequalification, insurance certificates, workplace safety clearances and sometimes bonding. That is entirely reasonable, and it filters for contractors who can carry the administrative side of a project of this kind. Boards and committees also make decisions slowly and by consensus, so building in time for the owner's own approval process is part of realistic scheduling. We work with committees regularly and we would rather present clearly to a group than push for a decision on a first visit.",
+        text: "Institutional and public owners typically work through tendered documents with prequalification, insurance certificates, workplace safety clearances and sometimes bonding, which filters for contractors who can carry the administrative side of a project like this. Boards and committees also decide slowly and by consensus, so building in time for the owner's own approval process is part of realistic scheduling. We would rather present clearly to a committee than push for a decision on a first visit.",
       },
       {
         type: "faq",
@@ -1269,21 +1260,16 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "This matters practically. Ten years from now, matching a panel for a repair, ordering the correct boot, knowing which sealant is compatible with the existing one, or working out whether a stain has been there since 2019 all depend on records that exist or do not. It also matters for warranty purposes: manufacturers' finish and system warranties commonly carry conditions about maintenance and about what may be installed on the roof, and documentation is what demonstrates compliance. Read the actual warranty documents for your building's products and keep them in the file.",
+        text: "This matters practically. Ten years from now, matching a panel for a repair, ordering the correct boot, or working out whether a stain has been there since 2019 all depend on records that exist or do not. It also matters for warranty purposes: manufacturers' finish and system warranties commonly carry conditions about maintenance and about what may be installed on the roof, and documentation is what demonstrates compliance. Read the actual warranty documents for your building's products and keep them in the file.",
       },
       {
         type: "h2",
-        heading: "Cleaning: what helps and what causes damage",
-        text: "Debris removal is the most valuable cleaning task. Leaves, needles, seeds and branches trapped behind curbs, in valleys and along trough lines hold moisture against the panel and are a common starting point for corrosion on an otherwise sound roof. Removing them is straightforward and worth doing on schedule.",
+        heading: "Cleaning and controlling traffic",
+        text: "Debris removal is the most valuable cleaning task. Leaves, needles, seeds and branches trapped behind curbs, in valleys and along trough lines hold moisture against the panel and are a common starting point for corrosion on an otherwise sound roof. Washing is a different matter and it is easy to do harm: clean coated steel with water and, where needed, a mild detergent, following the coating manufacturer's guidance. Abrasives, wire brushes, harsh solvents and aggressive pressure washing damage the finish. In winter, avoid metal shovels and ice chippers, and do not apply salt or chemical de-icers to a metal roof or into troughs.",
       },
       {
         type: "p",
-        text: "Washing a roof is a different matter and it is easy to do harm. Coated steel should be cleaned with water and, where needed, a mild detergent, following the coating manufacturer's guidance. Abrasives, wire brushes, harsh solvents and aggressive pressure washing damage the finish. In winter, avoid metal shovels and ice chippers on the panels, and do not apply salt or chemical de-icers to a metal roof or into troughs — the corrosion consequences outlast the convenience by a long way.",
-      },
-      {
-        type: "h2",
-        heading: "Controlling traffic on the roof",
-        text: "Foot traffic damages metal roofs in ways that are not always immediately visible: dented panel flats between supports, crushed or distorted ribs, disturbed seams, scratched coating. Where equipment is serviced regularly, designated walkways — walk pads or raised platforms clamped to the seams — protect the panels and give technicians safe, defined footing. Combined with an access log, this also means that when damage does appear, you know who was up there and when.",
+        text: "Foot traffic damages metal roofs in ways that are not always immediately visible: dented panel flats between supports, crushed ribs, disturbed seams, scratched coating. Where equipment is serviced regularly, designated walkways — walk pads or platforms clamped to the seams — protect the panels and give technicians defined footing. Combined with an access log, it also means that when damage appears you know who was up there and when.",
       },
       {
         type: "h2",
@@ -1391,17 +1377,17 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       },
       {
         type: "p",
-        text: "The reliable answers are the same as on any agricultural or industrial building: a condensation control membrane laminated to the underside of the panel, a genuinely ventilated assembly with continuous intake and exhaust, or a properly detailed insulated assembly with vapour control on the warm side and no air leakage. Which one suits depends on how the building is used and whether it will ever be heated. It is much easier and cheaper to build in at re-roof time than to retrofit into an occupied storage building later.",
+        text: "The reliable answers are the same as on any agricultural or industrial building: a condensation control membrane laminated to the underside of the panel, a genuinely ventilated assembly with continuous intake and exhaust, or a properly detailed insulated assembly with vapour control on the warm side. Which one suits depends on how the building is used and whether it will ever be heated, and it is far easier to build in at re-roof time than to retrofit into an occupied storage building later.",
       },
       {
         type: "h2",
         heading: "Fire separations and what you may not penetrate",
-        text: "Storage buildings and multi-unit commercial garages often have rated separations between units or compartments, and those separations frequently extend to the underside of the roof deck. Anything that penetrates a rated assembly has to maintain the rating, and installing framing, anchors or services through one without addressing that is a code problem as well as a safety one. Where a re-roof involves anchoring into or through a separation, or where the roof assembly itself forms part of a rating, confirm the requirements with your municipal building department and, where necessary, a designer. This is not an area to work out on site.",
+        text: "Storage buildings and multi-unit commercial garages often have rated separations between units, and those separations frequently extend to the underside of the roof deck. Anything penetrating a rated assembly has to maintain the rating, and installing framing, anchors or services through one without addressing that is a code problem as well as a safety one. Where a re-roof involves anchoring into or through a separation, or where the roof assembly forms part of a rating, confirm the requirements with your municipal building department and, where necessary, a designer.",
       },
       {
         type: "h2",
         heading: "Appearance, and why it is a business matter here",
-        text: "For a customer-facing storage facility, the roof and the doors are most of what a prospective tenant sees when they drive in. A faded, streaked, patched roof reads as a poorly run facility regardless of how secure and clean the units are. Colour and finish selection is a business decision on these buildings: consider how the colour will look after a decade of exposure, how it will show streaking from runoff, and whether it matches the doors and signage. Lighter colours run cooler and show less fading; darker colours move more thermally on long runs and show chalking more readily.",
+        text: "For a customer-facing storage facility, the roof and the doors are most of what a prospective tenant sees driving in, and a faded, streaked, patched roof reads as a poorly run facility regardless of how secure the units are. Colour and finish selection is a business decision on these buildings: consider how the colour will look after a decade of exposure, how it will show streaking from runoff, and whether it suits the doors and signage. Lighter colours run cooler and show less fading; darker colours move more thermally on long runs.",
       },
       {
         type: "faq",
@@ -1448,11 +1434,11 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "How much movement are we talking about",
-        text: "Steel expands roughly twelve micrometres per metre for every degree Celsius of temperature rise. That is a small number until you multiply it by a long panel and a large temperature range. A roof panel is not at air temperature: on a clear summer day a dark panel in full sun runs far hotter than the air around it, and on a clear winter night it radiates to the sky and runs colder than the air. Across an Ontario year, a swing of eighty degrees between the coldest and hottest panel temperature is a realistic working assumption.",
+        text: "Steel expands roughly twelve micrometres per metre for every degree Celsius of temperature rise — a small number until you multiply it by a long panel and a large temperature range. A roof panel is not at air temperature: on a clear summer day a dark panel in full sun runs far hotter than the air around it, and on a clear winter night it radiates to the sky and runs colder. Across an Ontario year, a swing of eighty degrees between the coldest and hottest panel temperature is a realistic working assumption.",
       },
       {
         type: "p",
-        text: "Run that through the arithmetic and a sixty-metre panel changes length by roughly sixty millimetres between its coldest and hottest state. A thirty-metre panel moves about half that. Aluminum moves roughly twice as much as steel for the same temperature change, which matters where aluminum trim runs alongside steel panels. These are illustrative figures rather than design values — the actual coefficient depends on the alloy and the actual temperature range depends on colour, exposure, insulation and orientation — but they show the scale of what the roof has to accommodate, and it is far more than sealant can absorb.",
+        text: "Run that through the arithmetic and a sixty-metre panel changes length by roughly sixty millimetres between its coldest and hottest state; a thirty-metre panel moves about half that. Aluminum moves roughly twice as much as steel for the same change, which matters where aluminum trim runs alongside steel panels. These are illustrative figures rather than design values — the coefficient depends on the alloy and the temperature range depends on colour, exposure and orientation — but they show the scale of what the roof has to accommodate, and it is far more than sealant can absorb.",
       },
       {
         type: "h2",
@@ -1505,20 +1491,12 @@ export const COMMERCIAL_POSTS: BlogPostSeed[] = [
       {
         type: "h2",
         heading: "Trim, flashing and expansion joints",
-        text: "Trim moves too. Long runs of ridge cap, rake trim, eave trim, fascia and trough all expand and contract, and they need to be made in manageable lengths with lapped slip joints and flexible sealant rather than being butted, riveted solid and caulked. Fastener holes in trim that crosses a moving joint should be slotted or oversized so the trim can slip rather than tear.",
-      },
-      {
-        type: "p",
-        text: "Where a run exceeds what the clip system can absorb, the roof needs a designed expansion detail partway down the slope: a break in the panel run with a flashed, movement-tolerant transition — often a stepped or double-slope detail — so that each section behaves as its own shorter run with its own fixed point. This is real design work, and it is far better to establish it at the outset than to install a run longer than the system's rated travel and hope.",
+        text: "Trim moves too. Long runs of ridge cap, rake trim, eave trim, fascia and trough all expand and contract, so they need to be made in manageable lengths with lapped slip joints and flexible sealant rather than butted, riveted solid and caulked. Fastener holes in trim crossing a moving joint should be slotted or oversized so the trim can slip rather than tear. And where a run exceeds what the clip system can absorb, the roof needs a designed expansion detail partway down the slope — a flashed, movement-tolerant break, often a stepped or double-slope transition — so each section behaves as its own shorter run with its own fixed point.",
       },
       {
         type: "h2",
         heading: "Related consequences worth knowing",
-        text: "Two secondary effects come up on long-run buildings. The first is noise: expansion noise travels through the structure into the space below, which matters in an arena, a school, an office or a church. Bearing pads or thermal blocks under the clips at each purlin, and a slip sheet over a solid deck, reduce the friction that causes stick-slip and quiet the roof considerably.",
-      },
-      {
-        type: "p",
-        text: "The second is colour. A dark panel reaches a substantially higher surface temperature in the sun than a light one, which increases the temperature range it works through and therefore the movement it generates. On a very long run, colour is not purely an appearance decision — it is one of the inputs to how much travel the system has to provide.",
+        text: "Two secondary effects come up on long-run buildings. The first is noise: expansion noise travels through the structure into the space below, which matters in an arena, a school, an office or a church. Bearing pads or thermal blocks under the clips at each purlin, and a slip sheet over a solid deck, reduce the friction that causes stick-slip and quiet the roof considerably. The second is colour: a dark panel reaches a substantially higher surface temperature than a light one, which widens the range it works through and increases the movement it generates. On a very long run, colour is not purely an appearance decision.",
       },
       {
         type: "faq",
