@@ -30,6 +30,14 @@ const nextConfig: NextConfig = {
     deviceSizes: [390, 640, 768, 1024, 1280, 1920],
     imageSizes: [180, 260, 384, 640],
   },
+  // The luxury and custom steel fence pages were folded into /services/metal-fences.
+  // Permanent redirects keep the old URLs working and pass their ranking signals on.
+  async redirects() {
+    return [
+      { source: "/services/luxury-metal-fences", destination: "/services/metal-fences", permanent: true },
+      { source: "/services/custom-steel-fence", destination: "/services/metal-fences", permanent: true },
+    ];
+  },
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },

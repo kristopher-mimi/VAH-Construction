@@ -24,8 +24,7 @@ const SERVICE_LINKS: Record<string, { href: string; label: string }[]> = {
   ],
   "Metal Fencing": [
     { href: "/services/metal-fences", label: "Metal fencing" },
-    { href: "/services/luxury-metal-fences", label: "Luxury metal fences" },
-    { href: "/services/custom-steel-fence", label: "Custom steel fences" },
+    { href: "/contact", label: "Request a fencing quote" },
     { href: "/projects", label: "Completed projects" },
   ],
   "Metal Siding": [
@@ -43,7 +42,7 @@ const SERVICE_LINKS: Record<string, { href: string; label: string }[]> = {
   "Luxury Exteriors": [
     { href: "/services/metal-roofing", label: "Metal roofing systems" },
     { href: "/services/metal-siding", label: "Metal siding" },
-    { href: "/services/luxury-metal-fences", label: "Luxury metal fences" },
+    { href: "/services/metal-fences", label: "Metal fencing" },
     { href: "/projects", label: "Completed projects" },
   ],
   default: [

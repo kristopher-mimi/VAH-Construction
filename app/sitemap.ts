@@ -32,8 +32,6 @@ const STATIC_ENTRIES: Entry[] = [
   { path: "/services/commercial-metal-roofing", priority: 0.85, changeFrequency: "monthly" },
   { path: "/services/roof-replacement", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/metal-fences", priority: 0.85, changeFrequency: "monthly" },
-  { path: "/services/luxury-metal-fences", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/services/custom-steel-fence", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/metal-siding", priority: 0.75, changeFrequency: "monthly" },
 
   // Buying guidance

@@ -272,6 +272,26 @@ article now serves ~9.6 KB of visible prose across 11 sections.
   a per-category "Related services" block giving all 226 articles a contextual
   route into the commercial pages.
 
+## Fence pages consolidated
+
+The owner found three fencing pages describing one product with three
+framings. `/services/luxury-metal-fences` and `/services/custom-steel-fence`
+were removed; `/services/metal-fences` is the single fencing page.
+
+- The only content unique to the retired pages was folded into the keeper:
+  four additional profiles (solid privacy screen, perforated architectural
+  panel, cable and steel, custom gates), a steel-vs-aluminum materials section,
+  and powder-coat colour swatches. Everything else was a restatement.
+- Both retired URLs are already indexed, so they now **permanently redirect**
+  (`next.config.ts`) to `/services/metal-fences`. Deleting them outright would
+  have produced 404s and thrown away their ranking signals.
+- Removed from the sitemap, the main navigation, the services hub index, and
+  the per-category blog service links. The nav "Fencing" column now has one
+  entry.
+- `seo:check` gained a `redirects` section that asserts each retired URL
+  returns a 3xx whose Location is the keeper, and that the keeper itself is a
+  200 (no chain, no loop).
+
 ## Limitations
 
 - **Core Web Vitals: NOT MEASURED.** No Lighthouse or headless browser was

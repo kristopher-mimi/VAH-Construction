@@ -53,6 +53,46 @@ const styles = [
     desc: "High-gauge steel systems for commercial lots, secure perimeters, and industrial properties. Built for structural performance.",
     ideal: "Commercial properties, warehouses, secure perimeters",
   },
+  {
+    title: "Solid Privacy Screen",
+    desc: "Flat steel or aluminum panels for complete visual privacy. Popular for pool enclosures, patio screens, and tight urban lots. Any height, custom dimensions.",
+    ideal: "Pool enclosures, patio screens, urban properties",
+  },
+  {
+    title: "Perforated Architectural Panel",
+    desc: "Perforated steel or aluminum that gives filtered privacy while still letting light and air through. Geometric, organic, or custom perforation patterns.",
+    ideal: "Feature walls, courtyards, modern facades",
+  },
+  {
+    title: "Cable & Steel",
+    desc: "A structural steel post frame with stainless cable infill. Minimal visual obstruction for properties where the view is the point.",
+    ideal: "Escarpment and waterfront lots, decks, view properties",
+  },
+  {
+    title: "Custom Gate Systems",
+    desc: "Swing and sliding gates welded to match any fence profile above, in the same steel or aluminum and the same finish. Manual or motorized, with access control available.",
+    ideal: "Driveways, side yards, pedestrian entries, secured lots",
+  },
+];
+
+const materials = [
+  {
+    title: "Structural Steel",
+    body: "Mild steel in tube, flat bar, and angle sections, phosphate washed, primed, and powder coated. The strongest and most weldable option, so it is the default for decorative work and anything carrying real load.",
+    pros: ["Highest strength", "Weldable for decorative detail", "Cost-effective", "Takes powder coat well"],
+  },
+  {
+    title: "Aluminum",
+    body: "Extruded aluminum in hollow tube and solid sections. It does not rust, even where the coating is scratched, so it suits wet or high-humidity sites and long spans where weight matters.",
+    pros: ["Does not rust", "Lightweight", "Good for wide post spacing", "Premium option"],
+  },
+];
+
+const colours = [
+  { hex: "#1a1a1a", border: "#333333", label: "Matte Black" },
+  { hex: "#4a3728", border: "#6b5040", label: "Bronze" },
+  { hex: "#6b7280", border: "#9ca3af", label: "Silver" },
+  { hex: "#8B7355", border: "#a08060", label: "Cedar Wood-Grain" },
 ];
 
 const faq = [
@@ -367,6 +407,59 @@ export default function MetalFencesPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Materials */}
+        <section className="bg-neutral-950 border-t border-neutral-800/60 py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <div className="mb-10">
+              <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">Materials</span>
+              <h2 className="text-3xl font-extrabold text-white tracking-tight">Steel or Aluminum.</h2>
+              <p className="text-neutral-500 text-sm mt-2">Both are powder coated. Which one suits the job comes down to strength, weight, and exposure.</p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {materials.map((mat) => (
+                <div key={mat.title} className="bg-[#111111] border border-neutral-800 rounded-lg p-6">
+                  <h3 className="text-white font-bold text-lg mb-3">{mat.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-5">{mat.body}</p>
+                  <ul className="space-y-2">
+                    {mat.pros.map((p) => (
+                      <li key={p} className="flex items-center gap-2 text-xs text-neutral-400">
+                        <svg viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3 text-amber-500 flex-shrink-0">
+                          <path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z" />
+                        </svg>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Finishes */}
+        <section className="bg-[#0a0a0a] border-t border-neutral-800/60 py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <div className="mb-8">
+              <span className="text-amber-500 text-xs font-bold tracking-[0.18em] uppercase mb-3 block">Finishes</span>
+              <h2 className="text-3xl font-extrabold text-white tracking-tight">Powder Coat Colours.</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+              {colours.map((c) => (
+                <div key={c.label} className="text-center">
+                  <div
+                    className="w-full h-20 rounded-md mb-2 border"
+                    style={{ backgroundColor: c.hex, borderColor: c.border }}
+                  />
+                  <span className="text-neutral-400 text-xs font-medium">{c.label}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-neutral-600 text-sm">
+              Custom RAL colours available. All finishes are industrial powder coat: chip-resistant and UV-stable.
+            </p>
           </div>
         </section>
 

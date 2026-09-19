@@ -148,16 +148,6 @@ const SERVICE_INDEX = [
         title: "Metal Fences",
         desc: "Powder-coated steel and aluminum fencing built to your dimensions.",
       },
-      {
-        href: "/services/luxury-metal-fences",
-        title: "Luxury Metal Fences",
-        desc: "Architectural privacy fencing and premium screen profiles.",
-      },
-      {
-        href: "/services/custom-steel-fence",
-        title: "Custom Steel Fences",
-        desc: "Fabricated steel fencing built to bespoke dimensions and colours.",
-      },
     ],
   },
   {

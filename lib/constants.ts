@@ -49,8 +49,6 @@ export const NAV_LINKS = [
         heading: "Fencing",
         items: [
           { label: "Metal Fences", href: "/services/metal-fences", sub: "Custom powder-coated fencing" },
-          { label: "Luxury Metal Fences", href: "/services/luxury-metal-fences", sub: "Architectural privacy" },
-          { label: "Custom Steel Fences", href: "/services/custom-steel-fence", sub: "Built to your dimensions" },
         ],
       },
       {

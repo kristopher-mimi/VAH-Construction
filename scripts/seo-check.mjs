@@ -201,8 +201,6 @@ async function main() {
     "/services/standing-seam-roofing",
     "/services/metal-tiles",
     "/services/metal-fences",
-    "/services/luxury-metal-fences",
-    "/services/custom-steel-fence",
     "/services/metal-siding",
     "/services/roof-replacement",
     "/services/residential-metal-roofing",
@@ -226,6 +224,28 @@ async function main() {
     : pass(`all ${internalLinks.size} internal links resolve`);
 
   // ------------------------------------------------------------------ misc
+  // ------------------------------------------------------------- redirects
+  // Retired URLs must permanently redirect to their replacement, and the
+  // replacement itself must be a real 200 so there is no chain or loop.
+  section("redirects");
+  const RETIRED = {
+    "/services/luxury-metal-fences": "/services/metal-fences",
+    "/services/custom-steel-fence": "/services/metal-fences",
+  };
+  for (const [from, to] of Object.entries(RETIRED)) {
+    const r = await get(from);
+    const loc = r.headers.get("location") ?? "";
+    if (r.status < 300 || r.status >= 400) {
+      fail(`${from} returned ${r.status}, expected a permanent redirect`);
+    } else if (!loc.endsWith(to)) {
+      fail(`${from} redirects to ${loc || "(none)"}, expected ${to}`);
+    } else if ((await get(to)).status !== 200) {
+      fail(`${from} -> ${to}, but ${to} is not a 200 (loop or broken target)`);
+    } else {
+      pass(`${from} -> ${to} (${r.status})`);
+    }
+  }
+
   section("404 handling");
   const missing = await get("/this-page-does-not-exist-seo-check");
   missing.status === 404
