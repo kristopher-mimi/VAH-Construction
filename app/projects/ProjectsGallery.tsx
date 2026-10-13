@@ -28,7 +28,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: "30+", label: "Locations Across Ontario" },
-  { value: "270+", label: "Roofing Projects Delivered" },
+  { value: "280+", label: "Roofing Projects Delivered" },
   { value: "100%", label: "Projects Completed on Schedule" },
   { value: "50+", label: "Warranty on Every Project" },
 ];

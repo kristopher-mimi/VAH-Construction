@@ -2,7 +2,7 @@
 
 const stats = [
   {
-    value: "270+",
+    value: "280+",
     label: "Projects Completed",
     sub: "Across Southern Ontario",
     icon: (
