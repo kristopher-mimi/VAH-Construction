@@ -1,5 +1,49 @@
 [
   {
+    "id": "metal-siding-black-side-wall",
+    "category": "Metal Siding",
+    "title": "Board & Batten Metal Siding — Forest Retreat",
+    "system": "Metal Siding",
+    "area": "2,200 sq ft",
+    "colour": "Matte Black",
+    "image": "/images/projects/metal-siding-black-side-wall.jpg",
+    "imageAlt": "Black vertical metal siding on a two-storey home surrounded by autumn forest — VAH Construction",
+    "objectPosition": "60% 50%"
+  },
+  {
+    "id": "metal-siding-black-gable-front",
+    "category": "Metal Siding",
+    "title": "Vertical Metal Siding — Modern Barn-Style Gable",
+    "system": "Metal Siding",
+    "area": "2,200 sq ft",
+    "colour": "Matte Black",
+    "image": "/images/projects/metal-siding-black-gable-front.jpg",
+    "imageAlt": "Black vertical metal siding on a modern barn-style gable wall — VAH Construction",
+    "objectPosition": "60% 35%"
+  },
+  {
+    "id": "standing-seam-black-hip-aerial",
+    "category": "Standing Seam",
+    "title": "Standing Seam — Multi-Hip Roof from Above",
+    "system": "Standing Seam",
+    "area": "3,400 sq ft",
+    "colour": "Matte Black",
+    "image": "/images/projects/standing-seam-black-hip-aerial.jpg",
+    "imageAlt": "Top-down aerial view of a black standing seam multi-hip roof — VAH Construction",
+    "objectPosition": "50% 60%"
+  },
+  {
+    "id": "standing-seam-black-brick-ranch",
+    "category": "Standing Seam",
+    "title": "Standing Seam — Brick Bungalow with Garage",
+    "system": "Standing Seam",
+    "area": "3,400 sq ft",
+    "colour": "Matte Black",
+    "image": "/images/projects/standing-seam-black-brick-ranch.jpg",
+    "imageAlt": "Black standing seam roof on a brick bungalow with attached garage — VAH Construction",
+    "objectPosition": "50% 35%"
+  },
+  {
     "id": "standing-seam-with-4-skylight-in-muskoka",
     "category": "Standing Seam",
     "title": "Standing Seam with 4 skylight in Muskoka",
